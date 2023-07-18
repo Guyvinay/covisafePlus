@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    <div id="loginlogout">
-        <div id="changer">
+    <div class="loginlogout">
+        <div class="changer">
             <div class="active page">
                 Sign In
             </div>
@@ -16,8 +16,9 @@
                 Sign Up
             </div>
         </div>
-        <div class="form">
-            <div id="imgdiv">
+        <!-- // form for sign in purpose -->
+        <div class="form signin">
+            <div class="imgdiv">
                 <div>
                     <img src="./images/login-family.svg" alt="">
                 </div>
@@ -29,18 +30,36 @@
                 <h2>Sign In for Vaccination</h2><br>
                 <p>Enter your credentials</p>
                 <form>
-                    <input type="email" id="email" placeholder="enter email">
-                    <input type="password" id="password" placeholder="password">
-                    <input type="submit" id="submit" value="Login">
+                    <input type="email" placeholder="enter email">
+                    <input type="password" placeholder="password">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+
+        <!-- signput form  -->
+
+        <div class="form signup">
+            <div class="imgdiv">
+                <div>
+                    <img src="./images/login-family.svg" alt="">
+                </div>
+                <div>
+                    <img src="./images/building-icon.svg" alt="">
+                </div>
+            </div>
+            <div>
+                <h2>Sign Up for Vaccination</h2><br>
+                <p>Register your credentials</p>
+                <form>
+                    <input type="email"  placeholder="Enter email">
+                    <input type="number" placeholder="Enter phone no">
+                    <input type="password" placeholder="Password">
+                    <input type="submit" value="Login">
                 </form>
             </div>
         </div>
     </div>
 </body>
+<script src="./src/login.js"></script>
 </html>
-
-<!-- 
-    background-color: rgba(61, 226, 255, 255);
-    background-color: rgba(20, 29, 55, 255) !important;
-
- -->

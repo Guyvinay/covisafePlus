@@ -26,7 +26,7 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#loginlogout{
+.loginlogout{
     position: fixed;
         top: 50%;
         left: 50%;
@@ -88,7 +88,7 @@ body {
     /* box-shadow: 0 0 8px 0 var(--second-color); */
 }
 
-#imgdiv{
+.imgdiv{
     background: linear-gradient(180deg, #085fce,#141d37);
    border-radius: 10px;
 }
@@ -110,7 +110,7 @@ form input[type="submit"]{
     color: var(--main-color);
 }
 
-#changer{
+.changer{
     width: 50%;
     margin: auto;
     margin-bottom: 4rem;
@@ -122,10 +122,10 @@ form input[type="submit"]{
     /* box-shadow: 0px 1px 20px 5px rgb(137 145 166 / 21%); */
 }
 
-#changer > div{
+.changer > div{
     text-align: center;
     padding: 2rem;
-    
+    cursor: pointer;
     font-weight: bold;
     color: grey;
 }
@@ -133,4 +133,10 @@ form input[type="submit"]{
 .active{
     background-color: var(--main-color);
     border-radius: 1rem;
+}
+
+/* by default signup hidden */
+
+.signup{
+    display: none;
 }
