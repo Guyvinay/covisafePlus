@@ -52,6 +52,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 .form>div>p{
     color: #f3f3f3;
