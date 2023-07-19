@@ -104,7 +104,7 @@ form input[type="submit"]{
 }
 
     
-#submit:hover{
+form input[type="submit"]:hover{
     background-color: transparent;
     border: 2px solid var(--main-color);
     color: var(--main-color);
@@ -139,4 +139,30 @@ form input[type="submit"]{
 
 .signup{
     display: none;
+}
+
+.altert{
+    background-color: green;
+    padding: .7rem 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: .7rem;
+    justify-content: center;
+    width: fit-content;
+    color: var(--light);
+    position: fixed;
+        left: 50%;
+        top: 5%;
+        transform: translate(-50%, 0%);
+}
+.altert div{
+    display: flex;
+    align-items: center;
+    border: .1rem solid;
+    border-radius: 50%;
+    padding: .3rem;
+    margin-left: 1rem;
+}
+.altert img{
+    /* color: transparent; */
 }
