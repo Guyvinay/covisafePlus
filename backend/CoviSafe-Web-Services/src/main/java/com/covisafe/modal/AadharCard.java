@@ -14,7 +14,6 @@ import lombok.Data;
 public class AadharCard {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer aadharId;
 	private Long aadgharNo;
 	
