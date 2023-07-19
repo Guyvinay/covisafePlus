@@ -3,6 +3,7 @@ package com.covisafe.modal;
 import java.time.LocalDate;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,10 +19,11 @@ public class Member {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Integer id;
+	 @Column(columnDefinition = "boolean default false")
+	 private Boolean dose1Status;
 	 
-	 private boolean dose1Status;
-	 
-	 private boolean dose2Status;
+	 @Column(columnDefinition = "boolean default false")
+	 private Boolean dose2Status;
 	 
 	 private LocalDate dose1Date;
 	 
