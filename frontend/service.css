@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif!important;
+
+}
+
+:root {
+    --head: rgb(4,93,93);
+    --nav: rgb(1,126,126);
+
+  }
+  
+
+.mheader{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 35px;
+    background-color: var(--head);
+    display: flex;
+    justify-content: space-between;
+}
+
+.mleftlogo{
+    display: flex;
+    /* border: 1px solid red; */
+   
+
+}
+
+
+
+.mleftlogo{
+    padding: 0.2% 0.2% 0.2% 0.2%;
+    font-size: 13px;
+    color: white;
+    line-height: 1.3;
+   
+}
+
+.mrightside{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 20%;
+    justify-content: space-between;
+}
+
+#eng{
+    padding: 1.7% 1.7% 1.7% 1.7%;
+    font-size: 22px;
+    color: white;
+}
+
+.mrightside button{
+    border: 1px solid white;
+    width:15%;
+    border-radius: 6px;
+    font-weight: bold;
+    background-color: var(--nav);
+    color: white;
+    
+}
+
+.mnav{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: var(--nav);
+    justify-content: space-between;
+}
+
+.mlogo{
+    
+    /* border: 1px solid red; */
+    width: 100px;
+    /* margin-right: 8%;   */
+}
+
+.mlogo img{
+    display: block;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.mnavlist{
+    /* border: 1px solid red; */
+    width: 60%;
+    display: flex;
+    font-size: 1rem;
+    /* margin-right: 1%; */
+    justify-content: space-between;
+  
+}
+
+.mnavlist a{
+    margin-top: 1%;
+    text-decoration: none;
+    color: white;
+    margin: 3%;
+}
+
+.mnavlist button{
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 2px 2px 2px 2px;
+    background-color: var(--nav);
+}
+
+.ban1{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    height: 550px;
+    margin-top: 1%;
+    justify-content: space-around;
+
+}
+
+.left{
+    margin-top: 6%;
+    /* border: 1px solid red; */
+    height: 300px;
+}
+
+.text1{
+    line-height: 1.5;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 3%;
+
+}
+
+.text2{
+    border: 3px solid rgb(253,84,40); 
+    color: rgb(253,84,40); 
+    border-radius: 6px; 
+    line-height: 1.6; 
+    width: 80%;
+    margin-top: 3%;
+
+}
+
+.text3{
+    margin-top: 3%;
+    
+
+}
+
+.text4{
+    margin-top: 3%;
+
+}
+
+.cards{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px 20px;
+
+}
+
+.cards div{
+    border: 1px solid red;
+    border-radius: 5px;
+    height: 80px;
+    padding: 10px 20px;
+}
