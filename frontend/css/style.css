@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif!important;
+
+}
+
+:root {
+    --head: rgb(4,93,93);
+    --nav: rgb(1,126,126);
+
+  }
+  
+
+.mheader{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 35px;
+    background-color: var(--head);
+    display: flex;
+    justify-content: space-between;
+}
+
+.mleftlogo{
+    display: flex;
+    /* border: 1px solid red; */
+   
+
+}
+
+
+
+.mleftlogo{
+    padding: 0.2% 0.2% 0.2% 0.2%;
+    font-size: 13px;
+    color: white;
+    line-height: 1.3;
+   
+}
+
+.mrightside{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 20%;
+    justify-content: space-between;
+}
+
+#eng{
+    padding: 1.7% 1.7% 1.7% 1.7%;
+    font-size: 22px;
+    color: white;
+}
+
+.mrightside button{
+    border: 1px solid white;
+    width:15%;
+    border-radius: 6px;
+    font-weight: bold;
+    background-color: var(--nav);
+    color: white;
+    
+}
+
+.mnav{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: var(--nav);
+    justify-content: space-between;
+}
+
+.mlogo{
+    
+    /* border: 1px solid red; */
+    width: 100px;
+    /* margin-right: 8%;   */
+}
+
+.mlogo img{
+    display: block;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.mnavlist{
+    /* border: 1px solid red; */
+    width: 60%;
+    display: flex;
+    font-size: 1rem;
+    /* margin-right: 1%; */
+    justify-content: space-between;
+  
+}
+
+.mnavlist a{
+    margin-top: 1%;
+    text-decoration: none;
+    color: white;
+    margin: 3%;
+}
+
+.mnavlist button{
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 2px 2px 2px 2px;
+    background-color: var(--nav);
+}
+
+.ban1{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    height: 550px;
+    margin-top: 1%;
+    justify-content: space-around;
+
+}
+
+.left{
+    margin-top: 6%;
+    /* border: 1px solid red; */
+    height: 300px;
+}
+
+.text1{
+    line-height: 1.5;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 3%;
+
+}
+
+.text2{
+    border: 3px solid rgb(253,84,40); 
+    color: rgb(253,84,40); 
+    border-radius: 6px; 
+    line-height: 1.6; 
+    width: 80%;
+    margin-top: 3%;
+
+}
+
+.text3{
+    margin-top: 3%;
+    
+
+}
+
+.text4{
+    margin-top: 3%;
+
+}
+
+.ban2{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-top: 3%;
+    height: 60px;
+    background-color: var(--nav);
+    justify-content: space-around;
+}
+
+.lefttext{
+    /* border: 1px solid red; */
+    text-align: left;
+}
+
+
+.lefttext p{
+    margin-top: 5%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.lefttext h5{
+    font-size: 20px;
+    margin-left: 45%;
+    color: white;
+}
+
+.ban2 button{
+    border: 2px solid white;
+    background-color:rgb(252,191,2);
+    font-size: 1rem;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+/* .righttext{
+    border: 1px solid red;
+} */
+
+.righttext p{
+    margin-top: 5%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+}
+
+.righttext h5{
+    font-size: 20px;
+    margin-right: 45%;
+   
+}
+
+.ban3{
+    width: 100%;
+    display: block;
+    /* border: 1px solid red; */
+    background-color: rgb(237,255,255);
+   
+
+}
+
+.ban3 h2{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 2rem;
+    color: rgb(0,124,124)
+}
+.ban3 img{
+    display: block;
+    margin: auto;
+    /* border: 1px solid red; */
+    
+}
+
+.ban4{
+    /* border: 1px solid red; */
+    padding-top: 2%;
+    text-align: center;
+}
+
+.ban4 h2{
+    color: rgb(0,124,124);
+    margin: auto;
+}
+
+.ban4 p{
+    margin-top: 1%;
+    font-size: .8rem;
+
+}
+
+.ban4 h6{
+    margin-top: 1%;
+    font-size: .9rem;
+    color: var(--nav);
+}
+
+hr{
+    border: 2px solid ;
+    color: rgb(174, 172, 172);
+    width: 50%;
+    margin: auto;
+}
+
+.location{
+    /* border: 1px solid red; */
+    text-align: center;
+    
+    
+}
+
+.location div{
+    /* border: 1px solid red; */
+    width: 50%;
+    margin: auto;
+    display: flex;
+    margin-top: 1%;
+    /* align-items: center; */
+    justify-content: space-around;
+    color: rgb(128,128,128);
+}
+
+.search{
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.search input{
+    border: 2px solid rgb(128,128,128);
+    width: 40%;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+}
+
+.search button{
+    display: block;
+    font-size: 1rem;
+    border-radius: 50px;
+    width: 10%;
+    background-color: var(--head);
+    color: white;
+    border: none;
+
+}
+
+.ban5{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    margin-top: 1%;
+}
+
+.ban5 img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.ban6{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    background-color: rgb(237,255,255);
+}
+
+.ban6 img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+
+.ban7{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 50%;
+    margin: auto;
+    margin-top: 1%;
+}
+
+.ban7 div{
+    /* border: 1px solid red; */
+    width: 60%;
+}
+
+.ban7 img{
+    /* border: 1px solid red; */
+    width: 40%;
+} 
+
+.ban7 h2{
+    color: var(--head);
+
+}
+
+.ban7 li{
+    font-size: .8rem;
+    margin-top: 2%;
+    text-align: left;
+
+}
+
+.ban7 button{
+    border: 1px solid red;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: var(--nav);
+    border: none;
+    color: white;
+}
+
+
+.ban8{
+    /* border: 1px solid red; */
+    padding-top: 2%;
+    text-align: center;
+}
+
+.ban8 h2{
+    color: rgb(0,124,124);
+    margin: auto;
+    font-size: 2rem;
+}
+
+.ban8 p{
+    margin-top: 1%;
+    font-size: .9rem;
+    line-height: 1.3;
+
+
+}
+
+.ban5 button{
+    display: block;
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: auto;
+    background-color: var(--nav);
+    border: none;
+    color: white;
+    
+
+}
+
+.ban9{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    background-color: var(--nav);
+    margin-top: 3%;
+}
+
+.ban9 img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
