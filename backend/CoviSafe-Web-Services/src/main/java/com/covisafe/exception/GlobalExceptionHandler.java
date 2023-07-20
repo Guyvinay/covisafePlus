@@ -11,7 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler {  // Exception Handler
 	
 	 @ExceptionHandler(InvalidVaccineDataException.class)
 	    public ResponseEntity<MyErrorDetails> handleInvalidVaccineDataException(InvalidVaccineDataException ex, WebRequest req) {
