@@ -17,7 +17,7 @@
 
   }
  
-  html{
+html{
     font-size: 62.5% !important;
 }
 
@@ -96,3 +96,8 @@ section{
     border-radius: 5px;
     /* background-color: var(--second-color); */
 }
+ 
+body{
+    background: linear-gradient(45deg, #6797d5,#fff );
+}
+/* (180deg, #, #085fce); */
