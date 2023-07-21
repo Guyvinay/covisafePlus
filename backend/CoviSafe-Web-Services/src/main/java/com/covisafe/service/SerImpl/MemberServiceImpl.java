@@ -2,53 +2,79 @@ package com.covisafe.service.SerImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+import com.covisafe.exception.InvalidArgumentsException;
+import com.covisafe.exception.InvalidUserException;
 import com.covisafe.modal.Member;
+import com.covisafe.repository.MemberRepository;
 import com.covisafe.service.MemberService;
 
 public class MemberServiceImpl implements MemberService {
 
-	
-	
-	@Override
-	public List<Member> getAllMember() {
-		  
-		return null;
+	@Autowired
+	private MemberRepository memberRepository;
+
+	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
+		if (pageNo == null && limit == null && sortBy.equals(null))
+			return memberRepository.findAll();
+		else if (pageNo != null && limit != null && sortBy.equals(null)) {
+			Pageable page = PageRequest.of(pageNo, limit);
+			return memberRepository.findAll(page).getContent();
+		} else if (pageNo != null && limit != null && !sortBy.equals(null)) {
+			Pageable page = PageRequest.of(pageNo, limit, Sort.by(sortBy));
+			return memberRepository.findAll(page).getContent();
+		} else {
+			throw new InvalidArgumentsException("please pass correct fields to get the pagewise data");
+		}
 	}
 
-	@Override
-	public Member getMemberById(Integer id) {
-		  
-		return null;
+	public Member getMemberById(Integer id) throws InvalidUserException {
+		return memberRepository.findById(id)
+				.orElseThrow(() -> new InvalidUserException("can't find any user with id " + id));
 	}
 
-	@Override
 	public Member getMemberByAadharNo(Long aadharNo) {
-		  
-		return null;
+		return memberRepository.findByAadharNo(aadharNo)
+				.orElseThrow(() -> new InvalidUserException("can't find any user with aadharNo " + aadharNo));
 	}
 
-	@Override
 	public Member getMemberByPanNo(String panNo) {
-		  
-		return null;
+		return memberRepository.findByPanNo(panNo)
+				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
 	}
 
-	@Override
 	public Member addMember(Member member) {
-		  
-		return null;
+		if (member == null)
+			throw new InvalidArgumentsException("Please pass the correct member details");
+		if (member.getId() != null) {
+			if (memberRepository.findById(member.getId()).orElse(null) != null) {
+				throw new InvalidUserException("User already present in database ");
+			}
+		}
+		return memberRepository.save(member);
 	}
 
-	@Override
 	public Member updateMember(Member member) {
-		  
-		return null;
+		if (member == null)
+			throw new InvalidArgumentsException("Please pass the correct member details");
+		if (memberRepository.findById(member.getId()).orElse(null) == null) {
+			throw new InvalidUserException("User not found in database ");
+		}
+		return memberRepository.save(member);
 	}
 
-	@Override
 	public Boolean deleteMember(Integer id) {
-		  
-		return null;
+		if (id == null)
+			throw new InvalidArgumentsException("Please pass the correct member details");
+		Member member = memberRepository.findById(id).orElse(null);
+		if (member == null) {
+			throw new InvalidUserException("User not found in database ");
+		}
+		memberRepository.delete(member);
+		return true;
 	}
-
 }
