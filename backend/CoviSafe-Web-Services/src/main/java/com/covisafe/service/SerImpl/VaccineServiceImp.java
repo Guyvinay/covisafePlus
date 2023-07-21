@@ -1,10 +1,11 @@
-package com.covisafe.service;
+package com.covisafe.service.SerImpl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.covisafe.modal.Vaccine;
+import com.covisafe.service.VaccineService;
 
 @Service
 public class VaccineServiceImp implements VaccineService {
