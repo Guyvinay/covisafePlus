@@ -91,16 +91,14 @@ body{
 }
 
 .mlogo {
+    display: flex;
     align-items: center;
     width: 10rem;
-    object-fit: cover;
-    width: 7rem;
-    /* margin-right: 8%;   */
 }
 
 .mlogo img {
     display: block;
-    width: 100%;
+    width: 20rem;
     padding-bottom: 2%;
 }
 
