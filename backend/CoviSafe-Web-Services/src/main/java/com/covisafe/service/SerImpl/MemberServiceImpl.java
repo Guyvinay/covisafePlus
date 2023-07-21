@@ -93,4 +93,10 @@ public class MemberServiceImpl implements MemberService {
 		memberRepository.delete(member);
 		return true;
 	}
+
+	@Override
+	public Member addMember(Member member) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
