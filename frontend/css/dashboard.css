@@ -71,7 +71,7 @@ html {
 }
 
 
-.footer-box{
+/* .footer-box{
     display: grid;
     background: linear-gradient(180deg, #141d37,#085fce);
     grid-template-columns: repeat(5,1fr);
@@ -105,7 +105,7 @@ html {
 .footer-box>div a{
     color: var(--white);
     line-height: 2;
-    /* border: 1px solid red; */
+    /* border: 1px solid red; 
    
 }
 
@@ -143,4 +143,4 @@ html {
 
 .footer-image-div img[src="./images/undp-logo-vertical.svg"]{
     width: 4rem;
-}
+} */

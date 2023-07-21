@@ -14,6 +14,7 @@ public interface MemberService {
 //	public Member getMemberByPanNo(String panNo);
 	public Member addMember(Member member, Integer userId );
 	public Member updateMember(Member member);
-	public Boolean deleteMember(Integer id);	
+	public Boolean deleteMember(Integer id);
+	Member addMember(Member member);	
 	
 }
