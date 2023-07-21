@@ -1,6 +1,6 @@
 package com.covisafe.exception;
 
-public class InsufficientDosesException extends Exception{
+public class InsufficientDosesException extends RuntimeException{
 
 	public InsufficientDosesException(String message) {
 		super(message);

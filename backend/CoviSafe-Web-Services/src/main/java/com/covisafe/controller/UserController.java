@@ -26,7 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	  "state":"BIHAR",
 	  "pincode":"800006",
 	  "password":"1234",
-	  "role":"ROLE_ADMIN"
+	  "role":"ROLE_ADMIN",
+	  "aadharNo":"987654098",
+	  "panNo":"vl5768"
 	  } 
  */
 
