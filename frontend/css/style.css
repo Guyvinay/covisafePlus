@@ -9,13 +9,6 @@
 :root {
     --head: rgb(4,93,93);
     --nav: rgb(1,126,126);
-    --main-color: rgba(20, 29, 55, 100%);
-    --second-color: rgba(8, 95, 206, 255);
-    --focus-color: rgba(255, 255, 255, 23%);
-    --white: #fff;
-    --light: #f3f3f3;
-    --grey: #7e7575;
-
 }
   
 html{
@@ -37,7 +30,6 @@ html {
 .mleftlogo{
     display: flex;
     /* border: 1px solid red; */
-   
 
 }
 
