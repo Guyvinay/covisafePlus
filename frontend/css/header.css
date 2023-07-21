@@ -64,9 +64,11 @@ body {
 }
 
 .mrightside button {
-    border: 1px solid white;
+    /* border: 2px solid white; */
+    border: none;
     width: 15%;
-    background-color: var(--second-color);
+    /* background-color: var(--second-color); */
+    background-color: var(--focus-color);
     height: fit-content;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -89,21 +91,17 @@ body {
 .mlogo {
     display: flex;
     align-items: center;
-    width: 10rem;
+    width: fit-content;
+    /* width: 10rem; */
     object-fit: cover;
-    width: 7rem;
-    /* margin-right: 8%;   */
+    /* width: 7rem; */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 .mlogo img {
     display: block;
-    width: 100%;
+    width: 5rem;
     width: 20rem;
-    padding-bottom: 2%;
-}
-
-.mlogo img {
-    display: block;
-    width: 100%;
     padding-bottom: 2%;
 }
 
@@ -130,6 +128,11 @@ body {
     color: var(--second-color);
 }
 
+.mnavlist a > h4:hover{
+    cursor: pointer;
+    
+}
+
 .mnavlist button {
     border: .2rem solid white;
     border-radius: 3rem;
@@ -137,5 +140,6 @@ body {
     font-size: 1.6rem;
     text-decoration: none;
     padding: 1rem;
-    background-color: var(--second-color);
+    background-color: var(--focus-color);
+    cursor: pointer;
 }
