@@ -8,151 +8,21 @@
 :root {
     --head: rgb(4,93,93);
     --nav: rgb(1,126,126);
+    --main-color: rgba(20, 29, 55, 100%);
+    --second-color: rgba(8, 95, 206, 255);
+    --focus-color: rgba(255, 255, 255, 23%);
+    --white: #fff;
+    --light: #f3f3f3;
+    --grey: #7e7575;
 
   }
-  
-
-.mheader{
-    /* border: 1px solid red; */
-    width: 100%;
-    height: 35px;
-    background-color: var(--head);
-    display: flex;
-    justify-content: space-between;
+ 
+  html{
+    font-size: 62.5% !important;
 }
 
-.mleftlogo{
-    display: flex;
-    /* border: 1px solid red; */
-   
-
-}
-
-
-
-.mleftlogo{
-    padding: 0.2% 0.2% 0.2% 0.2%;
-    font-size: 13px;
-    color: white;
-    line-height: 1.3;
-   
-}
-
-.mrightside{
-    display: flex;
-    /* border: 1px solid red; */
-    width: 20%;
-    justify-content: space-between;
-}
-
-#eng{
-    padding: 1.7% 1.7% 1.7% 1.7%;
-    font-size: 22px;
-    color: white;
-}
-
-.mrightside button{
-    border: 1px solid white;
-    width:15%;
-    border-radius: 6px;
-    font-weight: bold;
-    background-color: var(--nav);
-    color: white;
-    
-}
-
-.mnav{
-    /* border: 1px solid red; */
-    display: flex;
-    width: 100%;
-    height: 70px;
-    background-color: var(--nav);
-    justify-content: space-between;
-}
-
-.mlogo{
-    
-    /* border: 1px solid red; */
-    width: 100px;
-    /* margin-right: 8%;   */
-}
-
-.mlogo img{
-    display: block;
-    width: 100%;
-    padding-bottom: 2%;
-}
-
-.mnavlist{
-    /* border: 1px solid red; */
-    width: 60%;
-    display: flex;
-    font-size: 1rem;
-    /* margin-right: 1%; */
-    justify-content: space-between;
-  
-}
-
-.mnavlist a{
-    margin-top: 1%;
-    text-decoration: none;
-    color: white;
-    margin: 3%;
-}
-
-.mnavlist button{
-    border: 2px solid white;
-    border-radius: 30px;
-    color: white;
-    font-size: 1rem;
-    text-decoration: none;
-    padding: 2px 2px 2px 2px;
-    background-color: var(--nav);
-}
-
-.ban1{
-    /* border: 1px solid red; */
-    display: flex;
-    width: 100%;
-    height: 550px;
-    margin-top: 1%;
-    justify-content: space-around;
-
-}
-
-.left{
-    margin-top: 6%;
-    /* border: 1px solid red; */
-    height: 300px;
-}
-
-.text1{
-    line-height: 1.5;
-    font-weight: bolder;
-    font-size: 30px;
-    margin-top: 3%;
-
-}
-
-.text2{
-    border: 3px solid rgb(253,84,40); 
-    color: rgb(253,84,40); 
-    border-radius: 6px; 
-    line-height: 1.6; 
-    width: 80%;
-    margin-top: 3%;
-
-}
-
-.text3{
-    margin-top: 3%;
-    
-
-}
-
-.text4{
-    margin-top: 3%;
-
+html {
+    scroll-behavior: smooth;
 }
 
 section{
@@ -164,7 +34,7 @@ section{
     margin-top: 3%;
     text-align: center;
     font-size: 2.5rem;
-    color: var(--nav);
+    color: var(--second-color);
 }
 
 .mbanner{
@@ -205,5 +75,80 @@ section{
     /* border: 1px solid red; */
     font-size: 1.3rem;
     border-radius: 5px;
-    background-color: var(--nav);
+    background-color: var(--second-color);
+}
+
+
+.footer-box{
+    display: grid;
+    background: linear-gradient(180deg, #141d37,#085fce);
+    grid-template-columns: repeat(5,1fr);
+    color: #333;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-heading{
+    font-weight: 500;
+    background-color: var(--focus-color);
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    color: var(--white);
+}
+
+.footer-box>div{
+    width: 60%;
+    
+}
+
+.footer-box>div>ul>li{
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+    
+    
+}
+
+.footer-box>div a{
+    color: var(--white);
+    line-height: 2;
+    /* border: 1px solid red; */
+   
+}
+
+.footer-box>div a:hover{
+    color: var(--second-color);
+    font-weight: bold;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+}
+
+.last-footer {
+    display: grid;
+    background: linear-gradient(180deg, #141d37, #085fce);
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color:var(--white);
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-image-div{
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-image-div img{
+    width: 10rem;
+    height: fit-content;
+}
+
+.footer-image-div img[src="./images/undp-logo-vertical.svg"]{
+    width: 4rem;
 }

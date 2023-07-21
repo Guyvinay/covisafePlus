@@ -4,6 +4,8 @@
     --focus-color: rgba(255, 255, 255, 23%);
     --white: #fff;
     --light: #f3f3f3;
+    --head: rgb(4,93,93);
+    --nav: rgb(1,126,126);
 }
 
 *{
@@ -21,100 +23,124 @@ html {
     scroll-behavior: smooth;
 }
 
-.mheader {
+/* banner */
+
+.mdban1{
     /* border: 1px solid red; */
-    width: 100%;
-    height: 3.5rem;
-    background-color: var(--head);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    padding: 2%;
+    padding-bottom: 5%;
 }
 
-.mleftlogo {
-    display: flex;
+.mdban1 div{
     /* border: 1px solid red; */
-
-
-}
-
-
-
-.mleftlogo {
-    padding: 0.2% 0.2% 0.2% 0.2%;
-    font-size: 1.3rem;
-    color: white;
-    line-height: 1.3;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
-.mrightside {
-    display: flex;
-    width: 20%;
-    padding: .2rem;
-    justify-content: space-between;
-}
 
-#eng {
-    padding: 1.7% 1.7% 1.7% 1.7%;
-    font-size: 2.2rem;
-    color: white;
-}
-
-.mrightside button {
-    border: 1px solid white;
-    width: 15%;
-    border-radius: .6rem;
-    font-weight: bold;
-    background-color: var(--nav);
-    color: white;
+.mdban1 div:hover{
+    border: 4px solid var(--);
+    box-shadow: rgba(241, 91, 184, 0.24) 0px 3px 8px;
+    
 
 }
-
-.mnav {
-    /* border: 1px solid red; */
-    display: flex;
-    width: 100%;
-    height: 7rem;
-    background-color: var(--nav);
-    justify-content: space-between;
-}
-
-.mlogo {
-
-    /* border: 1px solid red; */
-    width: 10rem;
-    /* margin-right: 8%;   */
-}
-
-.mlogo img {
-    display: block;
-    width: 100%;
-    padding-bottom: 2%;
-}
-
-.mnavlist {
-    /* border: 1px solid red; */
-    width: 60%;
-    display: flex;
-    font-size: 1.6rem;
-    /* margin-right: 1%; */
-    justify-content: space-between;
-
-}
-
-.mnavlist a {
+.mdban1 div img{
+    width: 30%;
+    margin-bottom: 1%;
+    margin-left: 2%;
     margin-top: 1%;
-    text-decoration: none;
-    color: white;
-    margin: 3%;
+
 }
 
-.mnavlist button {
-    border: .2rem solid white;
-    border-radius: 3rem;
-    color: white;
-    font-size: 1.6rem;
-    text-decoration: none;
-    padding: 1rem;
-    background-color: var(--nav);
+.mdban1 div h2,
+.mdban1 div h3,
+.mdban1 div p{
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.mdban1 div p{
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+
+.footer-box{
+    display: grid;
+    background: linear-gradient(180deg, #141d37,#085fce);
+    grid-template-columns: repeat(5,1fr);
+    color: #333;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-heading{
+    font-weight: 500;
+    background-color: var(--focus-color);
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    color: var(--white);
+}
+
+.footer-box>div{
+    width: 60%;
+    
+}
+
+.footer-box>div>ul>li{
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+    
+    
+}
+
+.footer-box>div a{
+    color: var(--white);
+    line-height: 2;
+    /* border: 1px solid red; */
+   
+}
+
+.footer-box>div a:hover{
+    color: var(--second-color);
+    font-weight: bold;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+}
+
+.last-footer {
+    display: grid;
+    background: linear-gradient(180deg, #141d37, #085fce);
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color:var(--white);
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-image-div{
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-image-div img{
+    width: 10rem;
+    height: fit-content;
+}
+
+.footer-image-div img[src="./images/undp-logo-vertical.svg"]{
+    width: 4rem;
 }
