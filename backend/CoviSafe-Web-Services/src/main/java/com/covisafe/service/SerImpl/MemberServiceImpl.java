@@ -46,16 +46,16 @@ public class MemberServiceImpl implements MemberService {
 				.orElseThrow(() -> new InvalidUserException("can't find any user with id " + id));
 	}
 
-	public Member getMemberByAadharNo(Long aadharNo) {
-		return memberRepository.findByAadharNo(aadharNo)
-				.orElseThrow(() -> new InvalidUserException("can't find any user with aadharNo " + aadharNo));
-	}
-
-	public Member getMemberByPanNo(String panNo) {
+//	public Member getMemberByAadharNo(String aadharNo) {
+//		return memberRepository.findByAadharNo(aadharNo)
+//				.orElseThrow(() -> new InvalidUserException("can't find any user with aadharNo " + aadharNo));
+//	}
+//
+//	public Member getMemberByPanNo(String panNo) {
 //		return memberRepository.findByPanNo(panNo)
 //				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
-		return null;
-	}
+////		return null;
+//	}
 
 	public Member addMember(Member member, Integer userId ) {
 		if (member == null)

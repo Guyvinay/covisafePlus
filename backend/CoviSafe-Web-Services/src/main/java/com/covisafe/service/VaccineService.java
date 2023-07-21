@@ -11,4 +11,5 @@ public interface VaccineService {
 	public Vaccine addVaccine(Vaccine vaccine);
 	public Vaccine updateVaccine(Vaccine vaccine);
 	public Boolean deleteVaccine(Vaccine vaccine);
+
 }

@@ -1,6 +1,6 @@
 package com.covisafe.exception;
 
-public class BookingTimeExpiredException  extends Exception{
+public class BookingTimeExpiredException  extends RuntimeException{
 
 	public BookingTimeExpiredException(String message) {
 		super(message);

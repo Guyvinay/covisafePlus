@@ -17,6 +17,7 @@ import com.covisafe.service.UserService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*
+ * 
 	  {
 	  "name":"Shelbi",
 	  "dob":"2000-03-29",
@@ -26,8 +27,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	  "state":"BIHAR",
 	  "pincode":"800006",
 	  "password":"1234",
-	  "role":"ROLE_ADMIN"
+	  "role":"ROLE_ADMIN",
+	  "aadharNo":"987654098",
+	  "panNo":"vl5768"
 	  } 
+	  
  */
 
 @RestController
