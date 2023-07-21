@@ -17,6 +17,7 @@ import com.covisafe.service.UserService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*
+ * 
 	  {
 	  "name":"Shelbi",
 	  "dob":"2000-03-29",
@@ -30,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	  "aadharNo":"987654098",
 	  "panNo":"vl5768"
 	  } 
+	  
  */
 
 @RestController
