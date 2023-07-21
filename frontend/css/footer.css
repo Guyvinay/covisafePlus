@@ -41,24 +41,34 @@ html {
     margin-bottom: 2rem;
     text-align: center;
     border-radius: .7rem;
+    color: var(--white);
 }
 
 .footer-box>div{
     width: 60%;
+    
 }
 
 .footer-box>div>ul>li{
     margin-bottom: .6rem;
     margin-top: .6rem;
+    
+    
 }
 
 .footer-box>div a{
-    color: var(--grey);
+    color: var(--white);
+    line-height: 2;
+    /* border: 1px solid red; */
+   
 }
 
 .footer-box>div a:hover{
     color: var(--second-color);
     font-weight: bold;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
 }
 
 .last-footer {
@@ -66,7 +76,7 @@ html {
     background: linear-gradient(180deg, #141d37, #085fce);
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
-    color:rgba(255, 255, 255, 43%);
+    color:var(--white);
     align-items: center;
     padding: 2rem;
     gap: 2rem;

@@ -4,6 +4,8 @@
     --focus-color: rgba(255, 255, 255, 23%);
     --white: #fff;
     --light: #f3f3f3;
+    --head: rgb(4,93,93);
+    --nav: rgb(1,126,126);
 }
 
 *{
@@ -21,117 +23,50 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.mheader {
-    /* background: linear-gradient(180deg, #141d37, #085fce); */
-    width: 100%;
-    background-color: var(--main-color);
-    /* height: 3.5rem; */
-    /* background-color: var(--head); */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.mleftlogo {
-    display: flex;
-}
-
 .mleftlogo img{
     width: 3rem;
     margin-right: 2rem; 
 }
 
+.mdban1 div:hover{
+    border: 4px solid var(--);
+    box-shadow: rgba(241, 91, 184, 0.24) 0px 3px 8px;
+    
 
-.mleftlogo {
-    padding: .5rem;
-    font-size: 1.3rem;
-    color: white;
-    line-height: 1.3;
-
+.mdban1 div p{
+    font-size: 1.5rem;
+    text-align: justify;
 }
 
-.mrightside {
-    display: flex;
-    width: 20%;
-    padding: .2rem;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#eng {
-    padding: 1.7% 1.7% 1.7% 1.7%;
-    font-size: 2.2rem;
-    color: white;
-}
-
-.mrightside button {
-    border: 1px solid white;
-    width: 15%;
-    height: fit-content;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    border-radius: .6rem;
-    font-weight: bold;
-    background-color: var(--nav);
-    color: white;
-    text-align: center;
-}
-
-.mnav {
-    background: linear-gradient(180deg, #141d37, #085fce);
-    background-color: var(--second-color);
-    display: flex;
-    width: 100%;
-    height: 7rem;
-    justify-content: space-between;
-}
-
-.mlogo {
-    display: flex;
-    align-items: center;
-    width: 10rem;
-}
-
-.mlogo img {
-    display: block;
-    width: 20rem;
-    padding-bottom: 2%;
-}
-
-.mnavlist {
+.footer-box>div a{
+    color: var(--white);
+    line-height: 2;
     /* border: 1px solid red; */
-    width: 60%;
-    display: flex;
-    font-size: 1.6rem;
-    /* margin-right: 1%; */
-    align-items: center;
-    justify-content: space-between;
 
-}
 
-.mnavlist a {
-    margin-top: 1%;
-    text-decoration: none;
-    color: white;
-    margin: 3%;
-    cursor: pointer !important;
-}
-
-.mnavlist a:hover{
-    cursor: pointer;
+.footer-box>div a:hover{
     color: var(--second-color);
+    font-weight: bold;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
 }
 
-.mnavlist button {
-    border: .2rem solid white;
-    border-radius: 3rem;
-    color: white;
-    font-size: 1.6rem;
-    text-decoration: none;
-    padding: 1rem;
-    background-color: var(--nav);
+
+
+.footer-image-div{
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-image-div img{
+    width: 10rem;
+    height: fit-content;
+}
+
+.footer-image-div img[src="./images/undp-logo-vertical.svg"]{
+    width: 4rem;
 }
