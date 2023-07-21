@@ -23,12 +23,20 @@ form.addEventListener("submit", async (e) => {
     user = await ShowNextNext(user);
     console.log(user); //  here is all the data 
     // Adduser(user)
-    console.log(Adduser(user));
+    Adduser(user).then((res)=>{
+        console.log(user);
+    })
+    .catch((er)=>{
+        
+        console.log(er);
+    });
+    // console.log(); // calling server 
 });
 
 async function ShowNext(user) {
     document.querySelector(".signup").style.display = "none";
     document.querySelector(".next").style.display = "grid";
+    
 
     const getFormData = (e) => {
         e.preventDefault();
