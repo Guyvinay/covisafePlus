@@ -2,6 +2,8 @@ package com.covisafe.modal;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -29,6 +31,7 @@ public class Member {
 	 
 	 private LocalDate dose2Date;
 	 
+	 @JsonIgnore
 	 @OneToOne(cascade = CascadeType.ALL)
 	 private User user;
 	 

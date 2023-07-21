@@ -12,7 +12,7 @@ public interface MemberService {
 	public Member getMemberById(Integer id) throws InvalidUserException;
 	public Member getMemberByAadharNo(Long aadharNo);
 	public Member getMemberByPanNo(String panNo);
-	public Member addMember(Member member);
+	public Member addMember(Member member, Integer userId );
 	public Member updateMember(Member member);
 	public Boolean deleteMember(Integer id);	
 	

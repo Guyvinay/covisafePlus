@@ -44,11 +44,9 @@ public class User {
 	  private String password;
 	  private String role;
 	 
-	  @OneToOne( cascade = CascadeType.ALL)
-	  private PanCard panNo;
+	  private String panNo;
 	  
-	  @OneToOne( cascade = CascadeType.ALL)
-	  private AadharCard aadharNo;
+	  private String aadharNo;
 	  
 	  @OneToOne( mappedBy = "user")
 	  private Member member;
