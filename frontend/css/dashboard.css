@@ -23,26 +23,91 @@ html {
     scroll-behavior: smooth;
 }
 
-.mleftlogo img{
-    width: 3rem;
-    margin-right: 2rem; 
+/* banner */
+
+.mdban1{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    padding: 2%;
+    padding-bottom: 5%;
 }
+
+.mdban1 div{
+    /* border: 1px solid red; */
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
 
 .mdban1 div:hover{
     border: 4px solid var(--);
     box-shadow: rgba(241, 91, 184, 0.24) 0px 3px 8px;
     
 
+}
+.mdban1 div img{
+    width: 30%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+    margin-top: 1%;
+
+}
+
+.mdban1 div h2,
+.mdban1 div h3,
+.mdban1 div p{
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
 .mdban1 div p{
     font-size: 1.5rem;
     text-align: justify;
+}
+
+
+.footer-box{
+    display: grid;
+    background: linear-gradient(180deg, #141d37,#085fce);
+    grid-template-columns: repeat(5,1fr);
+    color: #333;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-heading{
+    font-weight: 500;
+    background-color: var(--focus-color);
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    color: var(--white);
+}
+
+.footer-box>div{
+    width: 60%;
+    
+}
+
+.footer-box>div>ul>li{
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+    
+    
 }
 
 .footer-box>div a{
     color: var(--white);
     line-height: 2;
     /* border: 1px solid red; */
-
+   
+}
 
 .footer-box>div a:hover{
     color: var(--second-color);
@@ -52,7 +117,16 @@ html {
     border-radius: 5px;
 }
 
-
+.last-footer {
+    display: grid;
+    background: linear-gradient(180deg, #141d37, #085fce);
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color:var(--white);
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
 
 .footer-image-div{
     display: flex;
