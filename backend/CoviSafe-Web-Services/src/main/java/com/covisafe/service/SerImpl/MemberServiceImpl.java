@@ -1,22 +1,31 @@
 package com.covisafe.service.SerImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import com.covisafe.exception.InvalidArgumentsException;
 import com.covisafe.exception.InvalidUserException;
+import com.covisafe.exception.UserNotFoundException;
 import com.covisafe.modal.Member;
+import com.covisafe.modal.User;
 import com.covisafe.repository.MemberRepository;
+import com.covisafe.repository.UserRepository;
 import com.covisafe.service.MemberService;
-
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberRepository memberRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 
 	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
 		if (pageNo == null && limit == null && sortBy.equals(null))
@@ -43,11 +52,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	public Member getMemberByPanNo(String panNo) {
-		return memberRepository.findByPanNo(panNo)
-				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
+//		return memberRepository.findByPanNo(panNo)
+//				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
+		return null;
 	}
 
-	public Member addMember(Member member) {
+	public Member addMember(Member member, Integer userId ) {
 		if (member == null)
 			throw new InvalidArgumentsException("Please pass the correct member details");
 		if (member.getId() != null) {
@@ -55,6 +65,12 @@ public class MemberServiceImpl implements MemberService {
 				throw new InvalidUserException("User already present in database ");
 			}
 		}
+		
+		Optional<User> optional = userRepository.findById(userId);
+		if(optional.isEmpty()) throw new UserNotFoundException("Provided User doesn't exist , Register user first");
+		
+		member.setUser(optional.get());
+		
 		return memberRepository.save(member);
 	}
 
