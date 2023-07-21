@@ -14,6 +14,11 @@ function SwitchSign(e){
     const signin = document.querySelector(".signin");
     // sign up form 
     const signup = document.querySelector(".signup");
+
+    const next = document.querySelector(".next");
+
+    const next2 = document.querySelector(".next2");
+
     // sign in styles for read only 
     const signinStyle = window.getComputedStyle(signin);
     // sign up style for read only 
@@ -22,8 +27,13 @@ function SwitchSign(e){
     if(signinStyle.getPropertyValue("display") === "grid"){
         signin.style.display = "none";
         signup.style.display = "grid";
+        next2.style.display = "none";
+        next.style.display = "none";
+
     }else{
         signup.style.display = "none";
         signin.style.display = "grid";
+        next.style.display = "none";
+        next2.style.display = "none";
     }
 }

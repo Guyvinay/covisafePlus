@@ -67,10 +67,11 @@ body {
     color: #f3f3f3;
 }
 
-.form form{
+.form form,.form select{
     width: 100%;
 }
-.form input{
+.form input,
+.form select{
     display: flex;
     width: 100%;
     height: 4rem;
@@ -80,8 +81,8 @@ body {
     padding-left: .7rem;
     margin-top: 2rem;
 }
-
-.form input:focus{
+.form input:focus,
+.form select:focus{
     border-color: var(--second-color);
     outline: none;
     
@@ -166,4 +167,10 @@ form input[type="submit"]:hover{
 }
 .altert img{
     /* color: transparent; */
+}
+
+
+
+.next,.next2{
+    display: none;
 }

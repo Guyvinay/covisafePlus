@@ -3,20 +3,26 @@
     padding: 0;
     font-family: Roboto,sans-serif!important;
 
+
 }
 
 :root {
     --head: rgb(4,93,93);
     --nav: rgb(1,126,126);
-
-  }
+}
   
+html{
+    font-size: 62.5% !important;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 .mheader{
     /* border: 1px solid red; */
     width: 100%;
-    height: 35px;
-    background-color: var(--head);
+    height: 3.5rem;
+    background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
 }
@@ -24,7 +30,6 @@
 .mleftlogo{
     display: flex;
     /* border: 1px solid red; */
-   
 
 }
 
@@ -32,7 +37,7 @@
 
 .mleftlogo{
     padding: 0.2% 0.2% 0.2% 0.2%;
-    font-size: 13px;
+    font-size: 1.3rem;
     color: white;
     line-height: 1.3;
    
@@ -40,23 +45,23 @@
 
 .mrightside{
     display: flex;
-    /* border: 1px solid red; */
     width: 20%;
+    padding: .2rem;
     justify-content: space-between;
 }
 
 #eng{
     padding: 1.7% 1.7% 1.7% 1.7%;
-    font-size: 22px;
+    font-size: 2.2rem;
     color: white;
 }
 
 .mrightside button{
     border: 1px solid white;
     width:15%;
-    border-radius: 6px;
+    border-radius: .6rem;
     font-weight: bold;
-    background-color: var(--nav);
+    background-color: var(--second-color);
     color: white;
     
 }
@@ -65,15 +70,15 @@
     /* border: 1px solid red; */
     display: flex;
     width: 100%;
-    height: 70px;
-    background-color: var(--nav);
+    height: 7rem;
+    background-color: var(--second-color);
     justify-content: space-between;
 }
 
 .mlogo{
     
     /* border: 1px solid red; */
-    width: 100px;
+    width: 10rem;
     /* margin-right: 8%;   */
 }
 
@@ -87,7 +92,7 @@
     /* border: 1px solid red; */
     width: 60%;
     display: flex;
-    font-size: 1rem;
+    font-size: 1.6rem;
     /* margin-right: 1%; */
     justify-content: space-between;
   
@@ -101,20 +106,20 @@
 }
 
 .mnavlist button{
-    border: 2px solid white;
-    border-radius: 30px;
+    border: .2rem solid white;
+    border-radius: 3rem;
     color: white;
-    font-size: 1rem;
+    font-size: 1.6rem;
     text-decoration: none;
-    padding: 2px 2px 2px 2px;
-    background-color: var(--nav);
+    padding: 1rem;
+    background-color: var(--second-color);
 }
 
 .ban1{
     /* border: 1px solid red; */
     display: flex;
     width: 100%;
-    height: 550px;
+    height: 55rem;
     margin-top: 1%;
     justify-content: space-around;
 
@@ -123,21 +128,21 @@
 .left{
     margin-top: 6%;
     /* border: 1px solid red; */
-    height: 300px;
+    height: 30rem;
 }
 
 .text1{
     line-height: 1.5;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 3rem;
     margin-top: 3%;
 
 }
 
 .text2{
-    border: 3px solid rgb(253,84,40); 
+    border: .3erm solid rgb(253,84,40); 
     color: rgb(253,84,40); 
-    border-radius: 6px; 
+    border-radius: .6rem; 
     line-height: 1.6; 
     width: 80%;
     margin-top: 3%;
@@ -146,22 +151,22 @@
 
 .text3{
     margin-top: 3%;
-    
-
 }
 
 .text4{
     margin-top: 3%;
-
 }
+
+
+
 
 .ban2{
     display: flex;
     /* border: 1px solid red; */
     width: 100%;
     margin-top: 3%;
-    height: 60px;
-    background-color: var(--nav);
+    height: 6rem;
+    background-color: var(--second-color);
     justify-content: space-around;
 }
 
@@ -173,24 +178,24 @@
 
 .lefttext p{
     margin-top: 5%;
-    font-size: 1.1rem;
+    font-size: 1.76rem;
     font-weight: bold;
     color: white;
     
 }
 
 .lefttext h5{
-    font-size: 20px;
+    font-size: 2rem;
     margin-left: 45%;
     color: white;
 }
 
 .ban2 button{
-    border: 2px solid white;
+    border: .2rem solid white;
     background-color:rgb(252,191,2);
-    font-size: 1rem;
-    border-radius: 50px;
-    padding: 10px 20px;
+    font-size: 1.6rem;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
 }
 
 /* .righttext{
@@ -199,13 +204,13 @@
 
 .righttext p{
     margin-top: 5%;
-    font-size: 1.1rem;
+    font-size: 1.76rem;
     font-weight: bold;
     
 }
 
 .righttext h5{
-    font-size: 20px;
+    font-size: 2rem;
     margin-right: 45%;
    
 }
@@ -222,8 +227,8 @@
 .ban3 h2{
     text-align: center;
     padding-top: 3%;
-    font-size: 2rem;
-    color: rgb(0,124,124)
+    font-size: 3.2rem;
+    color: var(--second-color)
 }
 .ban3 img{
     display: block;
@@ -245,18 +250,18 @@
 
 .ban4 p{
     margin-top: 1%;
-    font-size: .8rem;
+    font-size: 1.28rem;
 
 }
 
 .ban4 h6{
     margin-top: 1%;
-    font-size: .9rem;
+    font-size: 1.44rem;
     color: var(--nav);
 }
 
 hr{
-    border: 2px solid ;
+    border: .2rem solid ;
     color: rgb(174, 172, 172);
     width: 50%;
     margin: auto;
@@ -286,17 +291,17 @@ hr{
 }
 
 .search input{
-    border: 2px solid rgb(128,128,128);
+    border: .2rem solid rgb(128,128,128);
     width: 40%;
-    height: 40px;
+    height: 4rem;
     font-size: 1.2rem;
-    border-radius: 50px;
+    border-radius: 5rem;
 }
 
 .search button{
     display: block;
-    font-size: 1rem;
-    border-radius: 50px;
+    font-size: 1.6rem;
+    border-radius: 5rem;
     width: 10%;
     background-color: var(--head);
     color: white;
@@ -307,7 +312,7 @@ hr{
 .ban5{
     /* border: 1px solid red; */
     width: 100%;
-    height: 350px;
+    height: 35rem;
     margin: auto;
     margin-top: 1%;
 }
@@ -324,7 +329,7 @@ hr{
 .ban6{
     /* border: 1px solid red; */
     width: 100%;
-    height: 350px;
+    height: 35rem;
     margin: auto;
     background-color: rgb(237,255,255);
 }
@@ -361,17 +366,17 @@ hr{
 }
 
 .ban7 li{
-    font-size: .8rem;
+    font-size: 1.28rem;
     margin-top: 2%;
     text-align: left;
 
 }
 
 .ban7 button{
-    border: 1px solid red;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 50px;
+    border: .1rem solid red;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
     background-color: var(--nav);
     border: none;
     color: white;
@@ -385,37 +390,33 @@ hr{
 }
 
 .ban8 h2{
-    color: rgb(0,124,124);
+    color: var(--second-color);
     margin: auto;
-    font-size: 2rem;
+    font-size: 3.2rem;
 }
 
 .ban8 p{
     margin-top: 1%;
-    font-size: .9rem;
+    font-size: 1.44rem;
     line-height: 1.3;
-
-
 }
 
 .ban5 button{
     display: block;
     /* border: 1px solid red; */
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
     border-radius: 50px;
     margin: auto;
     background-color: var(--nav);
     border: none;
     color: white;
-    
-
 }
 
 .ban9{
     /* border: 1px solid red; */
     width: 100%;
-    height: 250px;
+    height: 25rem;
     margin: auto;
     background-color: var(--nav);
     margin-top: 3%;
@@ -427,4 +428,79 @@ hr{
     width: 90%;
     height: 80%;
     margin: auto;
+}
+
+
+.footer-box{
+    display: grid;
+    background: linear-gradient(180deg, #141d37,#085fce);
+    grid-template-columns: repeat(5,1fr);
+    color: #333;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-heading{
+    font-weight: 500;
+    background-color: var(--focus-color);
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    color: var(--white);
+}
+
+.footer-box>div{
+    width: 60%;
+    
+}
+
+.footer-box>div>ul>li{
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+    
+    
+}
+
+.footer-box>div a{
+    color: var(--white);
+    line-height: 2;
+    /* border: 1px solid red; */
+   
+}
+
+.footer-box>div a:hover{
+    color: var(--second-color);
+    font-weight: bold;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+}
+
+.last-footer {
+    display: grid;
+    background: linear-gradient(180deg, #141d37, #085fce);
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color:var(--white);
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-image-div{
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-image-div img{
+    width: 10rem;
+    height: fit-content;
+}
+
+.footer-image-div img[src="./images/undp-logo-vertical.svg"]{
+    width: 4rem;
 }

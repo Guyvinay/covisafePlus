@@ -8,4 +8,5 @@ public interface AppointmentService {
 	public Appointment addAppointment(Appointment appointment);
 	public Appointment updateAppointment(Integer bookingId , Appointment appointment);
 	public Appointment deleteAppointment(Integer bookingId);
+
 }
