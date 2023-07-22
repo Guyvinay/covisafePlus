@@ -46,16 +46,16 @@ public class MemberServiceImpl implements MemberService {
 				.orElseThrow(() -> new InvalidUserException("can't find any user with id " + id));
 	}
 
-//	public Member getMemberByAadharNo(String aadharNo) {
-//		return memberRepository.findByAadharNo(aadharNo)
-//				.orElseThrow(() -> new InvalidUserException("can't find any user with aadharNo " + aadharNo));
-//	}
-//
-//	public Member getMemberByPanNo(String panNo) {
-//		return memberRepository.findByPanNo(panNo)
-//				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
-////		return null;
-//	}
+	public Member getMemberByAadharNo(String aadharNo) {
+		return memberRepository.findByAadharNo(aadharNo)
+				.orElseThrow(() -> new InvalidUserException("can't find any user with aadharNo " + aadharNo));
+	}
+
+	public Member getMemberByPanNo(String panNo) {
+		return memberRepository.findByPanNo(panNo)
+				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
+//		return null;
+	}
 
 	public Member addMember(Member member, Integer userId ) {
 		if (member == null)
@@ -65,12 +65,9 @@ public class MemberServiceImpl implements MemberService {
 				throw new InvalidUserException("User already present in database ");
 			}
 		}
-		
 		Optional<User> optional = userRepository.findById(userId);
 		if(optional.isEmpty()) throw new UserNotFoundException("Provided User doesn't exist , Register user first");
-		
 		member.setUser(optional.get());
-		
 		return memberRepository.save(member);
 	}
 
@@ -94,9 +91,5 @@ public class MemberServiceImpl implements MemberService {
 		return true;
 	}
 
-	@Override
-	public Member addMember(Member member) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

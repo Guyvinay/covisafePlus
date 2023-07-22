@@ -8,10 +8,10 @@ public interface UserService {
 
 	public List<User> getAllUser();
 	public User getUserById(Integer id);
-	public User getUserByAadharNo(Long aadharNo);
+	public User getUserByAadharNo(String aadharNo);
 	public User getUserByPanNo(String panNo);
 	public User addUser(User member);
-	public User updateUser(User member);
+	public User updateUser(Integer userId , User member);
 	public Boolean deleteUser(Integer id);
 	
 }
