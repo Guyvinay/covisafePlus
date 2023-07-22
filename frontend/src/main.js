@@ -137,11 +137,11 @@ registerUserButton.addEventListener("click", function () {
 //   }
 
 function fetchAndRenderEmployees() {
-    fetch(`${baseServerURL}/employees`)
+    fetch(`${baseServerURL}/members`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            let empObj = data.map((item) => ({
+            let member = data.map((item) => ({
                 id: item.id,
                 title: item.name,
                 salary: item.salary,
@@ -180,29 +180,6 @@ function fetchAndRenderEmployees() {
 // return card;
 // }
 
-function fetchAndRenderCats(pageNumber = 1) {
-    fetch(`${baseServerURL}/cats?_limit=10&_page=${pageNumber}`)
-        .then((res) => {
-            let toalCats = res.headers.get("x-Total-Count");
-            //console.log(toalCats)
-            showPaginationButton(toalCats, 10)
-            return res.json()
-        })
-        .then((data) => {
-            //console.log(data)
-            let empObj = data.map((item) => ({
-                id: item.id,
-                title: item.name,
-                salary: item.cost,
-                description: item.description,
-                linkText: "Edit",
-                linkUrl: "https://google.com",
-                imageUrl: `${baseServerURL}${item.thumb}`,
-            }))
-            employeesData = empObj;
-            renderCardList(empObj)
-        })
-}
 
 function showPaginationButton(totalCats, limit) {
     const numOfButton = Math.ceil(totalCats / limit);
@@ -237,7 +214,8 @@ function renderCardList(cardData) {
                 getCard(
                     item.id,
                     item.title,
-                    item.description.substring(0, 50),
+                    item.user.aadharNo,
+                    item.user.panNo,
                     item.linkText,
                     item.linkUrl,
                     item.imageUrl
@@ -259,7 +237,7 @@ function renderCardList(cardData) {
     // }
 }
 
-function getCard(id, title, desc, linkText, linkUrl, imageUrl) {
+function getCard(id, title, desc, panNo,linkText, linkUrl, imageUrl) {
     let card = `
       <div class="card" data-id=${id} >
         <div class="card__img">
@@ -269,6 +247,9 @@ function getCard(id, title, desc, linkText, linkUrl, imageUrl) {
           <h3 class="card__item card__title">${title}</h3>
           <div class="card__item card__description">
             ${desc}
+          </div>
+          <div class="card__item card__description">
+            ${panNo}
           </div>
           <a href=${linkUrl} data-id=${id} class="card__item card__link">${linkText}</a>
         </div>
