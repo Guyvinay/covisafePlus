@@ -1,6 +1,5 @@
 // --- do not touch  ↓↓↓↓↓↓↓↓↓↓↓↓ ----------
-const baseServerURL = `http://localhost:${import.meta.env.REACT_APP_JSON_SERVER_PORT
-    }`;
+const baseServerURL = `http://localhost:8888`;
 // --- do not touch  ↑↑↑↑↑↑↑↑↑↑↑↑ ----------
 
 // ***** Constants / Variables ***** //
@@ -63,7 +62,8 @@ let employeesData = [];
 // ***** Event listeners ***** //
 window.addEventListener("load", () => {
     //fetchData();
-    fetchAndRenderEmployees()
+    // console.log("my api")
+    fetchAndRenderEmployees();
     //fetchAndRenderCats(1);
 });
 
