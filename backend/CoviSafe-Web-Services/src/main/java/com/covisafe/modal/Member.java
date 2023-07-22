@@ -31,7 +31,6 @@ public class Member {
 	 
 	 private LocalDate dose2Date;
 	 
-	 @JsonIgnore
 	 @OneToOne(cascade = CascadeType.ALL)
 	 private User user;
 	 
