@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif!important;
+
+
+}
+
+:root {
+    --head: rgb(4,93,93);
+    --nav: rgb(1,126,126);
+}
+  
+html{
+    font-size: 62.5% !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(45deg, #6797d5,#fff );
+}
+
+.container{
+    /* border: 1px solid red; */
+    width: 30%;
+    margin: left;
+    border-radius: 6px;
+    padding-bottom: .5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+
+}
+
+.column{
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.addmember{
+    /* border: 1px solid red; */
+    font-size: 1rem;
+}
+
+.addmember h4{
+    font-size: 2rem;
+    /* border: 1px solid red; */
+    text-align: center;
+    padding: 2%;
+
+}
+
+input{
+    /* border: 1px solid red; */
+    font-size: 2rem;
+    display: grid;
+    margin: auto;
+    padding: 1% 1% 1% 1%;
+    margin-top: 1%;
+    border-radius: 6px;
+    border: none;
+}
+
+button{
+    /* border: 1px solid red; */
+    border: none;
+    display: block;
+    margin: auto;
+    font-size: 2rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+    border-radius: 50px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    cursor: pointer;
+}
+
