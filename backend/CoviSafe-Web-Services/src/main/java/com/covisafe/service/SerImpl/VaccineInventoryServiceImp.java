@@ -14,6 +14,7 @@ import com.covisafe.service.VaccineInventoryService;
 @Service
 public class VaccineInventoryServiceImp implements VaccineInventoryService {
 
+
 	@Autowired
 	private VaccineInventoryRepository vaccineInventoryRepository;
 	
@@ -22,6 +23,7 @@ public class VaccineInventoryServiceImp implements VaccineInventoryService {
 		List<VaccineInventory> list = vaccineInventoryRepository.findAll();
 		if(list.size()==0) throw new VaccineNotFoundException("No ANy Vaccine Inventory Found");
 		return list;
+
 	}
 
 	@Override
