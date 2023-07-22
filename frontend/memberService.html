@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/header.css"> -->
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/memberService.css">
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/skeleton.css" />
+    <!-- <link rel="stylesheet" href="styles/style.css" /> -->
+</head> 
+<body>
+    <header>
+        <div class="mheader">
+        
+            <div class="mleftlogo">
+                <img src="/image/emblem-gov.svg">
+                <p>Ministry of Health and<br>Family Welfare</p>
+            </div>
+        
+            <div class="mrightside">
+                <button>A+</button>
+                <button>A</button>
+                <button>A-</button>
+        
+                <p id="eng">English </p>
+            </div>
+        </div>
+        
+        <!-- nav -->
+        <div class="mnav">
+        
+            <div class="mlogo">
+                <img src="./images/mainlogo.png" alt="logo">
+            </div>
+        
+            <div class="mnavlist">
+                <a href="#">
+                    <h4>Health ID</h4>
+                </a>
+                <a href="#">
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="/frontend/service.html">
+                    <h4>Service</h4>
+                </a>
+                <a href="/frontend/faq.html">
+                    <h4>FAQ</h4>
+                </a>
+                <a href="/frontend/partner.html">
+                    <h4>Partner</h4>
+                </a>
+                <a href="/frontend/login.html"><button>Register/Signin</button></a>
+            </div>
+        
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h1>Member Services</h1>
+                    <p></p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="columns four sidebar-one" id="sidebar-one">
+                    <h4>Actions</h4>
+                    <button id="fetch-ingredient" class="u-full-width button button-primary">
+                        <!-- Get all Employees -->
+                    </button>
+                    <button id="fetch-employees" class="u-full-width button button-primary">
+                        Get all Members
+                    </button>
+                    <hr />
+        
+                    <h4>Add Employee</h4>
+                    <input type="text" id="employee-name" class="u-full-width" placeholder="Name" />
+                    <input type="text" id="employee-image" class="u-full-width" placeholder="Image Url" />
+                    <input type="number" id="employee-dept" class="u-full-width" placeholder="Department" />
+                    <input type="number" id="employee-salary" class="u-full-width" placeholder="Salary" />
+                    <button id="add-employee" class="u-full-width button button-primary">
+                        Add Employee
+                    </button>
+                    <hr />
+        
+                    <h4>update all fields of Employee</h4>
+                    <input type="text" id="update-employee-id" class="u-full-width" placeholder="ID" />
+                    <input type="text" id="update-employee-name" class="u-full-width" placeholder="Name" />
+                    <input type="text" id="update-employee-image" class="u-full-width" placeholder="Image Url" />
+                    <input type="number" id="update-employee-dept" class="u-full-width" placeholder="Department" />
+                    <input type="number" id="update-employee-salary" class="u-full-width" placeholder="Salary" />
+                    <button id="update-employee" class="u-full-width button button-primary">
+                        Update all fields
+                    </button>
+                    <hr />
+        
+                    <h4>update only Salary</h4>
+                    <input type="text" id="update-score-employee-id" class="u-full-width" placeholder="ID" />
+                    <input type="number" id="update-score-employee-salary" class="u-full-width" placeholder="Salary" />
+                    <button id="update-score-employee" class="u-full-width button button-primary">
+                        Update Employee Salary
+                    </button>
+                    <hr />
+        
+                    <h4>Sort Based On Salary</h4>
+                    <button id="sort-low-to-high" class="u-full-width button button-primary">
+                        Sort Low To High
+                    </button>
+                    <button id="sort-high-to-low" class="u-full-width button button-primary">
+                        Sort High To Low
+                    </button>
+                    <hr />
+        
+                    <h4>Filter Based On Salary</h4>
+                    <button id="filter-less-than-1L" class="u-full-width button button-primary">
+                        less than 1L
+                    </button>
+                    <button id="filter-more-than-equal-1L" class="u-full-width button button-primary">
+                        more than or equal 1L
+                    </button>
+                    <hr />
+        
+        
+        
+                    <hr />
+        
+                    <h4>Register User</h4>
+                    <input type="text" id="register-user-username" class="u-full-width" placeholder="username" />
+                    <input type="text" id="register-user-firstname" class="u-full-width" placeholder="firstname" />
+                    <input type="text" id="register-user-lastname" class="u-full-width" placeholder="lastname" />
+                    <input type="text" id="register-user-email" class="u-full-width" placeholder="email" />
+                    <input type="password" id="register-user-passowrd" class="u-full-width" placeholder="password" />
+                    <input type="text" id="register-user-avatar" class="u-full-width" placeholder="avatar image url"
+                        value="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg" />
+                    <input type="number" id="register-user-level" class="u-full-width" placeholder="Department Number" />
+                    <button id="register-user" class="u-full-width button button-primary">Register User</button>
+                    <hr>
+        
+                    <h4>Log in an existing User</h4>
+                    <input type="text" id="login-user-username" class="u-full-width" placeholder="username" />
+                    <input type="password" id="login-user-passowrd" class="u-full-width" placeholder="password" />
+                    <button id="login-user" class="u-full-width button button-primary">Login User</button>
+                    <hr>
+        
+                    <button id="fetch-todos" class="u-full-width button button-primary">fetch todos</button>
+                    <hr>
+        
+                    <h4>Update User</h4>
+                    <input type="text" id="update-user-username" class="u-full-width" placeholder="username" />
+                    <input type="text" id="update-user-firstname" class="u-full-width" placeholder="firstname" />
+                    <input type="text" id="update-user-lastname" class="u-full-width" placeholder="lastname" />
+                    <input type="text" id="update-user-email" class="u-full-width" placeholder="email" />
+                    <input type="password" id="update-user-passowrd" class="u-full-width" placeholder="password" />
+                    <input type="text" id="update-user-avatar" class="u-full-width" placeholder="avatar image url"
+                        value="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg" />
+                    <input type="number" id="update-user-level" class="u-full-width" placeholder="Department Number" />
+                    <button id="update-user" class="u-full-width button button-primary">Update User</button>
+                    <hr>
+        
+                    <h4>Patch User Department</h4>
+                    <input type="number" id="patch-user-id" class="u-full-width" placeholder="user id" />
+                    <input type="text" id="patch-user-username" class="u-full-width" placeholder="username" />
+                    <input type="number" id="patch-user-level" class="u-full-width" placeholder="Department Number" />
+                    <button id="patch-user" class="u-full-width button button-primary">Patch User</button>
+                    <hr>
+                </div>
+        
+                <div class="columns eight main">
+                    <div class="notifications-wrapper" id="notifications-wrapper"></div>
+                    <div class="data-list-wrapper" id="data-list-wrapper"></div>
+                    <div class="pagination-wrapper" id="pagination-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-width">
+            <div class="footer-box">
+                <div>
+                    <p class="footer-heading">Vaccination Services</p>
+                    <ul>
+                        <li><a href="#">Register Members</a></li>
+                        <li><a href="#">Search Vaccination Centers</a></li>
+                        <li><a href="#">Book Vaccination Slots</a></li>
+                        <li><a href="#">Manage Appointment</a></li>
+                        <li><a href="#">Download Certificate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Platforms</p>
+                    <ul>
+                        <li><a href="#">Co-WIN International</a></li>
+                        <li><a href="#">Vaccinator</a></li>
+                        <li><a href="#">Department Login</a></li>
+                        <li><a href="#">Verify Certificates</a></li>
+                        <li><a href="#">Vaccination Statistics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Resources</p>
+                    <ul>
+                        <li><a href="#">How To Get Vaccinated</a></li>
+                        <li><a href="#">Dos and Don'ts</a></li>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">API Guidelines</a></li>
+                        <li><a href="#">Open API's</a></li>
+                        <li><a href="#">Grievance Guidelines</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Support</p>
+                    <ul>
+                        <li><a href="#">Frequently Asked Questions</a></li>
+                        <li><a href="#">Certificate Corrections</a></li>
+                        <li><a href="#">Book Vaccination Slots</a></li>
+                        <li><a href="#">Manage Appointment</a></li>
+                        <li><a href="#">Download Certificate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Contact us</p>
+                    <ul>
+                        <li><a href="#">Register Members</a></li>
+                        <li><a href="#">Search Vaccination Centers</a></li>
+                        <li><a href="#">Book Vaccination Slots</a></li>
+                        <li><a href="#">Manage Appointment</a></li>
+                        <li><a href="#">Download Certificate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="last-footer">
+                <div>
+                    <p>Copyright © 2021 Co-WIN. All Rights Reserved</p>
+                </div>
+                <div class="footer-image-div">
+                    <img src="./images/national-health-authority.jpg" alt="">
+                    <img src="./images/undp-logo-vertical.svg" alt="">
+                </div>
+                <div>
+                    <p>Terms of Service &nbsp; &nbsp;&nbsp; | &nbsp;&nbsp; Privacy Policy</p>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+<script src="./src/main.js"></script>
+</html>

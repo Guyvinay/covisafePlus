@@ -63,7 +63,9 @@ let employeesData = [];
 window.addEventListener("load", () => {
     //fetchData();
     // console.log("my api")
-    fetchAndRenderEmployees(); 
+
+    fetchAndRenderEmployees();
+
     //fetchAndRenderCats(1);
 });
 
