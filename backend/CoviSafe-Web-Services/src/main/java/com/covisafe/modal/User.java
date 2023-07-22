@@ -21,7 +21,7 @@ import lombok.Data;
 @Data
 @Entity
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -44,10 +44,12 @@ public class User {
 	private String password;
 	private String role;
 
+	
+	private String panNo;
+	
+	private String aadharNo;
+	
 	@OneToOne
-	private PanCard panNo;
-	@OneToOne(cascade = CascadeType.ALL)
-	private AadharCard aadharCard;
 	private Member member;
 
 }

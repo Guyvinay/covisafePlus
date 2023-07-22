@@ -46,11 +46,13 @@ public class MemberController {
 		return new ResponseEntity<List<Member>>(memberService.getAllMember(pageNo , limit ,sortBy ), HttpStatus.ACCEPTED);
 	}
 
-	
-//	@GetMapping(value = "/members/byAadhar/{aadharNo}")
-//	public ResponseEntity<Member> getMembersByAadharNo(@PathVariable String aadharNo){
-//		return new ResponseEntity<Member>(memberService.getMemberByAadharNo(aadharNo), HttpStatus.ACCEPTED);
-//	}
-//	
+	@GetMapping(value = "/members/aadhar/{aadhar}")
+	public ResponseEntity<Member> getMembersByAadharNo(@PathVariable String aadhar){
+		return new ResponseEntity<Member>(memberService.getMemberByAadharNo(aadhar), HttpStatus.ACCEPTED);
+	}
+	@GetMapping(value = "/members/pan/{pan}")
+	public ResponseEntity<Member> getMembersByPanNo(@PathVariable String pan){
+		return new ResponseEntity<Member>(memberService.getMemberByPanNo(pan), HttpStatus.ACCEPTED);
+	}
 
 }
