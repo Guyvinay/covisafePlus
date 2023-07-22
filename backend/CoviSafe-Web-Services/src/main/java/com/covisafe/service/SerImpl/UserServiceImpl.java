@@ -19,31 +19,37 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> getAllUser() {
-		  
-		return userRepository.findAll();
+		List<User> list = userRepository.findAll();
+		if(list.isEmpty()) throw new UserNotFoundException("Not any User to show");
+		return list;
 	}
 
 	@Override
 	public User getUserById(Integer id) {
-		  
-		return userRepository.findById(id).get();
+		  if(id==null) throw new UserNotFoundException("Please provide id of User to show");
+		 Optional<User> optional = userRepository.findById(id);
+		 if(optional.isEmpty())throw new UserNotFoundException("User Not Found of id:-"+id);
+		 return optional.get();
 	}
 
 	@Override
 	public User getUserByAadharNo(String aadharNo) {
 		
-		return userRepository.findByAadharNo(aadharNo).get();
+		List<User> list = userRepository.findByAadharNo(aadharNo);
+		if(list.size()==0) throw new UserNotFoundException("User Not Found of aadhar:-"+aadharNo);
+		return list.get(list.size()-1);
 	}
 
 	@Override
 	public User getUserByPanNo(String panNo) {
-		  
-		return userRepository.findByPanNo(panNo).get();
+		List<User> list = userRepository.findByAadharNo(panNo);
+		if(list.size()==0) throw new UserNotFoundException("User Not Found of aadhar:-"+panNo);
+		return list.get(list.size()-1);
 	}
 
 	@Override
 	public User addUser(User user) {
-		  
+		  if(user == null) throw new UserNotFoundException("Please provide user details");
 		return userRepository.save(user);
 	}
 
@@ -52,7 +58,7 @@ public class UserServiceImpl implements UserService {
 		
 		Optional<User> optional = userRepository.findById(userId);
 		if(optional.isEmpty()) throw new UserNotFoundException("User not found by given id");
-		if(user==null) throw new UserNotFoundException("User not found by given id");
+		if(user==null) throw new UserNotFoundException("Please provide user details");
 		user.setId(userId);
 		return userRepository.save(user);
 	}

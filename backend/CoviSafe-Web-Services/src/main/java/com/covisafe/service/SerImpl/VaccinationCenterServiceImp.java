@@ -18,7 +18,9 @@ public class VaccinationCenterServiceImp implements VaccinationCenterService {
 	
 	@Override
 	public List<VaccinationCenter> getAllVaccinationCenter() {
-		return vaccinationCenterRepository.findAll();
+		List<VaccinationCenter> list = vaccinationCenterRepository.findAll();
+		if(list.size()==0) throw new VaccineNotFoundException("not any Vaccination Center");
+		return list;
 	}
 
 	@Override
@@ -32,7 +34,10 @@ public class VaccinationCenterServiceImp implements VaccinationCenterService {
 	@Override
 	public VaccinationCenter addVaccinationCenter(VaccinationCenter center) {
 		if(center==null) throw new VaccineNotFoundException("Please Provide Vaccination Center Details");
-		return vaccinationCenterRepository.save(center);
+		 VaccinationCenter vaccinationCenter = vaccinationCenterRepository.save(center);
+		 System.out.println(vaccinationCenter);
+		 System.out.println(center);
+		 return vaccinationCenter;
 	}
 
 	@Override
