@@ -8,8 +8,8 @@ public interface VaccineService {
 	public List<Vaccine> getAllVaccine();
 	public Vaccine getVaccineByName(String vaccineName);
 	public Vaccine getVaccineById(Integer vaccineId);
-	public Vaccine addVaccine(Vaccine vaccine);
-	public Vaccine updateVaccine(Vaccine vaccine);
-	public Boolean deleteVaccine(Vaccine vaccine);
+	public Vaccine addVaccine(Vaccine vaccine,Integer memberId);
+	public Vaccine updateVaccine(Integer vaccineId,Vaccine vaccine);
+	public Boolean deleteVaccine(Integer vaccine);
 
 }

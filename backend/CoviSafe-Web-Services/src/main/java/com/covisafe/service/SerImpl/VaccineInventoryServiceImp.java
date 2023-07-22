@@ -3,18 +3,23 @@ package com.covisafe.service.SerImpl;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.covisafe.modal.Vaccine;
 import com.covisafe.modal.VaccineInventory;
+import com.covisafe.repository.VaccineInventoryRepository;
 import com.covisafe.service.VaccineInventoryService;
 @Service
 public class VaccineInventoryServiceImp implements VaccineInventoryService {
-
+	
+	@Autowired
+	private VaccineInventoryRepository vaccinatinInventoryRespository;
+	
 	@Override
 	public List<VaccineInventory> getAllVaccineInventory() {
 		// TODO Auto-generated method stub
-		return null;
+		return vaccinatinInventoryRespository.findAll();
 	}
 
 	@Override
