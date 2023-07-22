@@ -20,15 +20,21 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 public class VaccinationCenterController {
 
 	/*
-	public List<VaccinationCenter> getAllVaccinationCenter();
-	public VaccinationCenter getVaccination(Integer centerId);
-	public VaccinationCenter addVaccinationCenter(VaccinationCenter center);
-	public VaccinationCenter updateVaccineCenter(Integer centerId , VaccinationCenter center);
-	public Boolean deleteVaccinationCenter(Integer centerId);
+	
+	{
+	"centerName":"Vaccination Center One",
+	"address":"Address One",
+	"city":"City One",
+	"state":"State One",
+	"pinCode":"12345"	
+	}
+	
 	 */
 	
 	@Autowired
 	private VaccinationCenterService vaccinationCenterService;
+	
+	
 	@GetMapping(value = "/vaccinationCenters")
 	public ResponseEntity<List<VaccinationCenter>> getAllVaccinationCenter(){
 		return new ResponseEntity<List<VaccinationCenter>>(vaccinationCenterService.getAllVaccinationCenter(), HttpStatus.ACCEPTED);
@@ -39,14 +45,15 @@ public class VaccinationCenterController {
 	}
 	@PostMapping(value = "/vaccinationCenters")
 	public ResponseEntity<VaccinationCenter> addVaccinationCenter(@RequestBody VaccinationCenter center){
+		System.out.println(center);
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.addVaccinationCenter(center) , HttpStatus.ACCEPTED);
 	}
 	@PutMapping(value = "/vaccinationCenters/{centerId}")
-	public ResponseEntity<VaccinationCenter> updateVaccineCenter(Integer centerId , VaccinationCenter center){
+	public ResponseEntity<VaccinationCenter> updateVaccineCenter(@PathVariable Integer centerId ,@RequestBody VaccinationCenter center){
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.updateVaccineCenter(centerId , center) , HttpStatus.ACCEPTED);
 	}
 	@DeleteMapping(value = "vaccinationCenters/{centerId}")
-	public ResponseEntity<Boolean> deleteVaccinationCenter(Integer centerId) {
+	public ResponseEntity<Boolean> deleteVaccinationCenter(@PathVariable Integer centerId) {
 		return new ResponseEntity<Boolean>(vaccinationCenterService.deleteVaccinationCenter(centerId) , HttpStatus.ACCEPTED);
 	}
 	

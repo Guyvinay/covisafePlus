@@ -20,8 +20,7 @@ import com.covisafe.service.MemberService;
  "dose1Status":false,
  "dose2Status":false,
  "dose1Date":"2020-01-01",
- "dose2Date":"2021-03-04",
-
+ "dose2Date":"2021-03-04"
  }
  
  */

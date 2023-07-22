@@ -84,6 +84,15 @@
     <version>0.11.5</version>
     <scope>runtime</scope>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
+
 	</dependencies>
 
 	<build>
