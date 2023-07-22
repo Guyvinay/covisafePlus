@@ -17,7 +17,6 @@ import com.covisafe.service.UserService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*
- * 
 	  {
 	  "name":"Shelbi",
 	  "dob":"2000-03-29",
@@ -45,11 +44,19 @@ public class UserController {
 		return new ResponseEntity<User>(userService.addUser(user) , HttpStatus.ACCEPTED);
 	}
 	@GetMapping(value = "/users/{id}")
-	public ResponseEntity<User> saveUser(@PathVariable Integer id){
+	public ResponseEntity<User> getUserById(@PathVariable Integer id){
 		return new ResponseEntity<User>(userService.getUserById(id) , HttpStatus.ACCEPTED);
 	}
 	@GetMapping(value = "/users")
 	public ResponseEntity<List<User>> getAllUsers(){
 		return new ResponseEntity<List<User>>(userService.getAllUser(), HttpStatus.ACCEPTED);
+	}
+	@GetMapping(value = "/users/aadhar/{aadhar}")
+	public ResponseEntity<User> getUserByAadharNo(@PathVariable String aadhar){
+		return new ResponseEntity<User>(userService.getUserByAadharNo(aadhar), HttpStatus.ACCEPTED);
+	}
+	@GetMapping(value = "/users/pan/{pan}")
+	public ResponseEntity<User> getUserByPanNo(@PathVariable String pan){
+		return new ResponseEntity<User>(userService.getUserByPanNo(pan), HttpStatus.ACCEPTED);
 	}
 }

@@ -6,9 +6,9 @@ import com.covisafe.modal.VaccinationCenter;
 public interface VaccinationCenterService {
 	
 	public List<VaccinationCenter> getAllVaccinationCenter();
-	public VaccinationCenter getVaccination(int centerid);
+	public VaccinationCenter getVaccination(Integer centerId);
 	public VaccinationCenter addVaccinationCenter(VaccinationCenter center);
-	public VaccinationCenter updateVaccineCenter(VaccinationCenter center);
-	public Boolean deleteVaccinationCenter(VaccinationCenter center);
+	public VaccinationCenter updateVaccineCenter(Integer centerId , VaccinationCenter center);
+	public Boolean deleteVaccinationCenter(Integer centerId);
 	
 }

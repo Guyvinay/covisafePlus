@@ -10,11 +10,10 @@ public interface MemberService {
 
 	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy)throws InvalidArgumentsException;
 	public Member getMemberById(Integer id) throws InvalidUserException;
-//	public Member getMemberByAadharNo(String aadharNo);
-//	public Member getMemberByPanNo(String panNo);
+	public Member getMemberByAadharNo(String aadharNo);
+	public Member getMemberByPanNo(String panNo);
 	public Member addMember(Member member, Integer userId );
 	public Member updateMember(Member member);
-	public Boolean deleteMember(Integer id);
-	Member addMember(Member member);	
+	public Boolean deleteMember(Integer id);	
 	
 }
