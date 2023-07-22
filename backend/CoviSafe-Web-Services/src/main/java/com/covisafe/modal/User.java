@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
@@ -41,13 +42,14 @@ public class User {
 	private String pincode;
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
+	
 	private String role;
 
-	
 	private String panNo;
 	
 	private String aadharNo;
 	
+	@JsonIgnore
 	@OneToOne
 	private Member member;
 

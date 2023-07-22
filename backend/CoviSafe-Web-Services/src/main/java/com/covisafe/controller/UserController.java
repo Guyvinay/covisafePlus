@@ -17,19 +17,19 @@ import com.covisafe.service.UserService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*
-	  {
-	  "name":"Shelbi",
-	  "dob":"2000-03-29",
+  {
+	  "name":"Ethan",
+	  "dob":"1981-03-20",
 	  "gender":"MALE",
-	  "address":"Downtown",
+	  "address":"LA",
 	  "city":"PATNA",
 	  "state":"BIHAR",
 	  "pincode":"800006",
 	  "password":"1234",
 	  "role":"ROLE_ADMIN",
-	  "aadharNo":"987654098",
-	  "panNo":"vl5768"
-	  } 
+	  "aadharNo":"988764345",
+	  "panNo":"ETH7647"
+	} 
 	  
  */
 
