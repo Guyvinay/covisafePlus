@@ -8,4 +8,4 @@ let user =  document.getElementById("user");
 
 user.addEventListener("click", ()=>{
     window.location.replace("./user.html");
-    });
+});
