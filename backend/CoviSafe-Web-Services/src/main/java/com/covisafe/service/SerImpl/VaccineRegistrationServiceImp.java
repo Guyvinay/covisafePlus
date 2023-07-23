@@ -29,7 +29,7 @@ public class VaccineRegistrationServiceImp implements VaccineRegistrationService
 
 	@Override
 	public VaccineRegistration getVaccineRegistration(Long mobileNo) {
-		 
+//		memberRepository.findby
 		return null;
 	}
 
