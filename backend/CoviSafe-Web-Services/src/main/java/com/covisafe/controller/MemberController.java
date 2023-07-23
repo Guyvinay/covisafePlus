@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covisafe.modal.Member;
@@ -40,8 +41,8 @@ public class MemberController {
 		return new ResponseEntity<Member>(memberService.getMemberById(id) , HttpStatus.ACCEPTED);
 	}
 
-	@GetMapping(value = "/members/{pageNo}/{limit}/{sortBy}")
-	public ResponseEntity<List<Member>> getAllMembers(@PathVariable Integer pageNo,@PathVariable Integer limit,@PathVariable String sortBy){
+	@GetMapping(value = "/members")
+	public ResponseEntity<List<Member>> getAllMembers(@RequestParam(required = false) Integer pageNo,@RequestParam(required = false) Integer limit,@RequestParam(required = false) String sortBy){
 		return new ResponseEntity<List<Member>>(memberService.getAllMember(pageNo , limit ,sortBy ), HttpStatus.ACCEPTED);
 	}
 

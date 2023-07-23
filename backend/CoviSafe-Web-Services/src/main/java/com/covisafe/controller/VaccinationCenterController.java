@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covisafe.modal.VaccinationCenter;
 import com.covisafe.service.VaccinationCenterService;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class VaccinationCenterController {
@@ -44,7 +43,7 @@ public class VaccinationCenterController {
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.getVaccination(centerId) , HttpStatus.ACCEPTED);
 	}
 	@PostMapping(value = "/vaccinationCenters")
-	public ResponseEntity<VaccinationCenter> addVaccinationCenter(@RequestBody VaccinationCenter center){
+	public ResponseEntity<VaccinationCenter> addVaccinationCenter( @RequestBody VaccinationCenter center){
 		System.out.println(center);
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.addVaccinationCenter(center) , HttpStatus.ACCEPTED);
 	}
