@@ -13,8 +13,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 public class VaccinationCenter {
 
 	@Id

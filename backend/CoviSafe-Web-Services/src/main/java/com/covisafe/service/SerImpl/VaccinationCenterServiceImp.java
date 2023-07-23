@@ -34,10 +34,11 @@ public class VaccinationCenterServiceImp implements VaccinationCenterService {
 	@Override
 	public VaccinationCenter addVaccinationCenter(VaccinationCenter center) {
 		if(center==null) throw new VaccineNotFoundException("Please Provide Vaccination Center Details");
-		 VaccinationCenter vaccinationCenter = vaccinationCenterRepository.save(center);
-		 System.out.println(vaccinationCenter);
-		 System.out.println(center);
-		 return vaccinationCenter;
+//		 VaccinationCenter vaccinationCenter = vaccinationCenterRepository.save(center);
+//		 System.out.println(vaccinationCenter);
+//		 System.out.println(center);
+//		 return vaccinationCenter;
+		return vaccinationCenterRepository.save(center);
 	}
 
 	@Override
