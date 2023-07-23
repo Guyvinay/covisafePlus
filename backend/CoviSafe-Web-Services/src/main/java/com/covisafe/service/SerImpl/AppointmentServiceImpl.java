@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.covisafe.exception.AppointmentNotFoundException;
 import com.covisafe.modal.Appointment;
 import com.covisafe.modal.Member;
+import com.covisafe.modal.Slot;
 import com.covisafe.modal.VaccinationCenter;
 import com.covisafe.repository.AppointmentRepository;
 import com.covisafe.repository.MemberRepository;
@@ -42,14 +43,14 @@ public class AppointmentServiceImpl implements AppointmentService{
 		VaccinationCenter vaxCenter = vaccinationCenterRepository.findById(vaxcenterid).orElseThrow(()-> new AppointmentNotFoundException("Please Provide a valid Vaccination center id to book an Appointment"));
 		
 		member.setAppointment(appointment);
-		memberRepository.save(member);
+//		memberRepository.save(member);
 		
 		vaxCenter.getAppointments().add(appointment);
-		vaccinationCenterRepository.save(vaxCenter);
+//		vaccinationCenterRepository.save(vaxCenter);
 		
 		appointment.setMemberId(member);
 		appointment.setVaxCenter(vaxCenter);
-		
+		appointment.setSlot(Slot.SLOT1);
 		Appointment appoint = appointmentRepository.save(appointment);
 		return appoint;
 	}
