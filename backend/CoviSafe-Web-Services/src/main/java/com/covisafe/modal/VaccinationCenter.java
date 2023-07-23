@@ -2,6 +2,8 @@ package com.covisafe.modal;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class VaccinationCenter {
     @Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid Indian PIN code")
     private String pinCode;
     
+    @JsonIgnore
     @OneToMany(mappedBy = "vaxCenter" , cascade = CascadeType.ALL)
     private List<Appointment> appointments;
 	

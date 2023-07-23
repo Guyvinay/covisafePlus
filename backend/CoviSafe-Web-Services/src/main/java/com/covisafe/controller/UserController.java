@@ -1,6 +1,5 @@
 package com.covisafe.controller;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.covisafe.modal.User;
 import com.covisafe.service.UserService;
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 /*
   {
