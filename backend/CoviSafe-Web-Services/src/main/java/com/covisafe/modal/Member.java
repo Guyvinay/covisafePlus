@@ -39,7 +39,7 @@ public class Member {
 	 
 	 @OneToOne(mappedBy = "member", cascade = CascadeType.ALL)
 	 private Vaccine vaccine;
-
-	 @Embedded
-	 private VaccineRegistration vaxRegistration;
+	 
+	 private Long mobNo;
+	 private LocalDate dateOfRegistration = LocalDate.now();
 }
