@@ -49,8 +49,8 @@ document
             userId
         );
 
-        let data = RequestServer(appointment)
-        console.log(data);
+        let d = RequestServer(appointment);
+        console.log(d);
             
     }else{
         alert("please fill the complete details");
@@ -59,12 +59,12 @@ document
 
 // function resposible to add an appointment in server
 
-function RequestServer(appointment){
+async function RequestServer(appointment){
     // console.log(appointment);
     const id = appointment.userId;
     delete appointment.userId;
     let data;
-    fetch(URL +`/appointments/${id}/3`,
+    fetch(URL +`/appointments/${id}/1`,
     {
         // /{memberid}/{vaxcenterid}
 
@@ -77,13 +77,13 @@ function RequestServer(appointment){
     })
     .then(res=>res.json())
     .then((res)=>{
-        console.log(res);
         data = res;
+        console.log(data);
     })
     .catch((err) => {
         // console.log(err);
     });
-    return data;
+    return await data;
 }
 
 /**
@@ -143,16 +143,13 @@ document
 .getElementById("delete-employee")
 .addEventListener("click",
 ()=>{
-    const id = document.getElementById("update-member-id").value;
+    const id = document.getElementById("delete-member-id").value;
+    console.log(id);
     if(id){
-        deleteAppointment(id)
+        deleteAppointment(+id)
         .then((res) => {
             console.log(res);
         })
-        .catch((err) => {
-            alert("something went wrong");
-            console.error(err);
-        });
     }
 })
 

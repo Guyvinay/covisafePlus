@@ -34,14 +34,43 @@ function memberCard(member){
         <img src= "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg" alt="food" />
         </div>
         <div class="card__body">
-          <h3 class="card__item card__title">${member.title}</h3>
+          <h3 class="card__item card__title"> Name : ${member.user.name}</h3>
           <div class="card__item card__description">
-            ${member.user.aadharNo}
+            Aadhar no : ${member.user.aadharNo}
           </div>
           <div class="card__item card__description">
-            ${member.user.panNo}
+            Pan no : ${member.user.panNo}
           </div>
         </div>
     </div>
 `;
 }
+
+// to get member by name 
+
+document
+    .getElementById("byAadhar")
+    .addEventListener("click",
+    ()=>{
+        const aadhar = document
+                        .getElementById("member-name")
+                        .value;
+        GetMemberByName(aadhar);
+    });
+
+function GetMemberByName(aadhar){
+    fetch(URL + `/members/aadhar/${aadhar}`)
+        .then(res=>res.json())
+        .then((data)=>{
+            console.log(data);
+            showMembers(data);
+        })
+        .catch((err)=>{
+            alert("Not found");
+            console.error(err);
+        })
+}
+
+
+// to add new member 
+
