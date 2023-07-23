@@ -49,14 +49,9 @@ document
             userId
         );
 
-        RequestServer(appointment)
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((err) => {
-                alert("can't fetch data");
-                console.error(err);
-            })
+        let data = RequestServer(appointment)
+        console.log(data);
+            
     }else{
         alert("please fill the complete details");
     }
@@ -65,8 +60,14 @@ document
 // function resposible to add an appointment in server
 
 function RequestServer(appointment){
-   return fetch(URL +`/appointments/${appointment.userId}/1`,
+    // console.log(appointment);
+    const id = appointment.userId;
+    delete appointment.userId;
+    let data;
+    fetch(URL +`/appointments/${id}/3`,
     {
+        // /{memberid}/{vaxcenterid}
+
         method : `POST`,
         headers : 
         {
@@ -74,7 +75,15 @@ function RequestServer(appointment){
         },
         body : JSON.stringify(appointment)
     })
-    .then(res=>res.json());
+    .then(res=>res.json())
+    .then((res)=>{
+        console.log(res);
+        data = res;
+    })
+    .catch((err) => {
+        // console.log(err);
+    });
+    return data;
 }
 
 /**
