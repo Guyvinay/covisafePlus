@@ -1,4 +1,4 @@
-let URL = `http://localhost:8888/`; // base server URL 
+let URL = `http://localhost:8888`; // base server URL 
 
 //object of appointment type
 class Appointment{
@@ -60,7 +60,7 @@ document
     }else{
         alert("please fill the complete details");
     }
-})
+});
 
 // function resposible to add an appointment in server
 
@@ -106,7 +106,7 @@ document
             alert("please fill complete details");
         }
             
-    })
+    });
 
     // funcion to update user
 
@@ -118,7 +118,45 @@ function UpdateUserFuntion(updateUser){
         {
             'Content-Type' : 'application/json'
         },
-        body : JSON.stringify(updateUser);
+        body : JSON.stringify(updateUser)
+    })
+    .then(res=>res.json());
+}
+
+
+/**
+ * code to delete appointment
+ * 
+ */
+
+
+document
+.getElementById("delete-employee")
+.addEventListener("click",
+()=>{
+    const id = document.getElementById("update-member-id").value;
+    if(id){
+        deleteAppointment(id)
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            alert("something went wrong");
+            console.error(err);
+        });
+    }
+})
+
+// function to make detele request
+
+function deleteAppointment(id){
+    return fetch(URL + `/appointments/${id}`,
+    {
+        method : 'DELETE',
+        headers : 
+        {
+            'Content-Type' : 'application/json'
+        }
     })
     .then(res=>res.json());
 }
