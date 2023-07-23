@@ -6,6 +6,7 @@ public class AppointmentNotFoundException extends RuntimeException{
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
+	
 
 }
  
