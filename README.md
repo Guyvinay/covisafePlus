@@ -120,6 +120,7 @@ This Application Consist 7 Modules
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
  ## Contributors ## <br/>
  - VINAY KUMAR SINGH <br/>
+ - Anurag Chaudhary<br/>
  - Minal Kumari <br/>
  - Rupesh Kumar Sinha <br/>
  - Shashank Dwivedi <br/>
