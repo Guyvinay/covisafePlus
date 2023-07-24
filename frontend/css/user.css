@@ -56,7 +56,7 @@ body{
 
 }
 
-input{
+select,input{
     /* border: 1px solid red; */
     font-size: 2rem;
     display: grid;

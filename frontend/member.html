@@ -81,11 +81,11 @@
              
               <input
                 type="number"
-                id="member-name"
+                id="member-pan"
                 class="u-full-width"
                 placeholder="PAN Number"
               />
-              <button id="add-employee" class="u-full-width button button-primary">
+              <button id="byPan" class="u-full-width button button-primary">
                 Click Here
               </button>
               <hr />
@@ -115,7 +115,7 @@
                   />
         
                   <input
-                    type="number"
+                    type="date"
                     id="member-age"
                     class="u-full-width"
                     placeholder="Age"
@@ -128,12 +128,16 @@
                     placeholder="Aadhar Number"
                   />
         
-                  <input
+                  <!-- <input
                     type="text"
                     id="member-gender"
                     class="u-full-width"
                     placeholder="Gender"
-                  />
+                  /> -->
+                  <select name="gender" id="member-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
        
         
                   <input
@@ -150,12 +154,12 @@
                   placeholder="City"
                   />
                   
-                  <input
+                  <!-- <input
                   type="text"
                   id="member-blood"
                   class="u-full-width"
                   placeholder="Blood Group"
-                  />
+                  /> -->
                   
                   <input
                   type="number"
@@ -164,12 +168,12 @@
                   placeholder="PIN Code"
                   />
                   
-                  <input
+                  <!-- <input
                   type="number"
                   id="member-id"
                   class="u-full-width"
                   placeholder="User Id"
-                  />
+                  /> -->
                   
                   <input
                   type="number"
@@ -177,9 +181,17 @@
                   class="u-full-width"
                   placeholder="PAN Number"
                   />
-                          
                   
-                  <button id="add-employee" class="u-full-width button button-primary">
+                  <input
+                  type="text"
+                  id="member-address"
+                  class="password"
+                  placeholder="adderess"
+                  />
+
+                  <input type="password" id="member-password" class="password" placeholder="Password" />
+                  
+                  <button id="add-member" class="u-full-width button button-primary">
                     Add Member
                   </button>
                     <hr />

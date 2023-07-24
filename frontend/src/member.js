@@ -1,6 +1,35 @@
 
 let URL = `http://www.localhost:8888`;
 
+class User {
+    constructor(name,
+                dob, 
+                gender , 
+                address, 
+                city, 
+                state, 
+                pincode, 
+                role, 
+                panNo, 
+                aadharNo,
+                password
+                ) 
+    {
+        this.name = name;
+        this.dob = dob;
+        this.gender = gender;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.pincode = pincode;
+        this.role = role;
+        this.panNo = panNo;
+        this.aadharNo = aadharNo;
+        this.password = password;
+    }
+}
+
+
 document
     .getElementById("add-employee")
     .addEventListener("click",()=>{
@@ -46,7 +75,7 @@ function memberCard(member){
 `;
 }
 
-// to get member by name 
+// to get member by aadhar 
 
 document
     .getElementById("byAadhar")
@@ -74,3 +103,95 @@ function GetMemberByName(aadhar){
 
 // to add new member 
 
+document
+    .getElementById("add-member")
+    .addEventListener("click",
+    ()=>{
+        const name = document
+                        .getElementById("member-name")
+                        .value;
+        const dob = document
+                        .getElementById("member-age")
+                        .value;
+        const aadhar = document
+                        .getElementById("member-aadhar")
+                        .value;
+        const gender = document
+                        .getElementById("member-gender")
+                        .value;   
+        const state = document
+                        .getElementById("member-state")
+                        .value;
+        const city = document
+                        .getElementById("member-city")
+                        .value;
+        const pincode = document
+                            .getElementById("member-pin")  
+                            .value;
+        const panNo = document
+                        .getElementById("member-pan")
+                        .value;
+        const password = document.getElementById("member-password")
+                            .value;
+        const address = document.getElementById("member-address")
+            .value;
+        const role = `USER`;
+        let user = new User(name,
+            dob,
+            gender,
+            address,
+            city,
+            state,
+            pincode,
+            role,
+            panNo,
+            aadhar,
+            password);
+        Adduser(user);
+    })
+
+function Adduser(user) {
+    return fetch(URL + `/users`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(res=>{
+        alert("user added successfully");
+        console.log(res);
+    })
+    .catch((err)=>{
+        alert("oops something went wrong");
+    })
+    ;
+}
+
+
+
+
+
+document
+    .getElementById("byPan")
+    .addEventListener("click",
+        () => {
+            const pan = document
+                .getElementById("member-pan")
+                .value;
+            GetMemberByName(pan);
+        });
+
+function GetMemberByName(pan) {
+    fetch(URL + `/members/pan/${pan}`)
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+            showMembers(data);
+        })
+        .catch((err) => {
+            alert("Not found");
+            console.error(err);
+        })
+}
