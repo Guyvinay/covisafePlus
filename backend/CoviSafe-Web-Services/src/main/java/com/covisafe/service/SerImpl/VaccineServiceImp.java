@@ -25,8 +25,9 @@ public class VaccineServiceImp implements VaccineService {
 	private MemberRepository memberRepository;
 	@Override
 	public List<Vaccine> getAllVaccine() {
-		// TODO Auto-generated method stub
-		return vaccineRepository.findAll();
+		List<Vaccine> list = vaccineRepository.findAll();
+		if(list.size()==0) throw new VaccineNotFoundException("Vaccine Not Found");
+		return list;
 	}
 
 	@Override
