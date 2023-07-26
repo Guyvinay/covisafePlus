@@ -39,7 +39,7 @@ public class User {
 	private String city;
 	@Size(min = 2, max = 40)
 	private String state;
-	@Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid Indian PINcode")
+	@Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid  PIN code")
 	private String pincode;
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
