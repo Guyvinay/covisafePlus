@@ -51,6 +51,7 @@ function getMemebersData(){
 function showMembers(res){
     let data_list_wrapper = document.getElementById("data-list-wrapper");
     // data_list_wrapper.innerHTML = `Hi`;
+    // console.log(res);
     data_list_wrapper.innerHTML = res.map(e => 
         memberCard(e)
         ).join("");
@@ -92,7 +93,7 @@ function GetMemberByName(aadhar){
         .then(res=>res.json())
         .then((data)=>{
             console.log(data);
-            showMembers(data);
+             document.getElementById("data-list-wrapper").innerHTML =memberCard(data) ;
         })
         .catch((err)=>{
             alert("Not found");
@@ -188,7 +189,8 @@ function GetMemberByName(pan) {
         .then(res => res.json())
         .then((data) => {
             console.log(data);
-            showMembers(data);
+            document.getElementById("data-list-wrapper").innerHTML =memberCard(data) ;
+            // showMembers(data);
         })
         .catch((err) => {
             alert("Not found");
