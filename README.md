@@ -96,12 +96,6 @@ This Application Consist 7 Modules
 - Vaccine Inventory Module.
 - Search Module.
 
-<br/>
-<div align = "center">
-<h1>Spring Security Working Map</h1>
-<img src = "https://github.com/swapnil0076/swift-book-7091/assets/58816804/a4979ead-b892-4bed-ab8b-4c02dd0076a4"/>
-<br/>
-  </div>
 
 
 
