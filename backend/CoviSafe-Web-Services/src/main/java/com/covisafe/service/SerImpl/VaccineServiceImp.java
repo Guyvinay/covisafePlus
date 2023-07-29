@@ -49,7 +49,7 @@ public class VaccineServiceImp implements VaccineService {
 		if(MemberfindById.isEmpty())
 			throw new UserNotFoundException("Member Not Found");
 		
-		MemberfindById.get().setVaccine(vaccine);
+//		MemberfindById.get().setVaccine(vaccine);
 		vaccine.setMember(MemberfindById.get());
 		
 //cascading check

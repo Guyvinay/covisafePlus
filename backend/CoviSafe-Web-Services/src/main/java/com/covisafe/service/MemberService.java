@@ -8,7 +8,7 @@ import com.covisafe.modal.Member;
 
 public interface MemberService {
 
-	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy)throws InvalidArgumentsException;
+	public List<Member> getAllMember()throws InvalidArgumentsException;
 	public Member getMemberById(Integer id) throws InvalidUserException;
 	public Member getMemberByAadharNo(String aadharNo);
 	public Member getMemberByPanNo(String panNo);
