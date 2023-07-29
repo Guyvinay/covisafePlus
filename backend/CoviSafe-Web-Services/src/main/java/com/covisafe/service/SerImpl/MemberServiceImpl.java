@@ -27,18 +27,22 @@ public class MemberServiceImpl implements MemberService {
 	private UserRepository userRepository;
 	
 
-	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
-		if (pageNo == null && limit == null && sortBy.equals(null))
+//	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
+	public List<Member> getAllMember() throws InvalidArgumentsException {
+	
+//	if (pageNo == null && limit == null && sortBy.equals(null))
+//			return memberRepository.findAll();
+//		else if (pageNo != null && limit != null && sortBy.equals(null)) {
+//			Pageable page = PageRequest.of(pageNo, limit);
+//			return memberRepository.findAll(page).getContent();
+//		} else if (pageNo != null && limit != null && !sortBy.equals(null)) {
+//			Pageable page = PageRequest.of(pageNo, limit, Sort.by(sortBy));
+////			return memberRepository.findAll(page).getContent();
 			return memberRepository.findAll();
-		else if (pageNo != null && limit != null && sortBy.equals(null)) {
-			Pageable page = PageRequest.of(pageNo, limit);
-			return memberRepository.findAll(page).getContent();
-		} else if (pageNo != null && limit != null && !sortBy.equals(null)) {
-			Pageable page = PageRequest.of(pageNo, limit, Sort.by(sortBy));
-			return memberRepository.findAll(page).getContent();
-		} else {
-			throw new InvalidArgumentsException("please pass correct fields to get the pagewise data");
-		}
+
+//		} else {
+//			throw new InvalidArgumentsException("please pass correct fields to get the pagewise data");
+//		}
 	}
 
 	public Member getMemberById(Integer id) throws InvalidUserException {

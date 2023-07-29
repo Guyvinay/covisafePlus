@@ -26,7 +26,7 @@ public class VaccineInventoryServiceImp implements VaccineInventoryService {
 	@Override
 	public List<VaccineInventory> getAllVaccineInventory() {
 		List<VaccineInventory> list = vaccineInventoryRepository.findAll();
-		if(list.size()==0) throw new VaccineNotFoundException("No ANy Vaccine Inventory Found");
+		if(list.size()==0) throw new VaccineNotFoundException("Not Any Vaccine Inventory Found");
 		return list;
 	}
 

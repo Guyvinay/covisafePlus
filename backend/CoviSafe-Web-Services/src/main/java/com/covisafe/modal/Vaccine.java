@@ -1,5 +1,7 @@
 package com.covisafe.modal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ public class Vaccine {
     private String vaxName;
     private String description;
     
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     private Member member;
     

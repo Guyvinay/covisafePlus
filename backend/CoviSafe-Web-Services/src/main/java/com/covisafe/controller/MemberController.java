@@ -43,9 +43,13 @@ public class MemberController {
 		return new ResponseEntity<Member>(memberService.getMemberById(id) , HttpStatus.ACCEPTED);
 	}
 
+//	@GetMapping(value = "/members/pageNo/limit/sortBy")
+	
+//	public ResponseEntity<List<Member>> getAllMembers(@RequestParam(required = false) Integer pageNo,@RequestParam(required = false) Integer limit,@RequestParam(required = false) String sortBy){
 	@GetMapping(value = "/members")
-	public ResponseEntity<List<Member>> getAllMembers(@RequestParam(required = false) Integer pageNo,@RequestParam(required = false) Integer limit,@RequestParam(required = false) String sortBy){
-		return new ResponseEntity<List<Member>>(memberService.getAllMember(pageNo , limit ,sortBy ), HttpStatus.ACCEPTED);
+	public ResponseEntity<List<Member>> getAllMembers(){
+
+	return new ResponseEntity<List<Member>>(memberService.getAllMember(), HttpStatus.ACCEPTED);
 	}
 
 	@GetMapping(value = "/members/aadhar/{aadhar}")
