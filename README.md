@@ -29,7 +29,7 @@ The application strives to enhance the accessibility and convenience of Covid-19
 </p>
 
 <br/>
-### Built With
+## Built With
 
 Tech Stack :
 
@@ -100,7 +100,7 @@ This Application Consist 7 Modules
 
 
 <h1></h1>
-## Roadmap ## <br/>
+## Roadmap  <br/>
  - [✅] Made ER Diagram <br/>
  - [✅] Added POJO classes <br/>
  - [✅] Made mappings <br/>
@@ -112,7 +112,7 @@ This Application Consist 7 Modules
  - [✅] Tested Using Postman<br/>
  - [✅] Tested Using Swagger<br/>
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
- ## Contributors ## <br/>
+ ## Contributors <br/>
  - VINAY KUMAR SINGH <br/>
  - Anurag Chaudhary<br/>
  - Minal Kumari <br/>
