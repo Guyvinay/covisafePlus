@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     <>
       {/* <!-- header --> */}
@@ -15,9 +15,9 @@ export default function Nav() {
         </div>
 
         <div className="mrightside">
-          <button>A+</button>
-          <button>A</button>
-          <button>A-</button>
+          <button onClick={()=>props.zoom[1](props.zoom[0]+1)}>A+</button>
+          <button onClick={()=>props.zoom[1](100)}>A</button>
+          <button onClick={()=>props.zoom[1](props.zoom[0]-1)}>A-</button>
 
           <p id="eng">English </p>
         </div>
@@ -26,10 +26,7 @@ export default function Nav() {
       {/* <!-- nav --> */}
       <div className="mnav">
         <div className="mlogo">
-          <img
-            src="./images/mainlogo.png"
-            alt="logo"
-          />
+          <img src="./images/mainlogo.png" alt="logo" />
         </div>
 
         <div className="mnavlist">

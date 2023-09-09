@@ -87,10 +87,8 @@ body {
     background: linear-gradient(180deg, #be2f2f, #ca0909);
     background-color: var(--second-color);
     display: flex;
-    height: 100%;
     width: 100%;
-    align-items: center;
-    /* height: 7rem; */
+    height: 7rem;
     background-color: var(--nav);
     justify-content: space-between;
 }
@@ -98,13 +96,13 @@ body {
 .mlogo {
     display: flex;
     align-items: center;
-    height: fit-content;
     width: fit-content;
 }
 .mlogo img {
     display: block;
     width: 5rem;
     width: 20rem;
+    padding-bottom: 2%;
 }
 
 .mnavlist {
@@ -112,13 +110,16 @@ body {
     width: 60%;
     display: flex;
     font-size: 1.6rem;
+    /* margin-right: 1%; */
     align-items: center;
     justify-content: space-between;
 }
 
 .mnavlist a {
+    margin-top: 1%;
     text-decoration: none;
     color: white;
+    margin: 3%;
     cursor: pointer !important;
 }
 
