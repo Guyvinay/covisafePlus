@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --main-color: rgb(194, 14, 14);
+    --second-color: rgba(8, 95, 206, 255);
+    --focus-color: rgba(255, 255, 255, 23%);
+    --white: #ffffff99;
+    --light: #f3f3f3;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5% !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mheader {
+    background-color: var(--main-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mleftlogo {
+    display: flex;
+}
+
+.mleftlogo img {
+    width: 3rem;
+    margin-right: 2rem;
+}
+
+.mleftlogo {
+    padding: .5rem;
+    font-size: 1.3rem;
+    color: white;
+    line-height: 1.3;
+}
+
+.mrightside {
+    display: flex;
+    width: 20%;
+    padding: .2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#eng {
+    padding: 1.7% 1.7% 1.7% 1.7%;
+    font-size: 2.2rem;
+    color: white;
+}
+
+.mrightside button {
+    /* border: 2px solid white; */
+    border: none;
+    width: 15%;
+    /* background-color: var(--second-color); */
+    background-color: var(--focus-color);
+    height: fit-content;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: .6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.mnav {
+    background: linear-gradient(180deg, #be2f2f, #ca0909);
+    background-color: var(--second-color);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    /* height: 7rem; */
+    background-color: var(--nav);
+    justify-content: space-between;
+}
+
+.mlogo {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+}
+.mlogo img {
+    display: block;
+    width: 5rem;
+    width: 20rem;
+}
+
+.mnavlist {
+    /* border: 1px solid red; */
+    width: 60%;
+    display: flex;
+    font-size: 1.6rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mnavlist a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer !important;
+}
+
+.mnavlist a:hover {
+    cursor: pointer;
+    color: var(--second-color);
+}
+
+.mnavlist a > h4:hover{
+    cursor: pointer;
+    
+}
+
+.mnavlist button {
+    border: .2rem solid white;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: var(--focus-color);
+    cursor: pointer;
+} 
