@@ -7,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,8 +20,8 @@ import lombok.Data;
 
 @Data
 @Entity
-public class User {
-	
+public class IdCard {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -33,7 +32,7 @@ public class User {
 	private LocalDate dob;
 	@NotNull(message = "Gender must be specified")
 	private String gender;
-	@Size(min = 2, max = 80)
+	@Size(min = 2, max = 80, message = "minimum 2 an maximum 80 characters are allowed")
 	private String address;
 	@Size(min = 2, max = 40)
 	private String city;
@@ -43,13 +42,13 @@ public class User {
 	private String pincode;
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
-	
+
 	private String role;
 
 	private String panNo;
-	
+
 	private String aadharNo;
-	
+
 	@JsonIgnore
 	@OneToOne
 	private Member member;

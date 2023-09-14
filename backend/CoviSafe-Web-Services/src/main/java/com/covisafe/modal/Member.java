@@ -37,7 +37,7 @@ public class Member {
 	 private LocalDate dateOfRegistration = LocalDate.now();
 	 
 	 @OneToOne(cascade = CascadeType.ALL)
-	 private User user;
+	 private IdCard idcard;
 	 
 	 @OneToOne(mappedBy = "memberId", cascade = CascadeType.ALL)
 	 private Appointment appointment;

@@ -4,18 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.covisafe.exception.IdCardNotFoundException;
 import com.covisafe.exception.InvalidArgumentsException;
 import com.covisafe.exception.InvalidUserException;
-import com.covisafe.exception.UserNotFoundException;
+import com.covisafe.modal.IdCard;
 import com.covisafe.modal.Member;
-import com.covisafe.modal.User;
+import com.covisafe.repository.IdCardRepository;
 import com.covisafe.repository.MemberRepository;
-import com.covisafe.repository.UserRepository;
 import com.covisafe.service.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -24,7 +21,7 @@ public class MemberServiceImpl implements MemberService {
 	private MemberRepository memberRepository;
 	
 	@Autowired
-	private UserRepository userRepository;
+	private IdCardRepository userRepository;
 	
 
 //	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
@@ -69,9 +66,9 @@ public class MemberServiceImpl implements MemberService {
 				throw new InvalidUserException("User already present in database ");
 			}
 		}
-		Optional<User> optional = userRepository.findById(userId);
-		if(optional.isEmpty()) throw new UserNotFoundException("Provided User doesn't exist , Register user first");
-		member.setUser(optional.get());
+		Optional<IdCard> optional = userRepository.findById(userId);
+		if(optional.isEmpty()) throw new IdCardNotFoundException("Provided User doesn't exist , Register user first");
+		member.setIdcard(optional.get());
 		return memberRepository.save(member);
 	}
 
