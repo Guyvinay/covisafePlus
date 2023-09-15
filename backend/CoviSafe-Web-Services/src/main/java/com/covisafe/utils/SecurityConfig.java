@@ -25,6 +25,7 @@ public class SecurityConfig {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
 		http.authorizeHttpRequests(auth->{
 			auth.
 			 	
@@ -47,6 +48,7 @@ public class SecurityConfig {
 		.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 		
 		return http.build();
+		
 	}
 	
 }
