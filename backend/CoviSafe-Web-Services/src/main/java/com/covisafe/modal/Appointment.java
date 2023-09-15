@@ -22,7 +22,7 @@ import lombok.Data;
 public class Appointment {
 
 	 @Id
-	 @GeneratedValue(strategy =  GenerationType.IDENTITY)
+	 @GeneratedValue(strategy =  GenerationType.AUTO)
 	 private Integer bookingId;
 //	 @Pattern(regexp = "^[6-9][0-9]{9}")
 	 private Long mobileNo;

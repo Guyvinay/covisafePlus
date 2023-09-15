@@ -14,7 +14,7 @@ import lombok.Data;
 public class VaccineCount {
 
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private Integer vaxId;
 	    private Integer vaxQuantity;
 	    private double vaxPrice;

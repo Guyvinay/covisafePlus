@@ -20,7 +20,7 @@ import lombok.Data;
 public class VaccinationCenter {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer centerId;
 	@Size(min = 2, max = 80)
     private String centerName;

@@ -1,9 +1,11 @@
 package com.covisafe.modal;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
@@ -11,12 +13,11 @@ import lombok.Data;
 public class AadharCard {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer aadharId;
 	private Long aadgharNo;
 	
-/*//	@OneToOne(mappedBy = "aadharNo" , cascade = CascadeType.ALL) */
-//	@OneToOne(mappedBy = "aadharCard" , cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private IdCard idCard;
 	
 }

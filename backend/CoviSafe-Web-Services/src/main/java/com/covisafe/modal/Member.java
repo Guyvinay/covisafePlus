@@ -2,11 +2,8 @@ package com.covisafe.modal;
 
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +16,7 @@ import lombok.Data;
 public class Member {
 
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private Integer id;
 	 
 	 @Column(columnDefinition = "boolean default false")
@@ -36,7 +33,7 @@ public class Member {
 	 
 	 private LocalDate dateOfRegistration = LocalDate.now();
 	 
-	 @OneToOne(cascade = CascadeType.ALL)
+	 @OneToOne(mappedBy = "member",cascade = CascadeType.ALL)
 	 private IdCard idcard;
 	 
 	 @OneToOne(mappedBy = "memberId", cascade = CascadeType.ALL)

@@ -23,12 +23,12 @@ import lombok.Data;
 public class IdCard {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	@Size(min = 2, max = 20)
 	private String name;
 	@Past(message = "Invalid date of birth")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")	
 	private LocalDate dob;
 	@NotNull(message = "Gender must be specified")
 	private String gender;
@@ -48,7 +48,7 @@ public class IdCard {
 	private String panNo;
 
 	private String aadharNo;
-
+	
 	@JsonIgnore
 	@OneToOne
 	private Member member;
