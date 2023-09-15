@@ -60,7 +60,7 @@ public class IdCardServiceImpl implements IdCardService {
 		Optional<IdCard> optional = IdCardRepository.findById(IdCardId);
 		if(optional.isEmpty()) throw new IdCardNotFoundException("IdCard not found by given id");
 		if(IdCard==null) throw new IdCardNotFoundException("Please provide IdCard details");
-		IdCard.setId(IdCardId);
+		IdCard.setUserId(IdCardId);
 		return IdCardRepository.save(IdCard);
 	}
 

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.covisafe.modal.IdCard;
 import com.covisafe.service.IdCardService;
 
-
 /*
   {
 	  "name":"Ethan",
@@ -35,29 +34,43 @@ import com.covisafe.service.IdCardService;
 
 @RestController
 @CrossOrigin("*")
+@Deprecated
+
+/**
+ * <p>
+ * Idcard should be a field instead of having a seperate controllor we will
+ * merge it in either memeber or user
+ * </p>
+ * 
+ */
+
 public class IdCardControllor {
 
 	@Autowired
 	private IdCardService idCardService;
-	
+
 	@PostMapping(value = "/IdCards")
-	public ResponseEntity<IdCard> saveIdCard(@RequestBody IdCard IdCard){
-		return new ResponseEntity<IdCard>(idCardService.addIdCard(IdCard) , HttpStatus.ACCEPTED);
+	public ResponseEntity<IdCard> saveIdCard(@RequestBody IdCard IdCard) {
+		return new ResponseEntity<IdCard>(idCardService.addIdCard(IdCard), HttpStatus.ACCEPTED);
 	}
+
 	@GetMapping(value = "/IdCards/{id}")
-	public ResponseEntity<IdCard> getIdCardById(@PathVariable Integer id){
-		return new ResponseEntity<IdCard>(idCardService.getIdCardById(id) , HttpStatus.ACCEPTED);
+	public ResponseEntity<IdCard> getIdCardById(@PathVariable Integer id) {
+		return new ResponseEntity<IdCard>(idCardService.getIdCardById(id), HttpStatus.ACCEPTED);
 	}
+
 	@GetMapping(value = "/IdCards")
-	public ResponseEntity<List<IdCard>> getAllIdCards(){
+	public ResponseEntity<List<IdCard>> getAllIdCards() {
 		return new ResponseEntity<List<IdCard>>(idCardService.getAllIdCard(), HttpStatus.ACCEPTED);
 	}
+
 	@GetMapping(value = "/IdCards/aadhar/{aadhar}")
-	public ResponseEntity<IdCard> getIdCardByAadharNo(@PathVariable String aadhar){
+	public ResponseEntity<IdCard> getIdCardByAadharNo(@PathVariable String aadhar) {
 		return new ResponseEntity<IdCard>(idCardService.getIdCardByAadharNo(aadhar), HttpStatus.ACCEPTED);
 	}
+
 	@GetMapping(value = "/IdCards/pan/{pan}")
-	public ResponseEntity<IdCard> getIdCardByPanNo(@PathVariable String pan){
+	public ResponseEntity<IdCard> getIdCardByPanNo(@PathVariable String pan) {
 		return new ResponseEntity<IdCard>(idCardService.getIdCardByPanNo(pan), HttpStatus.ACCEPTED);
 	}
 }
