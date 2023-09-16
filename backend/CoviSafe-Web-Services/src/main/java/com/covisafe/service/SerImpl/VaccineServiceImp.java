@@ -6,9 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.covisafe.exception.IdCardNotFoundException;
 import com.covisafe.exception.InvalidArgumentsException;
-import com.covisafe.exception.InvalidUserException;
-import com.covisafe.exception.UserNotFoundException;
 import com.covisafe.exception.VaccineNotFoundException;
 import com.covisafe.modal.Member;
 import com.covisafe.modal.Vaccine;
@@ -47,7 +46,7 @@ public class VaccineServiceImp implements VaccineService {
 				
 		Optional<Member> MemberfindById = memberRepository.findById(memberId);
 		if(MemberfindById.isEmpty())
-			throw new UserNotFoundException("Member Not Found");
+			throw new IdCardNotFoundException("Member Not Found");
 		
 //		MemberfindById.get().setVaccine(vaccine);
 		vaccine.setMember(MemberfindById.get());

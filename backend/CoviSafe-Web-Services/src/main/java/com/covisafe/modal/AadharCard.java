@@ -17,8 +17,7 @@ public class AadharCard {
 	private Integer aadharId;
 	private Long aadgharNo;
 	
-/*//	@OneToOne(mappedBy = "aadharNo" , cascade = CascadeType.ALL) */
-//	@OneToOne(mappedBy = "aadharCard" , cascade = CascadeType.ALL)
-	private User userId;
+	@OneToOne(cascade = CascadeType.ALL)
+	private IdCard idCard;
 	
 }
