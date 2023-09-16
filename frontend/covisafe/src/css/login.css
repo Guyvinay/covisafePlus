@@ -28,7 +28,6 @@ body {
     align-items: center;
     padding: 1.5rem;
     border-radius: 1rem;
-    background-color: var(--focus-color);
     text-align: center;
     box-shadow: #262121 0px 2px 8px 0px;
     min-width: 70rem;
@@ -149,10 +148,6 @@ form input[type="submit"]:hover{
     padding: .3rem;
     margin-left: 1rem;
 }
-.altert img{
-    /* color: transparent; */
-}
-
 
 
 .next,.next2{

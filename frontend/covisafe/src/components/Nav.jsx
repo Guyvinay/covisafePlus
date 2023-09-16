@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Nav(props) {
   return (
@@ -15,9 +16,9 @@ export default function Nav(props) {
         </div>
 
         <div className="mrightside">
-          <button onClick={()=>props.zoom[1](props.zoom[0]+1)}>A+</button>
-          <button onClick={()=>props.zoom[1](100)}>A</button>
-          <button onClick={()=>props.zoom[1](props.zoom[0]-1)}>A-</button>
+          <button onClick={() => props.zoom[1](props.zoom[0] + 1)}>A+</button>
+          <button onClick={() => props.zoom[1](100)}>A</button>
+          <button onClick={() => props.zoom[1](props.zoom[0] - 1)}>A-</button>
 
           <p id="eng">English </p>
         </div>
@@ -42,9 +43,9 @@ export default function Nav(props) {
           <a href="/partner.html">
             <h4>Partner</h4>
           </a>
-          <a href="./login.html">
+          <Link to="/signin">
             <button>Register/Signin</button>
-          </a>
+          </Link>
         </div>
       </div>
     </>

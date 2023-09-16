@@ -1,19 +1,19 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Nav from './nav';
 import Footer from './Footer';
 
-export default function Login({ zoom: [zoom, setZoom] }) {
+export default function Signup({ zoom: [zoom, setZoom] }) {
   return (
     <>
-      <Nav/>
+      <Nav zoom={[zoom, setZoom]} />
       <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
-        <div className="loginlogout w-fit ">
-          <div className="changer bg-[#33333399] ">
-            <div className="active page text-[#ffffffc3]">
-              <Link to="/sigin">Sign In</Link>
+        <div class="loginlogout w-fit ">
+          <div class="changer bg-[#33333399] ">
+            <div class="page text-[#ffffffc3]">
+              <Link to="/signin">Sign In </Link>
             </div>
-            <div className="page text-[#ffffffc3]">
+            <div class="active page text-[#ffffffc3]">
               <Link to="/signup">Sign Up</Link>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

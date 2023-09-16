@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function RightPara(props) {
-    console.log(props.para);
   return (
     <div className="w-full bg-[#ff003214] py-10">
       <div className="w-3/4 flex justify-around mx-auto items-center">

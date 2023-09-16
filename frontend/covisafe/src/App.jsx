@@ -2,16 +2,15 @@ import { useState } from 'react'
 import Nav from './components/nav'
 import Footer from './components/Footer'
 import './css/footer.css'
+import "./index.css";
 import Main from './components/Main'
 import Login from './components/Login'
 
-function App() {
-  const [zoom, setZoom] = useState(100); 
+function App({ zoom: [zoom, setZoom] }) {
   return (
-    <div style={{ zoom: `${zoom}%` }}>
+    <div>
       <Nav zoom={[zoom, setZoom]} />
-      {/* <Main /> */}
-      <Login/>
+      <Main />
       <Footer />
     </div>
   );
