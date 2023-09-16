@@ -1,57 +1,109 @@
 package com.covisafe.modal;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class User {
-	
+@Data
+@Inheritance(strategy = InheritanceType.JOINED)
+public class User implements UserDetails {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	@Size(min = 2, max = 20)
-	private String name;
-	@Past(message = "Invalid date of birth")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate dob;
-	@NotNull(message = "Gender must be specified")
-	private String gender;
-	@Size(min = 2, max = 80)
-	private String address;
-	@Size(min = 2, max = 40)
-	private String city;
-	@Size(min = 2, max = 40)
-	private String state;
-	@Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid  PIN code")
-	private String pincode;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	private Integer userId;
+	
+	@NotBlank(message = "email can't be blank")
+	@Email(
+			regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+			message = "email should be in proper format i.e : johndoe@example.com"
+	)
+	@Column(unique = true)
+	private String email;
+	
+	@NotBlank(message = "password can't be blank")
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 	
-	private String role;
-
-	private String panNo;
 	
-	private String aadharNo;
+	private LocalDateTime createdAt = LocalDateTime.now();
 	
-	@JsonIgnore
-	@OneToOne
-	private Member member;
+	@Enumerated(EnumType.STRING)
+	private Role role;
 
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return List.of(new SimpleGrantedAuthority(role.name()));
+	}
+
+	public User(
+			
+			@NotBlank(message = "email can't be blank")
+			@Email(
+					regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+					message = "email should be in proper format i.e : johndoe@example.com"
+			)
+			String email,
+			
+			@NotBlank(message = "password can't be blank")
+			String password,
+			
+			Role role
+			
+	) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
+	
+	
+	@Override
+	public String getUsername() {
+		return this.email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 }

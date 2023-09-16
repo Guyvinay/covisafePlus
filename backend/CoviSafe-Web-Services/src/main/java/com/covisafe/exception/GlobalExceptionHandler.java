@@ -59,8 +59,8 @@ public class GlobalExceptionHandler {  // Exception Handler
 	        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
 	    }
 
-	    @ExceptionHandler(UserNotFoundException.class)
-	    public ResponseEntity<MyErrorDetails> handleUserNotFoundException(UserNotFoundException ex, WebRequest req) {
+	    @ExceptionHandler(IdCardNotFoundException.class)
+	    public ResponseEntity<MyErrorDetails> handleIdCardNotFoundException(IdCardNotFoundException ex, WebRequest req) {
 	        MyErrorDetails err = new MyErrorDetails();
 	        err.setTimestamp(LocalDateTime.now());
 	        err.setMessage("User not found: " + ex.getMessage());

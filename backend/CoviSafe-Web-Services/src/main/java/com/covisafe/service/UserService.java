@@ -1,17 +1,12 @@
 package com.covisafe.service;
 
-import java.util.List;
-
+import com.covisafe.controller.AuthenticationRequest;
+import com.covisafe.controller.AuthenticationResponse;
+import com.covisafe.modal.IdCard;
 import com.covisafe.modal.User;
 
 public interface UserService {
+	AuthenticationResponse signInUser(AuthenticationRequest authenticationRequest);
 
-	public List<User> getAllUser();
-	public User getUserById(Integer id);
-	public User getUserByAadharNo(String aadharNo);
-	public User getUserByPanNo(String panNo);
-	public User addUser(User member);
-	public User updateUser(Integer userId , User member);
-	public Boolean deleteUser(Integer id);
-	
+	AuthenticationResponse register(IdCard user);
 }
