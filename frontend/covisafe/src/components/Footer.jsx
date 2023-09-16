@@ -105,8 +105,7 @@ export default function Footer() {
           <div>
             <p className="footer-heading">
               <FontAwesomeIcon icon={faPhone} />
-              &nbsp;
-              Contact us
+              &nbsp; Contact us
             </p>
             <ul>
               <li>
@@ -127,13 +126,21 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="last-footer">
+        <div className="last-footer flex align-middle justify-around">
           <div>
             <p>Copyright © 2021 Co-WIN. All Rights Reserved</p>
           </div>
-          <div className="footer-images-div">
-            <img src="./images/national-health-authority.jpg" alt="" />
-            <img src="./images/undp-logo-vertical.svg" alt="" />
+          <div className="footer-images-div flex w-fit">
+            <img
+              src="./images/national-health-authority.jpg"
+              className="h-20 mx-3"
+              alt=""
+            />
+            <img
+              src="./images/undp-logo-vertical.svg"
+              className="h-20 mx-3"
+              alt=""
+            />
           </div>
           <div>
             <p>

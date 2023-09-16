@@ -73,7 +73,7 @@ html {
     gap: 2rem;
 }
 
-.footer-image-div {
+/* .footer-image-div {
     display: flex;
     padding-left: 25%;
     padding-right: 25%;
@@ -89,4 +89,4 @@ html {
 
 .footer-image-div img[src="./images/undp-logo-vertical.svg"] {
     width: 4rem;
-}
+} */

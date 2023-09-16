@@ -5,16 +5,7 @@ import './css/footer.css'
 import Main from './components/Main'
 
 function App() {
-  const [zoom, setZoom] = useState(100);
-  // const handleZoomIn = () => {
-  //   setZoom(zoom + 1);
-  // };
-  // const handleZoomOut = () => {
-  //   setZoom(zoom - 1);
-  // };
-  // const handleReset = () => {
-  //   setZoom(100);
-  // };   
+  const [zoom, setZoom] = useState(100); 
   return (
     <div style={{ zoom: `${zoom}%` }}>
       <Nav zoom={[zoom, setZoom]} />
