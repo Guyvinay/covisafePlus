@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import com.covisafe.controller.AuthenticationRequest;
 import com.covisafe.controller.AuthenticationResponse;
 import com.covisafe.exception.InvalidUserException;
+import com.covisafe.modal.IdCard;
 import com.covisafe.modal.User;
+import com.covisafe.repository.IdCardRepository;
 import com.covisafe.repository.UserRepository;
 import com.covisafe.service.UserService;
 import com.covisafe.utils.JwtService;
@@ -22,6 +24,9 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 	
 	@Autowired
+	private IdCardRepository idCardRepository;
+	
+	@Autowired
 	private JwtService jwtService;
 	
 	@Autowired
@@ -29,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
 	
 	@Override
-	public AuthenticationResponse register(User user) {
+	public AuthenticationResponse register(IdCard user) {
 		if(user == null)
 			throw new InvalidUserException("user can't be null");
 		if(user.getUserId()!= null) {
@@ -38,7 +43,7 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 		
-		userRepository.save(user);
+		idCardRepository.save(user);
 		var jwtToken = jwtService.generateToken(user);
 		return new AuthenticationResponse(
 				jwtToken,

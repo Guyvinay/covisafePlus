@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,13 +34,15 @@ import lombok.NoArgsConstructor;
 public class User implements UserDetails {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
 	
 	@NotBlank(message = "email can't be blank")
-	@Email( regexp = "\\\\b[\\\\w.%-]+@[-.\\\\w]+\\\\.[A-Za-z]{2,4}\\\\b", 
-		    message = "email should be in proper format i.e : johndoe@example.com"
+	@Email(
+			regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+			message = "email should be in proper format i.e : johndoe@example.com"
 	)
+	@Column(unique = true)
 	private String email;
 	
 	@NotBlank(message = "password can't be blank")
@@ -61,7 +64,7 @@ public class User implements UserDetails {
 			
 			@NotBlank(message = "email can't be blank")
 			@Email(
-					regexp = "\\\\b[\\\\w.%-]+@[-.\\\\w]+\\\\.[A-Za-z]{2,4}\\\\b",
+					regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
 					message = "email should be in proper format i.e : johndoe@example.com"
 			)
 			String email,

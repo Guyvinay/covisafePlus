@@ -16,7 +16,7 @@ import lombok.Data;
 public class Member {
 
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Integer id;
 	 
 	 @Column(columnDefinition = "boolean default false")
