@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Nav from './nav';
 import Footer from './Footer';
+import axios from "axios";
+
 
 export default function Login({ zoom: [zoom, setZoom] }) {
+
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  
+  const baseURL = "https://covisafeplus-production-f84b.up.railway.app";
+  
+  const handleSubmit = (event)=>{
+    event.preventDefault();
+
+    const user = {
+      email:email,
+      password:password,
+    }
+
+    axios
+    .post(`${baseURL}/users/signin`, user)
+    .then(
+      (res)=>{
+        console.log(res);
+      }
+    )
+
+  };
+
   return (
     <>
-      <Nav/>
+      <Nav />
       <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
         <div className="loginlogout w-fit ">
           <div className="changer bg-[#33333399] ">
@@ -30,16 +56,28 @@ export default function Login({ zoom: [zoom, setZoom] }) {
               <h2>Sign In for Vaccination</h2>
               <br />
               <p>Enter your credentials</p>
-              <form>
-                <input type="email" placeholder="Enter email" required />
-                <input type="password" placeholder="Enter password" required />
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  placeholder="Enter email"
+                  required
+                />
+                <input
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  placeholder="Enter password"
+                  required
+                />
                 <input type="submit" value="Login" />
               </form>
             </div>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
