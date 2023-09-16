@@ -38,7 +38,9 @@ public class SecurityConfig {
 				.anyRequest()
 				.authenticated();
 		})
-		
+		.cors(
+				cors->cors.disable()
+		)
 		.csrf(
 				Csrf->Csrf.disable()
 		)
