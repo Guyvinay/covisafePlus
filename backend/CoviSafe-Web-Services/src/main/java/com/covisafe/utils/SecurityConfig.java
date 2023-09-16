@@ -1,6 +1,5 @@
 package com.covisafe.utils;
 
-import org.springdoc.core.properties.SwaggerUiConfigProperties.Csrf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

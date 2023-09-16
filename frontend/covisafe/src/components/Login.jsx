@@ -9,8 +9,8 @@ export default function Login({ zoom: [zoom, setZoom] }) {
 
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  
-  const baseURL = "https://covisafeplus-production-f84b.up.railway.app";
+  const [isDisabled, setIsDisabled] = useState(false);
+  const baseURL = "http://covisafeplus-production-f84b.up.railway.app";
   
   const handleSubmit = (event)=>{
     event.preventDefault();
@@ -27,6 +27,9 @@ export default function Login({ zoom: [zoom, setZoom] }) {
         console.log(res);
       }
     )
+    .catch((error)=>{
+      console.log(error);
+    })
 
   };
 
