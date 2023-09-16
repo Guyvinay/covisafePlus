@@ -2,16 +2,15 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <div className="w-screen flex items-center justify-center  bg-gradient-to-r from-mainColor to-[#ff003255] ">
-      <div class="loginlogout w-fit">
-        <div class="changer">
-          {/* bg-[#ff003255] */}
-          <div class="active page">Sign In</div>
-          <div class="page">Sign Up</div>
+    <div className="w-full flex items-center justify-center py-20">
+      <div class="loginlogout w-fit ">
+        <div class="changer bg-[#33333399] ">
+          <div class="active page text-[#ffffffc3]">Sign In</div>
+          <div class="page text-[#ffffffc3]">Sign Up</div>
         </div>
-        <div className="form signin">
+        <div className="form signin bg-[#33333399]">
           <div className="imgdiv">
-            <div>
+            <div className="flex justify-center py-5">
               <img src="./images/login-family.svg" alt="" />
             </div>
             <div>
@@ -23,8 +22,8 @@ export default function Login() {
             <br />
             <p>Enter your credentials</p>
             <form>
-              <input type="email" placeholder="enter email" required />
-              <input type="password" placeholder="password" required />
+              <input type="email" placeholder="Enter email" required />
+              <input type="password" placeholder="Enter password" required />
               <input type="submit" value="Login" />
             </form>
           </div>
