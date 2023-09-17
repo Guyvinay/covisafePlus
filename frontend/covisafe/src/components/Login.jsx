@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import Nav from './nav';
 import Footer from './Footer';
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 export default function Login({ zoom: [zoom, setZoom] }) {
-
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  // const baseURL = "https://covisafeplus-production-f84b.up.railway.app";
   const baseURL = "http://localhost:8080";
 
   const alert = ()=>{
@@ -21,21 +20,37 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     event.preventDefault();
 
     const user = {
-      email:email,
-      password:password,
-    }
+      email: email,
+      password: password,
+    };
 
-    axios
-    .post(`${baseURL}/users/register`, user)
-    .then(
-      (res)=>{
-        console.log(res);
-      }
-    )
-    .catch((error)=>{
-      console.log(error);
+    console.log(user);
+
+    fetch(`${baseURL}/users/signin`, {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
+    .then((res) =>{
+       if (!res.ok) {
+         if (res.status === 400) {
+           throw new Error("Bad Request: Incorrect username or password.");
+         }
+         throw new Error("Network response was not ok");
+       }
+      return res.json();
+    })
+    .then((res) => {
+      console.log(res);
+        Swal.fire("Login succes!", "you can proceed to vaccination now ", "success");
 
+    })
+    .catch((res) => {
+       Swal.fire("Incorrect username or password!", "please provide the correct details", "error");
+
+    });
 
   };
 

@@ -143,3 +143,7 @@ body {
     background-color: var(--focus-color);
     cursor: pointer;
 } 
+
+.swal2-container .swal2-popup{
+    font-size: 1.6rem;
+}

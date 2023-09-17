@@ -88,7 +88,8 @@ form input[type="submit"]{
 }
 
     
-form input[type="submit"]:hover{
+form input[type="submit"]:hover,
+form input[type="submit"]:focus{
     background-color: transparent;
     border: 2px solid var(--main-color);
     color: var(--main-color);
