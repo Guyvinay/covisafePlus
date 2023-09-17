@@ -106,7 +106,7 @@ form input[type="submit"]:hover{
     box-shadow: #262121 0px 2px 8px 0px;
 }
 
-.changer > div{
+.changer  .page{
     text-align: center;
     padding: 2rem;
     cursor: pointer;

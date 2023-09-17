@@ -10,7 +10,12 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  const baseURL = "http://covisafeplus-production-f84b.up.railway.app";
+  // const baseURL = "https://covisafeplus-production-f84b.up.railway.app";
+  const baseURL = "http://localhost:8080";
+
+  const alert = ()=>{
+    
+  };
   
   const handleSubmit = (event)=>{
     event.preventDefault();
@@ -21,7 +26,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     }
 
     axios
-    .post(`${baseURL}/users/signin`, user)
+    .post(`${baseURL}/users/register`, user)
     .then(
       (res)=>{
         console.log(res);
@@ -31,20 +36,21 @@ export default function Login({ zoom: [zoom, setZoom] }) {
       console.log(error);
     })
 
+
   };
 
   return (
     <>
-      <Nav />
+      <Nav zoom={[zoom, setZoom]} />
       <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
         <div className="loginlogout w-fit ">
           <div className="changer bg-[#33333399] ">
-            <div className="active page text-[#ffffffc3]">
-              <Link to="/sigin">Sign In</Link>
-            </div>
-            <div className="page text-[#ffffffc3]">
-              <Link to="/signup">Sign Up</Link>
-            </div>
+            <Link to="/signin">
+              <div className="active page text-[#ffffffc3]">Sign In</div>
+            </Link>
+            <Link to="/signup">
+              <div className="page text-[#ffffffc3]">Sign Up</div>
+            </Link>
           </div>
           <div className="form signin bg-[#33333399]">
             <div className="imgdiv">

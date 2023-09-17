@@ -27,13 +27,15 @@ export default function Nav(props) {
       {/* <!-- nav --> */}
       <div className="mnav">
         <div className="mlogo">
-          <img src="./images/mainlogo.png" alt="logo" />
+          <Link to="/">
+            <img className='cursor-pointer' src="./images/mainlogo.png" alt="logo" />
+          </Link>
         </div>
 
         <div className="mnavlist">
-          <a href="/dashboard.html">
+          <Link to="/dashboard">
             <h4>Dashboard</h4>
-          </a>
+          </Link>
           <a href="./service.html">
             <h4>Service</h4>
           </a>

@@ -10,12 +10,12 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
       <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
         <div className="loginlogout w-fit ">
           <div className="changer bg-[#33333399] ">
-            <div className="page text-[#ffffffc3]">
-              <Link to="/signin">Sign In </Link>
-            </div>
-            <div className="active page text-[#ffffffc3]">
-              <Link to="/signup">Sign Up</Link>
-            </div>
+            <Link to="/signin">
+              <div className="page text-[#ffffffc3]">Sign In</div>
+            </Link>
+            <Link to="/signup">
+              <div className="active page text-[#ffffffc3]">Sign Up</div>
+            </Link>
           </div>
           <div className="form signin bg-[#33333399]">
             <div className="imgdiv">
