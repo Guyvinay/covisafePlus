@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import Steps from './Steps';
+import Para from './para';
 
 
 export default function Main() {
@@ -8,7 +10,7 @@ export default function Main() {
     <>
       <div className="grid grid-cols-2 align-middle place-content-center w-full">
         <div className="quote pl-28 ml-28 flex my-auto">
-          <div className='h-fit'>
+          <div className="h-fit">
             <div>
               <h3
                 className="font-sans font-bold text-5xl my-10"
@@ -39,6 +41,10 @@ export default function Main() {
           <img src="./images/independance.svg" alt="Independence" />
         </div>
       </div>
+      <div>
+        <Steps/>
+      </div>
+      <Para/>
     </>
   );
 }
