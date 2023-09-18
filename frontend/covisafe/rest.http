@@ -1,7 +1,18 @@
-POST http://localhost:8080/users/signin HTTP/1.1
+
+
+POST https://covisafeplus-production-417c.up.railway.app/users/register
 content-type: application/json
 
+
 {
-    "email": "anuragjatofficial2@gmail.com",
+    "email": "anuragjatofficial@gmail.com",
+    "name": "anuarabjlk",
+    "dob": "2023-01-01",
+    "aadhar": "dfjklsjfkljd234",
+    "address": "kanput",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "pincode": "201305",
+    "pan": "jjwt233",
     "password": "string"
 }
