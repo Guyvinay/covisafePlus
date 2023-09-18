@@ -10,7 +10,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  const baseURL = "http://localhost:8080";
+  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
 
   const alert = ()=>{
     
@@ -112,7 +112,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
                   placeholder="Enter password"
                   required
                 />
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login"/>
               </form>
             </div>
           </div>

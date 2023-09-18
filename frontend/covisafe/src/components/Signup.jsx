@@ -27,9 +27,9 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
               </div>
             </div>
             <div>
-              <h2>Sign In for Vaccination</h2>
+              <h2>Sign up for Vaccination</h2>
               <br />
-              <p>Enter your credentials</p>
+              <p>Register your credentials </p>
               <form>
                 <input type="email" placeholder="Enter email" required />
                 <input type="password" placeholder="Enter password" required />
