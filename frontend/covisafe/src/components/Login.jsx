@@ -44,7 +44,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     })
     .then((res) => {
         localStorage.setItem("token",res.token);
-        // localStorage.setItem("username",user)
+        localStorage.setItem("uuid",res.uuid);
         Swal.fire("Login succes!", "you can proceed to vaccination now ", "success");
 
     })
