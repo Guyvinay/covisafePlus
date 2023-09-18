@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthenticationResponse {
 	private String token;
+	private String uuid;
 	private Date issuedAt;
 	private Date expiredAt;
 }

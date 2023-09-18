@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
 		var jwtToken = jwtService.generateToken(user);
 		return new AuthenticationResponse(
 				jwtToken,
+				user.getUserId(),
 				new Date(System.currentTimeMillis()),
 				new Date(System.currentTimeMillis()+1000*60*24)
 		);
@@ -75,6 +76,7 @@ public class UserServiceImpl implements UserService {
 		var jwtToken = jwtService.generateToken(user);
 		return new AuthenticationResponse(
 				jwtToken,
+				user.getUserId(),
 				new Date(
 						System
 						.currentTimeMillis()
