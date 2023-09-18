@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covisafe.modal.IdCard;
+import com.covisafe.modal.Role;
 import com.covisafe.service.UserService;
 
 import jakarta.validation.Valid;
@@ -36,6 +37,7 @@ public class UserControllor {
 						.getPassword()
 				)
 		);
+		user.setRole(Role.valueOf("MEMBER"));
 		return new ResponseEntity<AuthenticationResponse>(userService.register(user), HttpStatus.CREATED);
 	}
 
