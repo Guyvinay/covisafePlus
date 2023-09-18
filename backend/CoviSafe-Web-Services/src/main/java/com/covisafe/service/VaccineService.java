@@ -7,9 +7,8 @@ import com.covisafe.modal.Vaccine;
 public interface VaccineService {
 	public List<Vaccine> getAllVaccine();
 	public Vaccine getVaccineByName(String vaccineName);
-	public Vaccine getVaccineById(Integer vaccineId);
-	public Vaccine addVaccine(Vaccine vaccine,Integer memberId);
-	public Vaccine updateVaccine(Integer vaccineId,Vaccine vaccine);
-	public Boolean deleteVaccine(Integer vaccine);
-
+	public Vaccine getVaccineById(String vaccineId);
+	public Vaccine addVaccine(Vaccine vaccine,String memberId);
+	public Vaccine updateVaccine(String vaccineId,Vaccine vaccine);
+	public Boolean deleteVaccine(String vaccine);
 }

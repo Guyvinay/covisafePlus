@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.covisafe.modal.Member;
 
-public interface MemberRepository extends JpaRepository<Member, Integer> {
+public interface MemberRepository extends JpaRepository<Member, String> {
 	
 	@Query("SELECT m FROM Member m JOIN m.idcard u WHERE u.aadharNo=:aadharN")
 	public Optional<Member> findByAadharNo(String aadharN);

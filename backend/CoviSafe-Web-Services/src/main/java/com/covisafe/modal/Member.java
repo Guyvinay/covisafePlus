@@ -16,8 +16,8 @@ import lombok.Data;
 public class Member {
 
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Integer id;
+	 @GeneratedValue(strategy = GenerationType.UUID)
+	 private String id;
 	 
 	 @Column(columnDefinition = "boolean default false")
 	 private Boolean dose1Status;

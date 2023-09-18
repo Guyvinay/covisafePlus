@@ -36,19 +36,19 @@ public class AppointmentController {
 	private AppointmentService appointmentService;
 	
 	@GetMapping(value = "/appointments/{bookingId}")
-	public ResponseEntity<Appointment> getAppointmentDetails(@PathVariable Integer bookingId){
+	public ResponseEntity<Appointment> getAppointmentDetails(@PathVariable String bookingId){
 		return  new ResponseEntity<Appointment>(appointmentService.getAppointmentDetails(bookingId) , HttpStatus.OK);
 	}
 	@PostMapping(value = "/appointments/{memberid}/{vaxcenterid}")
-	public ResponseEntity<Appointment> addAppointment(@PathVariable Integer memberid , @PathVariable Integer vaxcenterid,@RequestBody Appointment appointment){
+	public ResponseEntity<Appointment> addAppointment(@PathVariable String memberid , @PathVariable String vaxcenterid,@RequestBody Appointment appointment){
 		return  new ResponseEntity<Appointment>(appointmentService.addAppointment(memberid , vaxcenterid , appointment) , HttpStatus.ACCEPTED);
 	}
 	@PutMapping(value = "/appointments/{bookingId}")
-	public ResponseEntity<Appointment> updateAppointment(@PathVariable Integer bookingId ,@RequestBody Appointment appointment){
+	public ResponseEntity<Appointment> updateAppointment(@PathVariable String bookingId ,@RequestBody Appointment appointment){
 		return  new ResponseEntity<Appointment>(appointmentService.updateAppointment(bookingId , appointment) , HttpStatus.OK);
 	}
 	@DeleteMapping(value = "/appointments/{bookingId}")
-	public ResponseEntity<Appointment> deleteAppointment(@PathVariable Integer bookingId){
+	public ResponseEntity<Appointment> deleteAppointment(@PathVariable String bookingId){
 		return  new ResponseEntity<Appointment>(appointmentService.deleteAppointment(bookingId) , HttpStatus.OK);
 	}
 	

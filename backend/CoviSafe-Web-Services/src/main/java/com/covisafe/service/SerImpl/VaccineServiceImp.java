@@ -17,15 +17,17 @@ import com.covisafe.service.VaccineService;
 
 @Service
 public class VaccineServiceImp implements VaccineService {
-	
+
 	@Autowired
 	private VaccineRepository vaccineRepository;
 	@Autowired
 	private MemberRepository memberRepository;
+
 	@Override
 	public List<Vaccine> getAllVaccine() {
 		List<Vaccine> list = vaccineRepository.findAll();
-		if(list.size()==0) throw new VaccineNotFoundException("Vaccine Not Found");
+		if (list.size() == 0)
+			throw new VaccineNotFoundException("Vaccine Not Found");
 		return list;
 	}
 
@@ -35,46 +37,46 @@ public class VaccineServiceImp implements VaccineService {
 	}
 
 	@Override
-	public Vaccine getVaccineById(Integer vaccineId) {
+	public Vaccine getVaccineById(String vaccineId) {
 		return vaccineRepository.findById(vaccineId).get();
 	}
 
 	@Override
-	public Vaccine addVaccine(Vaccine vaccine, Integer memberId) {
-		if(vaccine == null)
+	public Vaccine addVaccine(Vaccine vaccine, String memberId) {
+		if (vaccine == null)
 			throw new InvalidArgumentsException("Please pass the correct Vaccine details");
-				
+
 		Optional<Member> MemberfindById = memberRepository.findById(memberId);
-		if(MemberfindById.isEmpty())
+		if (MemberfindById.isEmpty())
 			throw new IdCardNotFoundException("Member Not Found");
-		
+
 //		MemberfindById.get().setVaccine(vaccine);
 		vaccine.setMember(MemberfindById.get());
-		
+
 //cascading check
-		
+
 		return vaccineRepository.save(vaccine);
 	}
 
 	@Override
-	public Vaccine updateVaccine(Integer vaccineId, Vaccine vaccine) {
-		if(vaccine == null)
+	public Vaccine updateVaccine(String vaccineId, Vaccine vaccine) {
+		if (vaccine == null)
 			throw new InvalidArgumentsException("Please pass the correct Vaccine details");
-		
-		Vaccine findById = vaccineRepository.findById(vaccineId).orElseThrow(()-> new VaccineNotFoundException("NO Vaccine Found"));
-		
+
+		Vaccine findById = vaccineRepository.findById(vaccineId)
+				.orElseThrow(() -> new VaccineNotFoundException("NO Vaccine Found"));
+
 		vaccine.setId(vaccineId);
-		
-		
+
 		return vaccineRepository.save(vaccine);
 	}
 
 	@Override
-	public Boolean deleteVaccine(Integer vaccineId) {
+	public Boolean deleteVaccine(String vaccineId) {
 		Optional<Vaccine> findById = vaccineRepository.findById(vaccineId);
-		if(findById.isEmpty())
+		if (findById.isEmpty())
 			throw new VaccineNotFoundException("Given Vaccine Does Not Exist");
-		
+
 		vaccineRepository.deleteById(vaccineId);
 		return true;
 	}

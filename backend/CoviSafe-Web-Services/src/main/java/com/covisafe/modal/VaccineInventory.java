@@ -17,8 +17,8 @@ import lombok.Data;
 public class VaccineInventory {
 
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private  Integer inventoryId;
+	    @GeneratedValue(strategy = GenerationType.UUID)
+	    private  String inventoryId;
 	    private LocalDate date;
 	    
 	    @OneToOne(mappedBy = "vaxInventory" , cascade = CascadeType.ALL)

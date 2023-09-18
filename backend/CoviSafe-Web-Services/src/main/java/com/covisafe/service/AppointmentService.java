@@ -4,9 +4,9 @@ import com.covisafe.modal.Appointment;
 
 public interface AppointmentService {
 
-	public Appointment getAppointmentDetails(Integer bookingId);
-	public Appointment addAppointment(Integer memberid ,Integer vaxcenterid , Appointment appointment);
-	public Appointment updateAppointment(Integer bookingId , Appointment appointment);
-	public Appointment deleteAppointment(Integer bookingId);
+	public Appointment getAppointmentDetails(String bookingId);
+	public Appointment addAppointment(String memberid ,String vaxcenterid , Appointment appointment);
+	public Appointment updateAppointment(String bookingId , Appointment appointment);
+	public Appointment deleteAppointment(String bookingId);
 
 }

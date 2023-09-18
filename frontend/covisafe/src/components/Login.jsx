@@ -43,12 +43,29 @@ export default function Login({ zoom: [zoom, setZoom] }) {
       return res.json();
     })
     .then((res) => {
-      console.log(res);
+        localStorage.setItem("token",res.token);
+        // localStorage.setItem("username",user)
         Swal.fire("Login succes!", "you can proceed to vaccination now ", "success");
 
     })
     .catch((res) => {
-       Swal.fire("Incorrect username or password!", "please provide the correct details", "error");
+      switch (res.message) {
+        case "Bad Request: Incorrect username or password.":
+          Swal.fire(
+            "Incorrect username or password!",
+            "please provide the correct details",
+            "error"
+          );
+          break;
+        case "Network response was not ok":
+          Swal.fire(
+            "Network error",
+            "seems like there is a problem related to network",
+            'error'
+          )
+          break;
+      }
+       
 
     });
 
