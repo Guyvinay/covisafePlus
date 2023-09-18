@@ -55,7 +55,7 @@ public class IdCardControllor {
 	}
 
 	@GetMapping(value = "/IdCards/{id}")
-	public ResponseEntity<IdCard> getIdCardById(@PathVariable Integer id) {
+	public ResponseEntity<IdCard> getIdCardById(@PathVariable String id) {
 		return new ResponseEntity<IdCard>(idCardService.getIdCardById(id), HttpStatus.ACCEPTED);
 	}
 

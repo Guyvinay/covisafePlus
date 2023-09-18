@@ -22,8 +22,8 @@ import lombok.Data;
 public class Appointment {
 
 	 @Id
-	 @GeneratedValue(strategy =  GenerationType.IDENTITY)
-	 private Integer bookingId;
+	 @GeneratedValue(strategy =  GenerationType.UUID)
+	 private String bookingId;
 //	 @Pattern(regexp = "^[6-9][0-9]{9}")
 	 private Long mobileNo;
 	 private LocalDate dateOfBooking;

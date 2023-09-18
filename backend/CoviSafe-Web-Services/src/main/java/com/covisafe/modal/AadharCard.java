@@ -13,8 +13,8 @@ import lombok.Data;
 public class AadharCard {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer aadharId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+	private String aadharId;
 	private Long aadgharNo;
 	
 	@OneToOne(cascade = CascadeType.ALL)

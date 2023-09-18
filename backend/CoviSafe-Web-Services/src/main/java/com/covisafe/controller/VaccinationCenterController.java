@@ -39,7 +39,7 @@ public class VaccinationCenterController {
 		return new ResponseEntity<List<VaccinationCenter>>(vaccinationCenterService.getAllVaccinationCenter(), HttpStatus.ACCEPTED);
 	}
 	@GetMapping(value = "/vaccinationCenters/{centerId}")
-	public ResponseEntity<VaccinationCenter> getVaccinationCenterById(@PathVariable Integer centerId){
+	public ResponseEntity<VaccinationCenter> getVaccinationCenterById(@PathVariable String centerId){
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.getVaccination(centerId) , HttpStatus.ACCEPTED);
 	}
 	@PostMapping(value = "/vaccinationCenters")
@@ -48,11 +48,11 @@ public class VaccinationCenterController {
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.addVaccinationCenter(center) , HttpStatus.ACCEPTED);
 	}
 	@PutMapping(value = "/vaccinationCenters/{centerId}")
-	public ResponseEntity<VaccinationCenter> updateVaccineCenter(@PathVariable Integer centerId ,@RequestBody VaccinationCenter center){
+	public ResponseEntity<VaccinationCenter> updateVaccineCenter(@PathVariable String centerId ,@RequestBody VaccinationCenter center){
 		return new ResponseEntity<VaccinationCenter>(vaccinationCenterService.updateVaccineCenter(centerId , center) , HttpStatus.ACCEPTED);
 	}
 	@DeleteMapping(value = "vaccinationCenters/{centerId}")
-	public ResponseEntity<Boolean> deleteVaccinationCenter(@PathVariable Integer centerId) {
+	public ResponseEntity<Boolean> deleteVaccinationCenter(@PathVariable String centerId) {
 		return new ResponseEntity<Boolean>(vaccinationCenterService.deleteVaccinationCenter(centerId) , HttpStatus.ACCEPTED);
 	}
 	

@@ -34,8 +34,8 @@ import lombok.NoArgsConstructor;
 public class User implements UserDetails {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private String userId;
 	
 	@NotBlank(message = "email can't be blank")
 	@Email(

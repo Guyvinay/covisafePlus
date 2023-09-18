@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.covisafe.modal.VaccineInventory;
 
-public interface VaccineInventoryRepository extends JpaRepository<VaccineInventory, Integer> {
+public interface VaccineInventoryRepository extends JpaRepository<VaccineInventory, String> {
 
 	public List<VaccineInventory> findVaccineInventoryByDate(LocalDate date);
 	

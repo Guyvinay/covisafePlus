@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covisafe.modal.Member;
@@ -35,11 +34,11 @@ public class MemberController {
 	private MemberService memberService;
 
 	@PostMapping(value = "/members/{userId}")
-	public ResponseEntity<Member> saveMember(@PathVariable Integer userId , @RequestBody Member members){
+	public ResponseEntity<Member> saveMember(@PathVariable String userId , @RequestBody Member members){
 		return new ResponseEntity<Member>(memberService.addMember(members, userId) , HttpStatus.ACCEPTED);
 	}
 	@GetMapping(value = "/members/{id}")
-	public ResponseEntity<Member> getMember(@PathVariable Integer id){
+	public ResponseEntity<Member> getMember(@PathVariable String id){
 		return new ResponseEntity<Member>(memberService.getMemberById(id) , HttpStatus.ACCEPTED);
 	}
 

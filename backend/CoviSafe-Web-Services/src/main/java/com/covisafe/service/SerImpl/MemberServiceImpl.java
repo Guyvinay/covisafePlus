@@ -14,19 +14,19 @@ import com.covisafe.modal.Member;
 import com.covisafe.repository.IdCardRepository;
 import com.covisafe.repository.MemberRepository;
 import com.covisafe.service.MemberService;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberRepository memberRepository;
-	
+
 	@Autowired
 	private IdCardRepository userRepository;
-	
 
 //	public List<Member> getAllMember(Integer pageNo, Integer limit, String sortBy) throws InvalidArgumentsException {
 	public List<Member> getAllMember() throws InvalidArgumentsException {
-	
+
 //	if (pageNo == null && limit == null && sortBy.equals(null))
 //			return memberRepository.findAll();
 //		else if (pageNo != null && limit != null && sortBy.equals(null)) {
@@ -35,14 +35,14 @@ public class MemberServiceImpl implements MemberService {
 //		} else if (pageNo != null && limit != null && !sortBy.equals(null)) {
 //			Pageable page = PageRequest.of(pageNo, limit, Sort.by(sortBy));
 ////			return memberRepository.findAll(page).getContent();
-			return memberRepository.findAll();
+		return memberRepository.findAll();
 
 //		} else {
 //			throw new InvalidArgumentsException("please pass correct fields to get the pagewise data");
 //		}
 	}
 
-	public Member getMemberById(Integer id) throws InvalidUserException {
+	public Member getMemberById(String id) throws InvalidUserException {
 		return memberRepository.findById(id)
 				.orElseThrow(() -> new InvalidUserException("can't find any user with id " + id));
 	}
@@ -58,7 +58,7 @@ public class MemberServiceImpl implements MemberService {
 //		return null;
 	}
 
-	public Member addMember(Member member, Integer userId ) {
+	public Member addMember(Member member, String userId) {
 		if (member == null)
 			throw new InvalidArgumentsException("Please pass the correct member details");
 		if (member.getId() != null) {
@@ -67,7 +67,8 @@ public class MemberServiceImpl implements MemberService {
 			}
 		}
 		Optional<IdCard> optional = userRepository.findById(userId);
-		if(optional.isEmpty()) throw new IdCardNotFoundException("Provided User doesn't exist , Register user first");
+		if (optional.isEmpty())
+			throw new IdCardNotFoundException("Provided User doesn't exist , Register user first");
 		member.setIdcard(optional.get());
 		return memberRepository.save(member);
 	}
@@ -81,7 +82,7 @@ public class MemberServiceImpl implements MemberService {
 		return memberRepository.save(member);
 	}
 
-	public Boolean deleteMember(Integer id) {
+	public Boolean deleteMember(String id) {
 		if (id == null)
 			throw new InvalidArgumentsException("Please pass the correct member details");
 		Member member = memberRepository.findById(id).orElse(null);
@@ -92,5 +93,4 @@ public class MemberServiceImpl implements MemberService {
 		return true;
 	}
 
-	
 }

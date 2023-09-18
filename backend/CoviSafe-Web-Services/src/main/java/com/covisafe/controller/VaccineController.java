@@ -33,19 +33,19 @@ public class VaccineController {
 		return new ResponseEntity<Vaccine>(vaccineService.getVaccineByName(vaccineName) ,HttpStatus.ACCEPTED);
     }
 	@GetMapping(value = "/vaccines/{vaccineId}")
-	public ResponseEntity<Vaccine> getVaccineById(@PathVariable Integer vaccineId){
+	public ResponseEntity<Vaccine> getVaccineById(@PathVariable String vaccineId){
 		return new ResponseEntity<Vaccine>(vaccineService.getVaccineById(vaccineId) ,HttpStatus.ACCEPTED);
     }
 	@PostMapping(value = "/vaccines/{memberId}")
-	public ResponseEntity<Vaccine> addVaccine(@RequestBody Vaccine vaccine, @PathVariable Integer memberId){
+	public ResponseEntity<Vaccine> addVaccine(@RequestBody Vaccine vaccine, @PathVariable String memberId){
 		return new ResponseEntity<Vaccine>(vaccineService.addVaccine(vaccine , memberId) ,HttpStatus.ACCEPTED);    
     }
 	@PutMapping(value = "/vaccines/{vaccineId}")
-	public ResponseEntity<Vaccine> updateVaccine(@PathVariable Integer vaccineId,@RequestBody Vaccine vaccine){
+	public ResponseEntity<Vaccine> updateVaccine(@PathVariable String vaccineId,@RequestBody Vaccine vaccine){
 		return new ResponseEntity<Vaccine>(vaccineService.updateVaccine(vaccineId , vaccine) ,HttpStatus.ACCEPTED);    
     }
-	@DeleteMapping(value = "/vaccines/vaccineId")
-	public ResponseEntity<Boolean> deleteVaccine(@PathVariable Integer vaccineId){
+	@DeleteMapping(value = "/vaccines/{vaccineId}")
+	public ResponseEntity<Boolean> deleteVaccine(@PathVariable String vaccineId){
 		return new ResponseEntity<Boolean>(vaccineService.deleteVaccine(vaccineId ) ,HttpStatus.ACCEPTED);    
     }
 	
