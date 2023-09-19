@@ -32,32 +32,26 @@ body{
     padding-bottom: .5%;
     gap: 3rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    
-
 }
 
 .column{
-    /* border: 1px solid red; */
     text-align: center;
     font-size: 2rem;
 }
 
 
 .addmember{
-    /* border: 1px solid red; */
     font-size: 1rem;
 }
 
 .addmember h4{
     font-size: 2rem;
-    /* border: 1px solid red; */
     text-align: center;
     padding: 2%;
 
 }
 
 select,input{
-    /* border: 1px solid red; */
     font-size: 2rem;
     display: grid;
     margin: auto;
@@ -84,8 +78,6 @@ button{
     width: 20rem;
     mix-blend-mode: multiply;
 }
-
-
 
 .columns .card{
     display: flex;
