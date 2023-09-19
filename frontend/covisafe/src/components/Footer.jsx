@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="max-width">
-        <div className="footer-box">
+        <div className="footer-box justify-center">
           <div>
             <p className="footer-heading">
               <FontAwesomeIcon icon={faSyringe} />

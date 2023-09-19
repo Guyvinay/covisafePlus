@@ -90,7 +90,7 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
   return (
     <>
       <Nav zoom={[zoom, setZoom]} />
-      <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
+      <div className="w-full bg-[#ff003214] flex items-center justify-center py-20" style={{minHeight:'86vh'}}>
         <div className="loginlogout w-fit ">
           <div className="changer bg-[#33333399] ">
             <Link to="/signin">
