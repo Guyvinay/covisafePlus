@@ -125,7 +125,9 @@ body {
 
 .mnavlist a:hover {
     cursor: pointer;
-    color: var(--second-color);
+    color: #000000;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .mnavlist a > h4:hover{
@@ -146,4 +148,8 @@ body {
 
 .swal2-container .swal2-popup{
     font-size: 1.6rem;
+}
+
+.active{
+    transition: 0.5s;
 }

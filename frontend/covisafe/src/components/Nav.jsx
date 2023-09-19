@@ -28,7 +28,11 @@ export default function Nav(props) {
       <div className="mnav">
         <div className="mlogo">
           <Link to="/">
-            <img className='cursor-pointer' src="./images/mainlogo.png" alt="logo" />
+            <img
+              className="cursor-pointer"
+              src="./images/mainlogo.png"
+              alt="logo"
+            />
           </Link>
         </div>
 
@@ -36,9 +40,9 @@ export default function Nav(props) {
           <Link to="/dashboard">
             <h4>Dashboard</h4>
           </Link>
-          <a href="./service.html">
+          <Link to="/service">
             <h4>Service</h4>
-          </a>
+          </Link>
           <a href="/faq.html">
             <h4>FAQ</h4>
           </a>
