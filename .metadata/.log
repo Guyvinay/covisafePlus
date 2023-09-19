@@ -1,0 +1,415 @@
+!SESSION 2023-09-18 13:12:23.114 -----------------------------------------------
+eclipse.buildId=4.19.0.202306150758
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data E:\current_working_directory\potent-voyage-8716\ -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-09-18 13:12:24.314
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.ui 2 0 2023-09-18 13:12:28.561
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2023-09-18 13:12:28.561
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2023-09-18 13:12:29.225
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2023-09-18 13:12:29.256
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY com.genuitec.eclipse.theming.ui 4 0 2023-09-18 13:12:29.288
+!MESSAGE The file css/gef_dark.css Could not be found in bundle org.eclipse.gef
+
+!ENTRY org.eclipse.jface 2 0 2023-09-18 13:12:30.156
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-09-18 13:12:30.156
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-09-18 13:12:30.156
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-09-18 13:12:30.156
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-09-18 13:12:33.787
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Anurag Choudhary'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:52.777
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:54.854
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:54.873
+!MESSAGE Boot project ADDED: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:54.874
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:54.901
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-18 13:12:54.929
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\Anurag Choudhary\Downloads\sts-4.18.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\javaw.exe
+-cp
+C:\Users\Anurag Choudhary\Downloads\sts-4.18.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes;C:\Users\Anurag Choudhary\Downloads\sts-4.18.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\Users\Anurag Choudhary\Downloads\sts-4.18.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=E:/current_working_directory/potent-voyage-8716/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1695022974928
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:54.930
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-18 13:12:54.953
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 14892
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-09-18 13:12:54.989
+!MESSAGE org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+!STACK 0
+java.lang.ClassNotFoundException: org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:541)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:536)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:416)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:622)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.getServerInterface(LanguageServersRegistry.java:196)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:291)
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:56.370
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:12:57.920
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:13:01.346
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:13:33.311
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:13:54.683
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:14:49.192
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:14:54.519
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:15:37.003
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:15:49.419
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:17:00.615
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:17:03.867
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:17:12.285
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:17:24.854
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:19:15.972
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:19:24.659
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:20:56.055
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:21:06.545
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:21:56.266
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-09-18 13:22:39.581
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:22:50.707
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:23:09.182
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:23:21.510
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:23:42.600
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:23:54.538
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:24:42.747
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:24:49.340
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:03.171
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:08.930
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:14.424
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:20.807
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:25.887
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:44.519
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:49.462
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:53.649
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:25:56.342
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:26:13.829
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-09-18 13:26:55.061
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): updateIdCard(Integer, IdCard) [in IdCardServiceImpl [in [Working copy] IdCardServiceImpl.java [in com.covisafe.service.SerImpl [in src/main/java [in CoviSafe-Web-Services]]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.Member.getFlags(Member.java:172)
+	at org.eclipse.jdt.internal.corext.util.JdtFlags.isPrivate(JdtFlags.java:157)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkSuperImplementationDetector.isOverriddenMethod(JavaElementHyperlinkSuperImplementationDetector.java:57)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkSuperImplementationDetector.addHyperlinks(JavaElementHyperlinkSuperImplementationDetector.java:44)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkDetector.detectHyperlinks(JavaElementHyperlinkDetector.java:136)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4072)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2023-09-18 13:26:55.061
+!MESSAGE updateIdCard(Integer, IdCard) [in IdCardServiceImpl [in [Working copy] IdCardServiceImpl.java [in com.covisafe.service.SerImpl [in src/main/java [in CoviSafe-Web-Services]]]]] does not exist
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-09-18 13:26:55.062
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): updateIdCard(Integer, IdCard) [in IdCardServiceImpl [in [Working copy] IdCardServiceImpl.java [in com.covisafe.service.SerImpl [in src/main/java [in CoviSafe-Web-Services]]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.SourceMethod.getReturnType(SourceMethod.java:204)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkReturnTypeDetector.addHyperlinks(JavaElementHyperlinkReturnTypeDetector.java:43)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkDetector.detectHyperlinks(JavaElementHyperlinkDetector.java:136)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4072)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2023-09-18 13:26:55.062
+!MESSAGE updateIdCard(Integer, IdCard) [in IdCardServiceImpl [in [Working copy] IdCardServiceImpl.java [in com.covisafe.service.SerImpl [in src/main/java [in CoviSafe-Web-Services]]]]] does not exist
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:27:02.386
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:28:06.010
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:28:13.934
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:29:27.075
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-09-18 13:29:46.416
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:29:47.719
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:30:21.434
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:30:25.880
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:30:43.804
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:30:46.504
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:31:00.480
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:31:23.618
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:31:58.110
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:31:59.152
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:46:04.679
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-09-18 13:47:03.863
+!MESSAGE Classpath changed for project: CoviSafe-Web-Services
