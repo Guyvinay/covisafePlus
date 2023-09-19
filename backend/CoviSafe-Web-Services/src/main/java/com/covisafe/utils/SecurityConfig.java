@@ -31,12 +31,11 @@ public class SecurityConfig {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		
-		http.authorizeHttpRequests(auth->{
+		http
+
+		.authorizeHttpRequests(auth->{
 			auth.
-			 	
-				requestMatchers(HttpMethod.POST,"/users/register")
-				.permitAll()
+				requestMatchers(HttpMethod.POST,"/users/register").permitAll()
 				.requestMatchers(HttpMethod.POST,"/users/signin")
 				.permitAll()
 				.requestMatchers("/swagger-ui/**","/v3/api-docs/**")
@@ -46,10 +45,8 @@ public class SecurityConfig {
 		})
 		.cors(cors -> {
 			cors.configurationSource(new CorsConfigurationSource() {
-				
 				@Override
 				public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-
 					CorsConfiguration cfg = new CorsConfiguration();
 					cfg.setAllowedOriginPatterns(Collections.singletonList("*"));
 					cfg.setAllowedMethods(Collections.singletonList("*"));
@@ -58,21 +55,18 @@ public class SecurityConfig {
 					cfg.setExposedHeaders(Arrays.asList("Authorization"));
 					return cfg;
 				}
-				
 			});
 		})
 		.csrf(
-				Csrf->Csrf.disable()
-		)
-		.sessionManagement(
-				session -> session
-							.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			Csrf->
+				Csrf.disable()
 		)
 		.authenticationProvider(authenticationProvider)
+		.sessionManagement(se -> se.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 		.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 		
 		return http.build();
-		
+
 	}
 	
 }

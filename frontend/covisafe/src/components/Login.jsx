@@ -49,6 +49,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
 
     })
     .catch((res) => {
+      setIsDisabled(!isDisabled);
       switch (res.message) {
         case "Bad Request: Incorrect username or password.":
           Swal.fire(

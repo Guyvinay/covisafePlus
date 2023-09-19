@@ -10,7 +10,8 @@ import com.covisafe.exception.IdCardNotFoundException;
 import com.covisafe.modal.IdCard;
 import com.covisafe.repository.IdCardRepository;
 import com.covisafe.service.IdCardService;
-import com.covisafe.service.IdCardService;
+
+
 
 @Service
 public class IdCardServiceImpl implements IdCardService {
