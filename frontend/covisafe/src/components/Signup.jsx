@@ -5,11 +5,14 @@ import Footer from './Footer';
 import Swal from "sweetalert2";
 import axios from 'axios';
 import { Select } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Signup({ zoom: [zoom, setZoom] }) {
 
   const [next, setNext] = useState(false);
+
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState('');
@@ -62,7 +65,9 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
         "Registered succesfully!",
         "you can proceed to vaccination now ",
         "success"
-      );
+      ).then(()=>{
+        navigate("/")
+      })
     })
     .catch(res=>{
       console.error(res);
@@ -90,9 +95,16 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
   return (
     <>
       <Nav zoom={[zoom, setZoom]} />
-      <div className="w-full bg-[#ff003214] flex items-center justify-center py-20" style={{minHeight:'86vh'}}>
+      <div
+        className="w-full bg-[#ff003214] flex items-center justify-center py-20"
+        style={{
+          background:
+            "linear-gradient(45deg, #ed033166,#ed033188,#ed033144,#ed033133 )",
+          minHeight: "87vh",
+        }}
+      >
         <div className="loginlogout w-fit ">
-          <div className="changer bg-[#33333399] ">
+          <div className="changer bg-[#33333344] ">
             <Link to="/signin">
               <div className="page text-[#ffffffc3]">Sign In</div>
             </Link>
@@ -100,7 +112,7 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
               <div className="active page text-[#ffffffc3]">Sign Up</div>
             </Link>
           </div>
-          <div className="form signin bg-[#33333399]">
+          <div className="form signin bg-[#33333344]">
             <div className="imgdiv h-full flex flex-col justify-around">
               <div className="flex justify-center py-5">
                 <img src="./images/login-family.svg" alt="" />
@@ -133,13 +145,13 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
                     <input
                       type="date"
                       placeholder="Enter D.O.B"
-                      className="text-[#9ca3a4ff] px-5"
+                      className="text-[#f3f3f399] px-5"
                       required
                       value={dob}
                       onChange={(e) => setDob(e.target.value)}
                     />
                     <select
-                      style={{ fontSize: "1.6rem", color: "#9ca3a4ff" }}
+                      style={{ fontSize: "1.6rem", color: "#f3f3f399" }}
                       onChange={(e) => setGender(e.target.value)}
                     >
                       <option value={male}>MALE</option>

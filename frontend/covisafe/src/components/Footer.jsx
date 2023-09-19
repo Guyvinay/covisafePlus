@@ -1,6 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faGlobe, faInfo, faInfoCircle, faPhone, faSyringe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBook,
+  faGlobe,
+  faInfo,
+  faInfoCircle,
+  faPhone,
+  faSyringe,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (

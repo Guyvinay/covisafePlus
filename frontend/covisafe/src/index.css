@@ -123,9 +123,10 @@ body {
     cursor: pointer !important;
 }
 
-.mnavlist a:hover {
+.mnavlist a:hover,
+.mnavlist a:focus {
     cursor: pointer;
-    color: #000000;
+    color: #00000099;
     font-weight: 500;
     transition: 0.3s;
 }
