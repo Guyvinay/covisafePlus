@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.covisafe.modal.IdCard;
 import com.covisafe.service.IdCardService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /*
   {
 	  "name":"Ethan",

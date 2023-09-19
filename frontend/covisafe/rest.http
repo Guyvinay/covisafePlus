@@ -1,6 +1,6 @@
 
 
-POST https://covisafeplus-production-417c.up.railway.app/users/register
+POST http://localhost:8080/users/register
 content-type: application/json
 
 
@@ -10,9 +10,20 @@ content-type: application/json
     "dob": "2023-01-01",
     "aadhar": "dfjklsjfkljd234",
     "address": "kanput",
+    "gender":"MALE",
     "city": "Noida",
     "state": "Uttar Pradesh",
     "pincode": "201305",
     "pan": "jjwt233",
     "password": "string"
 }
+
+
+###
+GET  http://localhost:8080/IdCards
+
+content-type: application/json
+
+Authentication: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnVyYWdqYXRvZmZpY2lhbEBnbWFpbC5jb20iLCJpYXQiOjE2OTUxMDcyMzAsImV4cCI6MTY5NTEwODY3MH0.txqe19k7xVxBzCX68H5m1-jiXSfXVyOyy4gmdpEGneE"
+
+

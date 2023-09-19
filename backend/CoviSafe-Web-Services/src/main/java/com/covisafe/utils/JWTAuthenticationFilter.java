@@ -16,8 +16,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
+@Slf4j
 public class JWTAuthenticationFilter extends OncePerRequestFilter{
 	
 	@Autowired
@@ -39,6 +41,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter{
 		final String username;
 		
 		// check for valid header
+		log.info("once per request executed ");
 		
 		if(authHeader == null || !authHeader.startsWith("Bearer ")) {
 			filterChain.doFilter(request, response);
@@ -56,15 +59,18 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter{
 			UserDetails userDetails  = this.userDetailsService.loadUserByUsername(username);
 			
 			// if token is valid
+
+			
 			
 			if(jwtService.isTokenValid(jwt, userDetails)) {
-				
+				log.info("validation logic executed");
 				UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
 						username,
 						null,
 						userDetails.getAuthorities()
 				);
 				
+				log.info(authToken.toString());
 				authToken.setDetails(
 						new WebAuthenticationDetailsSource()
 							.buildDetails(request)
@@ -75,12 +81,15 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter{
 			}
 			
 		}
+
+		filterChain.doFilter(request, response);
 		
 	}
 
-	@Override
-	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-		return !(request.getServletPath().equals("/users/signin"));
-	}
+	// @Override
+	// protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+	// 	return !(request.getServletPath().equals("/users/signin"));
+	// }
+
 
 }
