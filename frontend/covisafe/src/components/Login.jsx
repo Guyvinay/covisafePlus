@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nav from './nav';
 import Footer from './Footer';
 import axios from "axios";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Login({ zoom: [zoom, setZoom] }) {
+
+  const navigate = useNavigate();
+
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
-
-  const alert = ()=>{
-    
-  };
+  const baseURL = "https://covisafeplus-production-417c.up.railway.app";  
   
   const handleSubmit = (event)=>{
     event.preventDefault();
@@ -45,7 +46,14 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     .then((res) => {
         localStorage.setItem("token",res.token);
         localStorage.setItem("uuid",res.uuid);
-        Swal.fire("Login succes!", "you can proceed to vaccination now ", "success");
+        Swal.fire(
+                "Login succes!",
+                "you can proceed to vaccination now ", 
+                "success"
+        )
+        .then(()=>{
+          navigate("/")
+        })
 
     })
     .catch((res) => {
@@ -75,9 +83,16 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   return (
     <>
       <Nav zoom={[zoom, setZoom]} />
-      <div className="w-full bg-[#ff003214] flex items-center justify-center py-20">
+      <div
+        className="w-full bg-[#ff003214] flex items-center justify-center py-20"
+        style={{
+          background:
+            "linear-gradient(45deg, #ed033166,#ed033188,#ed033144,#ed033133 )",
+          minHeight: "87vh",
+        }}
+      >
         <div className="loginlogout w-fit ">
-          <div className="changer bg-[#33333399] ">
+          <div className="changer bg-[#33333344] ">
             <Link to="/signin">
               <div className="active page text-[#ffffffc3]">Sign In</div>
             </Link>
@@ -85,7 +100,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
               <div className="page text-[#ffffffc3]">Sign Up</div>
             </Link>
           </div>
-          <div className="form signin bg-[#33333399]">
+          <div className="form signin bg-[#33333344] backdrop-blur-lg">
             <div className="imgdiv">
               <div className="flex justify-center py-5">
                 <img src="./images/login-family.svg" alt="" />
@@ -99,6 +114,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
               <br />
               <p>Enter your credentials</p>
               <form onSubmit={handleSubmit}>
+                {/* <FontAwesomeIcon icon={faEnvelope} style={{position:'absolute',bottom:238, left:390}}/> */}
                 <input
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -113,7 +129,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
                   placeholder="Enter password"
                   required
                 />
-                <input type="submit" value="Login"/>
+                <input type="submit" value="Login" />
               </form>
             </div>
           </div>

@@ -48,7 +48,6 @@ section{
 }
 
 .mbanner div{
-    /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 6px;
     padding: 20px 20px 20px 20px;
@@ -56,8 +55,6 @@ section{
 .mbanner>div{
     background-color: var(--light);
     color: var(--grey);
-        /* box-shadow: 5px 5px 10px #10172b,
-                -5px -5px 10px #182343; */
 }
 .mbanner div h2{
     color: var(--head);
@@ -83,24 +80,18 @@ section{
 }
 
 .mbanner div img{
-    /* border: 1px solid red; */
     width: 30%;
     mix-blend-mode: multiply;
     margin-top: 5%;
 }
 
 .mbanner div h3:hover{
-    /* color: white; */
-    /* border: 1px solid red; */
-    /* font-size: 1.3rem; */
     border-radius: 5px;
-    /* background-color: var(--second-color); */
 }
  
 body{
     background: linear-gradient(45deg, #6797d5,#fff );
 }
-/* (180deg, #, #085fce); */
 
 #memberServices{
     cursor: pointer;

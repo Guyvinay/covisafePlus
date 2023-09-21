@@ -21,7 +21,6 @@ html {
 
 
 .ban1{
-    /* border: 1px solid red; */
     display: flex;
     width: 100%;
     height: 55rem;
@@ -32,7 +31,6 @@ html {
 
 .left{
     margin-top: 6%;
-    /* border: 1px solid red; */
     height: 30rem;
 }
 
@@ -67,7 +65,6 @@ html {
 
 .ban2{
     display: flex;
-    /* border: 1px solid red; */
     width: 100%;
     margin-top: 3%;
     height: 6rem;
@@ -76,7 +73,6 @@ html {
 }
 
 .lefttext{
-    /* border: 1px solid red; */
     text-align: left;
 }
 
@@ -103,10 +99,6 @@ html {
     padding: 1rem 2rem;
 }
 
-/* .righttext{
-    border: 1px solid red;
-} */
-
 .righttext p{
     margin-top: 5%;
     font-size: 1.76rem;
@@ -123,10 +115,7 @@ html {
 .ban3{
     width: 100%;
     display: block;
-    /* border: 1px solid red; */
     background-color: rgb(237,255,255);
-   
-
 }
 
 .ban3 h2{
@@ -138,12 +127,9 @@ html {
 .ban3 img{
     display: block;
     margin: auto;
-    /* border: 1px solid red; */
-    
 }
 
 .ban4{
-    /* border: 1px solid red; */
     padding-top: 2%;
     text-align: center;
 }
@@ -173,25 +159,19 @@ hr{
 }
 
 .location{
-    /* border: 1px solid red; */
     text-align: center;
-    
-    
 }
 
 .location div{
-    /* border: 1px solid red; */
     width: 50%;
     margin: auto;
     display: flex;
     margin-top: 1%;
-    /* align-items: center; */
     justify-content: space-around;
     color: rgb(128,128,128);
 }
 
 .search{
-    /* border: 1px solid red; */
     display: flex;
 }
 
@@ -215,7 +195,6 @@ hr{
 }
 
 .ban5{
-    /* border: 1px solid red; */
     width: 100%;
     height: 35rem;
     margin: auto;
@@ -223,7 +202,6 @@ hr{
 }
 
 .ban5 img{
-    /* border: 1px solid red; */
     display: block;
     width: 90%;
     height: 100%;
@@ -232,7 +210,6 @@ hr{
 
 
 .ban6{
-    /* border: 1px solid red; */
     width: 100%;
     height: 35rem;
     margin: auto;
@@ -240,7 +217,6 @@ hr{
 }
 
 .ban6 img{
-    /* border: 1px solid red; */
     display: block;
     width: 90%;
     height: 80%;
@@ -249,19 +225,16 @@ hr{
 
 .ban7{
     display: flex;
-    /* border: 1px solid red; */
     width: 50%;
     margin: auto;
     margin-top: 1%;
 }
 
 .ban7 div{
-    /* border: 1px solid red; */
     width: 60%;
 }
 
 .ban7 img{
-    /* border: 1px solid red; */
     width: 40%;
 } 
 
@@ -289,7 +262,6 @@ hr{
 
 
 .ban8{
-    /* border: 1px solid red; */
     padding-top: 2%;
     text-align: center;
 }
@@ -308,7 +280,6 @@ hr{
 
 .ban5 button{
     display: block;
-    /* border: 1px solid red; */
     font-size: 1.6rem;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -319,7 +290,6 @@ hr{
 }
 
 .ban9{
-    /* border: 1px solid red; */
     width: 100%;
     height: 25rem;
     margin: auto;
@@ -328,7 +298,6 @@ hr{
 }
 
 .ban9 img{
-    /* border: 1px solid red; */
     display: block;
     width: 90%;
     height: 80%;

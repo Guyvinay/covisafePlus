@@ -4,6 +4,7 @@ import App from './App';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import Services from './components/Services';
 
 
 export default function Router() {
@@ -32,6 +33,10 @@ export default function Router() {
           element={<Dashboard zoom={[zoom, setZoom]} />}
         />
 
+        <Route
+          path='service'
+          element={<Services zoom={[zoom, setZoom]}/>}
+        />
       </Routes>
     </div>
   );

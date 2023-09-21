@@ -32,7 +32,15 @@ html {
     grid-template-columns: repeat(5, 1fr);
     color: #333;
     padding: 2rem;
+    justify-content: center;
     gap: 2rem;
+}
+
+.footer-box>div{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
 }
 
 .footer-heading {
@@ -72,21 +80,3 @@ html {
     padding: 2rem;
     gap: 2rem;
 }
-
-/* .footer-image-div {
-    display: flex;
-    padding-left: 25%;
-    padding-right: 25%;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-image-div img {
-    width: 10rem;
-    height: fit-content;
-}
-
-.footer-image-div img[src="./images/undp-logo-vertical.svg"] {
-    width: 4rem;
-} */

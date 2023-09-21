@@ -1,12 +1,19 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faGlobe, faInfo, faInfoCircle, faPhone, faSyringe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBook,
+  faGlobe,
+  faInfo,
+  faInfoCircle,
+  faPhone,
+  faSyringe,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
     <footer>
       <div className="max-width">
-        <div className="footer-box">
+        <div className="footer-box justify-center">
           <div>
             <p className="footer-heading">
               <FontAwesomeIcon icon={faSyringe} />
