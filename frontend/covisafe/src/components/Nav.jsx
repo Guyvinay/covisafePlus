@@ -41,7 +41,7 @@ export default function Nav(props) {
             <h4>Dashboard</h4>
           </Link>
           <Link to="/service">
-            <h4>Service</h4>
+            <h4>Book an slot</h4>
           </Link>
           <a href="/faq.html">
             <h4>FAQ</h4>
