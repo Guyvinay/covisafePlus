@@ -65,9 +65,11 @@ html {
     color: var(--white);
 }
 
-.footer-box>div a:hover {
+.footer-box>div a:hover ,
+.footer-box>div a:focus{
     color: var(--black);
     font-weight: bold;
+    transition: .3s;
 }
 
 .last-footer {

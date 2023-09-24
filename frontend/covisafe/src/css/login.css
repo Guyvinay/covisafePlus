@@ -93,6 +93,7 @@ form input[type="submit"]:focus{
     background-color: transparent;
     border: 2px solid var(--main-color);
     color: var(--main-color);
+    transition: .3s;
 }
 
 .changer{
