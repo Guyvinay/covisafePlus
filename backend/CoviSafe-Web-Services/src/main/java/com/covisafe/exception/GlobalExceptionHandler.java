@@ -140,14 +140,14 @@ public class GlobalExceptionHandler {  // Exception Handler
 	        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
 	    }
 
-	    @ExceptionHandler(Exception.class)
-	    public ResponseEntity<MyErrorDetails> GeneralExceptionHandler(Exception se, WebRequest req){
-	    	MyErrorDetails err= new MyErrorDetails();
-	    	err.setTimestamp(LocalDateTime.now());
-	    	err.setMessage(se.getMessage());
-	    	err.setDetails(req.getDescription(false));
-	    	return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST) ;
-	    }
+//	    @ExceptionHandler(Exception.class)
+//	    public ResponseEntity<MyErrorDetails> GeneralExceptionHandler(Exception se, WebRequest req){
+//	    	MyErrorDetails err= new MyErrorDetails();
+//	    	err.setTimestamp(LocalDateTime.now());
+//	    	err.setMessage(se.getMessage());
+//	    	err.setDetails(req.getDescription(false));
+//	    	return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST) ;
+//	    }
 	
 
 }

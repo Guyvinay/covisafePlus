@@ -15,7 +15,10 @@ import com.covisafe.repository.IdCardRepository;
 import com.covisafe.repository.MemberRepository;
 import com.covisafe.service.MemberService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
@@ -66,11 +69,13 @@ public class MemberServiceImpl implements MemberService {
 				throw new InvalidUserException("User already present in database ");
 			}
 		}
-		Optional<IdCard> optional = userRepository.findById(userId);
-		if (optional.isEmpty())
-			throw new IdCardNotFoundException("Provided User doesn't exist , Register user first");
-		member.setIdcard(optional.get());
-		return memberRepository.save(member);
+		IdCard idCard = userRepository.findById(userId).orElseThrow(
+				()->new  IdCardNotFoundException("Provided User doesn't exist , Register user first"));
+		member.setIdcard(idCard);
+//		idCard.setMember(member);
+		Member mem = memberRepository.save(member);
+//		userRepository.save(idCard);
+		return mem;
 	}
 
 	public Member updateMember(Member member) {
@@ -91,6 +96,23 @@ public class MemberServiceImpl implements MemberService {
 		}
 		memberRepository.delete(member);
 		return true;
+	}
+
+	@Override
+	public Member getMemberByUUID(String uuid) {
+//		log.info("@#$%^&*UUID generate(*&^%$d from 987654setrfgh)(*&^%$#jj "+uuid);
+
+		IdCard idCard = userRepository.findById(uuid)
+				.orElseThrow(
+				()->new InvalidArgumentsException("Please pass the correct UUID ")
+				);
+//		Optional<IdCard> optional = userRepository.findById(uuid);
+//		Member member = idCard.getMember();		
+//		log.info("@#$%^&*UUID generate(*&^%$d from 987654setrfgh)(*&^%$#jj "+uuid);
+
+//		System.out.println(idCard);
+		
+		return idCard.getMember();
 	}
 
 }

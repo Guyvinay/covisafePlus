@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.covisafe.modal.Member;
 import com.covisafe.service.MemberService;
 
+import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
+
 /*
  
  {
@@ -28,6 +31,7 @@ import com.covisafe.service.MemberService;
 
 @RestController
 @CrossOrigin("*")
+@Slf4j
 public class MemberController {
 
 	@Autowired
@@ -47,17 +51,23 @@ public class MemberController {
 //	public ResponseEntity<List<Member>> getAllMembers(@RequestParam(required = false) Integer pageNo,@RequestParam(required = false) Integer limit,@RequestParam(required = false) String sortBy){
 	@GetMapping(value = "/members")
 	public ResponseEntity<List<Member>> getAllMembers(){
-
 	return new ResponseEntity<List<Member>>(memberService.getAllMember(), HttpStatus.ACCEPTED);
 	}
-
+	
 	@GetMapping(value = "/members/aadhar/{aadhar}")
 	public ResponseEntity<Member> getMembersByAadharNo(@PathVariable String aadhar){
 		return new ResponseEntity<Member>(memberService.getMemberByAadharNo(aadhar), HttpStatus.ACCEPTED);
 	}
+	
 	@GetMapping(value = "/members/pan/{pan}")
 	public ResponseEntity<Member> getMembersByPanNo(@PathVariable String pan){
 		return new ResponseEntity<Member>(memberService.getMemberByPanNo(pan), HttpStatus.ACCEPTED);
+	}
+	
+	@GetMapping(value = "/memberByUUID/{uuid}")
+	public ResponseEntity<Member> getMemberByUUID(@PathVariable("uuid") String uuid){
+		log.info("@#$%^&*UUID generate(*&^%$d from 987654setrfgh)(*&^%$#jj "+uuid);
+		return new ResponseEntity<Member>(memberService.getMemberByUUID(uuid),HttpStatus.ACCEPTED);
 	}
 
 }

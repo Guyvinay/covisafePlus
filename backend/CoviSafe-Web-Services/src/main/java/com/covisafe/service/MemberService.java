@@ -15,5 +15,5 @@ public interface MemberService {
 	public Member addMember(Member member, String userId );
 	public Member updateMember(Member member);
 	public Boolean deleteMember(String id);	
-	
+	public Member getMemberByUUID(String uuid);
 }

@@ -9,6 +9,9 @@ import com.covisafe.modal.Member;
 
 public interface MemberRepository extends JpaRepository<Member, String> {
 	
+	@Query("SELECT m FROM Member m JOIN m.idcard u WHERE u.userId=:uuid")
+	public Optional<Member> findByUUID(String uuid);
+	
 	@Query("SELECT m FROM Member m JOIN m.idcard u WHERE u.aadharNo=:aadharN")
 	public Optional<Member> findByAadharNo(String aadharN);
 	
