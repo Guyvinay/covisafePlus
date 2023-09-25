@@ -52,6 +52,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter{
 		
 		jwt = authHeader.substring(7);
 		username = jwtService.extractUsername(jwt);
+		log.info(jwt);
 		
 		// if user is not authenticated an username is also not null
 		

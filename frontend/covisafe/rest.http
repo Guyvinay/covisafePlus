@@ -5,8 +5,8 @@ content-type: application/json
 
 
 {
-    "email": "anuragjatofficial@gmail.com",
-    "name": "anuarabjlk",
+    "email": "kava@gmail.com",
+    "name": "java",
     "dob": "2023-01-01",
     "aadhar": "dfjklsjfkljd234",
     "address": "kanput",
@@ -20,10 +20,13 @@ content-type: application/json
 
 
 ###
-GET  http://localhost:8080/IdCards
+POST http://localhost:8080/members/24c6b1c9-4521-482c-8f8a-8e83ef9757c6
 
 content-type: application/json
 
-Authentication: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnVyYWdqYXRvZmZpY2lhbEBnbWFpbC5jb20iLCJpYXQiOjE2OTUxMDcyMzAsImV4cCI6MTY5NTEwODY3MH0.txqe19k7xVxBzCX68H5m1-jiXSfXVyOyy4gmdpEGneE"
 
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXZhQGdtYWlsLmNvbSIsImlhdCI6MTY5NTY1OTc1MCwiZXhwIjoxNjk1NjYxMTkwfQ.dIuRj2Bgw33Wzhj2EfPLPSy0vRYuYDighkWODf6khcE
 
+{
+    "mobileNo": 9197533709
+}

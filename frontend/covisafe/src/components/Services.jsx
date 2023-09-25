@@ -15,12 +15,15 @@ import {
   background,
 } from "@chakra-ui/react";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 function Services({ zoom: [zoom, setZoom] }) {
 
+  
+
   useEffect(()=>{
-    
+    axios.get(``)
   },[]);
 
   return (
