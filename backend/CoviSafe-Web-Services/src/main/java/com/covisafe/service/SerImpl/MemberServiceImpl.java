@@ -104,7 +104,8 @@ public class MemberServiceImpl implements MemberService {
 				);
 
 		System.out.println(idCard.getMember());
-		
+		if(idCard.getMember()==null)
+			throw new InvalidUserException("can't find any member associated with user id "+uuid);
 		return idCard.getMember();
 	}
 
