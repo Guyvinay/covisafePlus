@@ -58,7 +58,6 @@ public class MemberServiceImpl implements MemberService {
 	public Member getMemberByPanNo(String panNo) {
 		return memberRepository.findByPanNo(panNo)
 				.orElseThrow(() -> new InvalidUserException("can't find any user with panNo " + panNo));
-//		return null;
 	}
 
 	public Member addMember(Member member, String userId) {
@@ -72,10 +71,8 @@ public class MemberServiceImpl implements MemberService {
 		IdCard idCard = userRepository.findById(userId).orElseThrow(
 				()->new  IdCardNotFoundException("Provided User doesn't exist , Register user first"));
 		member.setIdcard(idCard);
-//		idCard.setMember(member);
-		Member mem = memberRepository.save(member);
-//		userRepository.save(idCard);
-		return mem;
+		idCard.setMember(member);
+		return memberRepository.save(member);
 	}
 
 	public Member updateMember(Member member) {
@@ -100,17 +97,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Member getMemberByUUID(String uuid) {
-//		log.info("@#$%^&*UUID generate(*&^%$d from 987654setrfgh)(*&^%$#jj "+uuid);
 
 		IdCard idCard = userRepository.findById(uuid)
 				.orElseThrow(
 				()->new InvalidArgumentsException("Please pass the correct UUID ")
 				);
-//		Optional<IdCard> optional = userRepository.findById(uuid);
-//		Member member = idCard.getMember();		
-//		log.info("@#$%^&*UUID generate(*&^%$d from 987654setrfgh)(*&^%$#jj "+uuid);
 
-//		System.out.println(idCard);
+		System.out.println(idCard.getMember());
 		
 		return idCard.getMember();
 	}
