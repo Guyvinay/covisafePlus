@@ -20,10 +20,23 @@ import axios from "axios";
 
 function Services({ zoom: [zoom, setZoom] }) {
 
-  
+  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
 
   useEffect(()=>{
-    axios.get(``)
+    const uuid = localStorage.getItem("uuid");
+    const token = localStorage.getItem("token");
+    if(uuid && token){
+      axios
+        .get(`${baseURL}/memberByUUID/${uuid}`, {
+          headers:{
+            'Authorization':`Bearer ${token}`
+          }
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    }
+    
   },[]);
 
   return (
