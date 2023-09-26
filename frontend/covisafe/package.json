@@ -19,6 +19,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.14.10",
+    "@mui/styled-engine-sc": "^5.14.10",
     "axios": "^1.5.0",
     "babel-plugin-macros": "^3.1.0",
     "framer-motion": "^10.16.4",
@@ -26,7 +28,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
     "react-select": "^5.7.4",
-    "sweetalert2": "^11.7.28"
+    "styled-components": "^5.3.11",
+    "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
