@@ -53,9 +53,9 @@ export default function Para() {
     <div>
       {paraDetails.map((e, i) =>
         i % 2 == 0 ? (
-          <LeftPara para={e} />
+          <LeftPara para={e} key={i} />
         ) : (
-          <RightPara para={e} />
+          <RightPara para={e} key={i} />
         )
       )}
     </div>
