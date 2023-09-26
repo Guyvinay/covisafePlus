@@ -12,7 +12,7 @@ function Services({ zoom: [zoom, setZoom] }) {
   const [error, setError] = useState(false);
   const [slot, setSlot] = useState('');
   const [vaxinationCenter, setVaxinationCenter ] = useState('');
-
+  const [vCenters, setVCenters] = useState([]);
 
   const registerMember = ()=>{
     const uuid = localStorage.getItem("uuid");
@@ -64,6 +64,19 @@ function Services({ zoom: [zoom, setZoom] }) {
     const token = localStorage.getItem("token");
     
     if(uuid && token){
+
+      axios
+        .get(`${baseURL}/vaccinationCenters`,{
+          headers:{
+            'Authorization':`Bearer ${token}`
+          }
+        })
+        .then((res)=>{
+          console.log(res);
+          setVCenters(res.data);
+        })
+
+
       axios
         .get(`${baseURL}/memberByUUID/${uuid}`, {
           headers:{
@@ -83,7 +96,7 @@ function Services({ zoom: [zoom, setZoom] }) {
         })
     }
     
-  },[error, setError]);
+  },[error, setError, vCenters, setVCenters]);
 
   return (
     <>
@@ -131,9 +144,9 @@ function Services({ zoom: [zoom, setZoom] }) {
             <div className="flex min-h-full  flex-col justify-center">
               <div className="w-fit">
                 <img
-                  className="mx-auto h-16 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt="Your Company"
+                  className="mx-auto h-16 w-auto mix-blend-exclusion"
+                  src="./images/mainlogo.png"
+                  alt="logo"
                 />
                 <h2 className="mt-14 text-center text-5xl font-bold leading-9 tracking-tight text-gray-900">
                   Book an appointment
