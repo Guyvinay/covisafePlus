@@ -11,8 +11,11 @@ function Services({ zoom: [zoom, setZoom] }) {
   const baseURL = "https://covisafeplus-production-417c.up.railway.app";
   const [error, setError] = useState(false);
   const [slot, setSlot] = useState('');
-  const [vaxinationCenter, setVaxinationCenter ] = useState('');
-  const [vCenters, setVCenters] = useState([]);
+  const [vaxinationCenter, setVaxinationCenter] = useState({
+    id: 1,
+    name: "select value",
+  });
+  const [vCenters, setVCenters] = useState([{id:1,name:''}]);
 
   const registerMember = ()=>{
     const uuid = localStorage.getItem("uuid");
@@ -107,7 +110,7 @@ function Services({ zoom: [zoom, setZoom] }) {
       >
         {error ? (
           <div
-            className="p-8 h-fit w-10/12 text-red-800   border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
+            className="p-8 h-fit w-10/12 text-red-800 border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
             style={{ borderLeftWidth: "7px" }}
             role="alert"
           >
@@ -174,8 +177,16 @@ function Services({ zoom: [zoom, setZoom] }) {
                     </div>
                   </div> */}
 
-                  <Select />
-                  <Select />
+                  <Select
+                    selectedValue={[vaxinationCenter, setVaxinationCenter]}
+                    data={vCenters.map((e, i) => {
+                      return {
+                        id: e.centerId,
+                        name: `${e.centerName}, ${e.city}`,
+                      };
+                    })}
+                  />
+                  {/* <Select /> */}
                   {/* <div>
                     <div className="flex items-center justify-between">
                       <label
