@@ -10,9 +10,15 @@ function Services({ zoom: [zoom, setZoom] }) {
 
   const baseURL = "https://covisafeplus-production-417c.up.railway.app";
   const [error, setError] = useState(false);
-  const [slot, setSlot] = useState('');
-  const [vaxinationCenter, setVaxinationCenter ] = useState('');
-  const [vCenters, setVCenters] = useState([]);
+  const [slot, setSlot] = useState({
+    id:1,
+    name:"select value"
+  });
+  const [vaxinationCenter, setVaxinationCenter] = useState({
+    id: "",
+    name: "select value",
+  });
+  const [vCenters, setVCenters] = useState([{id:1,name:''}]);
 
   const registerMember = ()=>{
     const uuid = localStorage.getItem("uuid");
@@ -59,24 +65,28 @@ function Services({ zoom: [zoom, setZoom] }) {
     });
   };
 
+  useEffect(() => {
+    const uuid = localStorage.getItem("uuid");
+    const token = localStorage.getItem("token");
+    if (uuid && token) {
+      axios
+        .get(`${baseURL}/vaccinationCenters`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+          setVCenters(res.data);
+        });
+    }
+  }, [vCenters, setVCenters]);
+
   useEffect(()=>{
     const uuid = localStorage.getItem("uuid");
     const token = localStorage.getItem("token");
     
     if(uuid && token){
-
-      axios
-        .get(`${baseURL}/vaccinationCenters`,{
-          headers:{
-            'Authorization':`Bearer ${token}`
-          }
-        })
-        .then((res)=>{
-          console.log(res);
-          setVCenters(res.data);
-        })
-
-
       axios
         .get(`${baseURL}/memberByUUID/${uuid}`, {
           headers:{
@@ -86,6 +96,7 @@ function Services({ zoom: [zoom, setZoom] }) {
         .then((res) => {
           console.log(res);
           localStorage.setItem("memberId", res.data.id);
+          localStorage.setItem("mobileNo", res.data.mobNo);
         }).catch(res=>{
           console.log(res);
           switch(res.code){
@@ -96,7 +107,30 @@ function Services({ zoom: [zoom, setZoom] }) {
         })
     }
     
-  },[error, setError, vCenters, setVCenters]);
+  },[error, setError]);
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    const uuid = localStorage.getItem("uuid");
+    const token = localStorage.getItem("token");
+    const memberid = localStorage.getItem("memberId");
+    const mobileNo = localStorage.getItem("mobileNo");
+    if (uuid && token && memberid && mobileNo) {
+      console.log(`${baseURL}/appointments/${memberid}/${vaxinationCenter.id}`);
+      console.log({slot:slot.name,mobileNo:mobileNo});
+      axios
+      .post(`${baseURL}/appointments/${memberid}/${vaxinationCenter.id}`, {
+        headers: {
+    
+          "Authorization": `Bearer ${token}`
+        },
+        body:JSON.stringify({slot:slot.name,mobileNo:mobileNo})
+      })
+      .then(res=>{
+        console.log(res);
+      })
+    }
+  };
 
   return (
     <>
@@ -107,7 +141,7 @@ function Services({ zoom: [zoom, setZoom] }) {
       >
         {error ? (
           <div
-            className="p-8 h-fit w-10/12 text-red-800   border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
+            className="p-8 h-fit w-10/12 text-red-800 border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
             style={{ borderLeftWidth: "7px" }}
             role="alert"
           >
@@ -154,7 +188,7 @@ function Services({ zoom: [zoom, setZoom] }) {
               </div>
 
               <div className="mt-14">
-                <form className="space-y-6" action="#" method="POST">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* <div>
                     <label
                       htmlFor="email"
@@ -174,8 +208,31 @@ function Services({ zoom: [zoom, setZoom] }) {
                     </div>
                   </div> */}
 
-                  <Select />
-                  <Select />
+                  <Select
+                    selectedValue={[vaxinationCenter, setVaxinationCenter]}
+                    data={vCenters.map((e, i) => {
+                      return {
+                        id: e.centerId,
+                        name: `${e.centerName}, ${e.city}`,
+                      };
+                    })}
+                    labelText={"Vaccination center"}
+                  />
+                  <Select
+                    selectedValue={[slot, setSlot]}
+                    data={[
+                      { id: 1, name: "SLOT1" },
+                      { id: 2, name: "SLOT2" },
+                      { id: 3, name: "SLOT3" },
+                      { id: 4, name: "SLOT4" },
+                      { id: 5, name: "SLOT5" },
+                      { id: 6, name: "SLOT6" },
+                      { id: 7, name: "SLOT7" },
+                      { id: 8, name: "SLOT8" },
+                      { id: 9, name: "SLOT9" },
+                    ]}
+                    labelText={"Choose Slot"}
+                  />
                   {/* <div>
                     <div className="flex items-center justify-between">
                       <label
@@ -208,7 +265,7 @@ function Services({ zoom: [zoom, setZoom] }) {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-5 text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="flex w-full justify-center rounded-md bg-red-600 px-3 py-5 text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
                       Sign in
                     </button>

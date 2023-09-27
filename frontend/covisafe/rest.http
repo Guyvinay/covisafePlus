@@ -20,13 +20,14 @@ content-type: application/json
 
 
 ###
-POST http://localhost:8080/members/24c6b1c9-4521-482c-8f8a-8e83ef9757c6
+POST https://covisafeplus-production-417c.up.railway.app/appointments/14e73044-f2b4-44aa-920f-f53368a87206/0ce64d0e-7d1c-4a69-9140-47a745a08cba
 
 content-type: application/json
 
 
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXZhQGdtYWlsLmNvbSIsImlhdCI6MTY5NTY1OTc1MCwiZXhwIjoxNjk1NjYxMTkwfQ.dIuRj2Bgw33Wzhj2EfPLPSy0vRYuYDighkWODf6khcE
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aW5heUBnbWFpbC5jb20iLCJpYXQiOjE2OTU4MzYyNzUsImV4cCI6MTY5NTgzNzcxNX0.j00GTc633W1sXEsTNo1Ag7acj2pAJ6mA1uj1AHJeAj4
 
 {
-    "mobileNo": 9197533709
+    "slot": "SLOT1",
+    "mobileNo": "7291971753"
 }
