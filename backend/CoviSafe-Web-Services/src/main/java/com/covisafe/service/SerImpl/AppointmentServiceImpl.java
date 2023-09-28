@@ -56,7 +56,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 		appointment.setMemberId(member);
 		appointment.setVaxCenter(vaxCenter);
-		appointment.setSlot(Slot.SLOT1);
+		appointment.setSlot(appointment.getSlot());
 		Appointment appoint = appointmentRepository.save(appointment);
 		return appoint;
 	}
