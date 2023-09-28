@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./nav";
 import Footer from "./Footer";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { json } from "react-router-dom";
 import Select from "./Select";
 
 function Services({ zoom: [zoom, setZoom] }) {
-
+  const navigate = useNavigate();
   const baseURL = "https://covisafeplus-production-417c.up.railway.app";
   const [error, setError] = useState(false);
   const [slot, setSlot] = useState({
@@ -54,14 +55,16 @@ function Services({ zoom: [zoom, setZoom] }) {
       },
       allowOutsideClick: () => !Swal.isLoading(),
     }).then((result) => {
-      localStorage.setItem("memberId",result.data.id);
+       localStorage.setItem("memberId", result.id);
+       localStorage.setItem("mobileNo", result.mobNo);
       console.log(result);
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: `${result.value.login}'s avatar`,
-          imageUrl: result.value.avatar_url,
-        });
-      }
+       Swal.fire(
+         "Updated Succesfully!",
+         "mobile no updated succesfully",
+         "success"
+       ).then(() => {
+         setError(false);
+       });
     });
   };
 
@@ -76,7 +79,7 @@ function Services({ zoom: [zoom, setZoom] }) {
           },
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           setVCenters(res.data);
         });
     }
@@ -94,17 +97,30 @@ function Services({ zoom: [zoom, setZoom] }) {
           }
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           localStorage.setItem("memberId", res.data.id);
           localStorage.setItem("mobileNo", res.data.mobNo);
         }).catch(res=>{
-          console.log(res);
-          switch(res.code){
-            case "ERR_BAD_REQUEST":
+          // console.log(res);
+          switch(res.response.status){
+            case 404:
               setError(true);
+              break;
+            case 403:
+              Swal.fire(
+                "Acces Denied!",
+                "please login first",
+                "error"
+              ).then(() => {
+                navigate("/signin");
+              });
               break;
           }
         })
+    }else{
+       Swal.fire("Acces Denied!", "please login first", "error").then(() => {
+         navigate("/signin");
+       });
     }
     
   },[error, setError]);
@@ -116,19 +132,30 @@ function Services({ zoom: [zoom, setZoom] }) {
     const memberid = localStorage.getItem("memberId");
     const mobileNo = localStorage.getItem("mobileNo");
     if (uuid && token && memberid && mobileNo) {
-      console.log(`${baseURL}/appointments/${memberid}/${vaxinationCenter.id}`);
       console.log({slot:slot.name,mobileNo:mobileNo});
-      axios
-      .post(`${baseURL}/appointments/${memberid}/${vaxinationCenter.id}`, {
+      console.log(vaxinationCenter.id);
+      fetch(`${baseURL}/appointments/${memberid}/${vaxinationCenter.id}`, {
+        method: "POST",
         headers: {
-    
-          "Authorization": `Bearer ${token}`
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        body:JSON.stringify({slot:slot.name,mobileNo:mobileNo})
+        body: JSON.stringify({ slot: slot.name, mobileNo: mobileNo }),
       })
-      .then(res=>{
-        console.log(res);
-      })
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) {
+            throw new Error(JSON.stringify(res));
+          }
+          return res.json();
+        })
+        .then((res) => {
+          Swal.fire("Booked succesfully",`your appiontment is booked succesfully`,'success')
+        })
+        .catch((res) => {
+          console.log(res);
+          Swal.fire(`Error `,`${res}`,'error');
+        });
     }
   };
 
