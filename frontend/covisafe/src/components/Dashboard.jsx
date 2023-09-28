@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from './Footer';
-import Nav from './nav';
+import Nav from './Nav';
 
 export default function Dashboard({ zoom: [zoom, setZoom] }) {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./nav";
+import Nav from "./Nav";
 import Footer from "./Footer";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
