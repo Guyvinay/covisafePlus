@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import Steps from './Steps';
-import Para from './para';
+import Para from './Para';
 
 
 export default function Main() {
