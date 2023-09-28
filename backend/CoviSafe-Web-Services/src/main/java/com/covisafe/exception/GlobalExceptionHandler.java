@@ -56,8 +56,8 @@ public class GlobalExceptionHandler {  // Exception Handler
 	        err.setTimestamp(LocalDateTime.now());
 	        err.setMessage("Invalid user: " + ex.getMessage());
 	        err.setDetails(req.getDescription(false));
-	        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
-	    }
+	        return new ResponseEntity<>(err, HttpStatus.NOT_FOUND);
+		}
 
 	    @ExceptionHandler(IdCardNotFoundException.class)
 	    public ResponseEntity<MyErrorDetails> handleIdCardNotFoundException(IdCardNotFoundException ex, WebRequest req) {
