@@ -150,11 +150,15 @@ function Services({ zoom: [zoom, setZoom] }) {
           return res.json();
         })
         .then((res) => {
-          Swal.fire("Booked succesfully",`your appiontment is booked succesfully`,'success')
+          console.log(res);
+          Swal.fire("Booked succesfully",`your appiontment is booked succesfully`,'success').then(()=>{
+            navigate("/");
+          })
         })
         .catch((res) => {
-          console.log(res);
-          Swal.fire(`Error `,`${res}`,'error');
+          Swal.fire(`Appointment Booked already`,`An appointment already booked for you `,'error').then(()=>{
+            navigate("/");
+          })
         });
     }
   };
