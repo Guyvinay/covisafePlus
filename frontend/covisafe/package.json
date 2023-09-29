@@ -1,10 +1,13 @@
 {
+  "homepage": "https://anuragjatofficial.github.io/covisafe-plus",
   "name": "covisafe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -23,6 +26,8 @@
     "@heroicons/react": "^2.0.18",
     "@mui/material": "^5.14.10",
     "@mui/styled-engine-sc": "^5.14.10",
+    "@nextui-org/react": "^2.1.13",
+    "assets": "^3.0.1",
     "axios": "^1.5.0",
     "babel-plugin-macros": "^3.1.0",
     "framer-motion": "^10.16.4",
@@ -37,6 +42,7 @@
     "@tailwindcss/forms": "^0.5.6",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-legacy": "^4.1.1",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.45.0",
@@ -46,6 +52,8 @@
     "gh-pages": "^6.0.0",
     "postcss": "^8.4.30",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-legacy": "^2.1.0"
   }
 }

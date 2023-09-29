@@ -139,12 +139,12 @@ export default function Footer() {
           </div>
           <div className="footer-images-div flex w-fit">
             <img
-              src="./images/national-health-authority.jpg"
+              src="/images/national-health-authority.jpg"
               className="h-20 mx-3"
               alt=""
             />
             <img
-              src="./images/undp-logo-vertical.svg"
+              src="/images/undp-logo-vertical.svg"
               className="h-20 mx-3"
               alt=""
             />

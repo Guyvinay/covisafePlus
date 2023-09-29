@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import Nav from './nav';
+import Nav from './Nav';
 import Footer from './Footer';
 import axios from "axios";
 import Swal from "sweetalert2";
