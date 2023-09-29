@@ -13,7 +13,7 @@ export default function Main() {
           <div className="h-fit">
             <div>
               <h3
-                className="font-sans font-bold text-5xl my-10"
+                className="font-sans font-bold max-2xl:text-4xl flex flex-wrap text-5xl my-10"
                 style={{ lineHeight: "4rem" }}
               >
                 Historic & Unparalleled Achievement !
@@ -21,10 +21,10 @@ export default function Main() {
                 India’s Glorious Journey of
               </h3>
             </div>
-            <div className="border-red-500 border-2 flex rounded-md uppercase w-fit font-bold text-red-500 my-8 py-4 px-8 text-5xl">
+            <div className="border-red-500 border-2 flex rounded-md uppercase w-fit font-bold text-red-500 max-2xl:text-4xl my-8 py-4 px-8 text-5xl">
               <FontAwesomeIcon
                 icon={faCircleCheck}
-                className="text-blue-500 my-auto text-4xl"
+                className="text-blue-500 my-auto max-2xl:text-2xl text-4xl"
               />
               &nbsp; 200 CRORE VACCINATIONS
             </div>
@@ -42,9 +42,9 @@ export default function Main() {
         </div>
       </div>
       <div>
-        <Steps/>
+        <Steps />
       </div>
-      <Para/>
+      <Para />
     </>
   );
 }

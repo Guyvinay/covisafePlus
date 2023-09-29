@@ -8,7 +8,7 @@ export default function Dashboard({ zoom: [zoom, setZoom] }) {
     <>
       <Nav zoom={[zoom, setZoom]} />
       <div className="w-full" style={{ minHeight: "87vh" }}>
-        {/* <Profile /> */}
+        <Profile />
       </div>
       <Footer />
     </>
