@@ -1,17 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -21,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Profile() {
-
+  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
   const [uuid, setUuid] = useState("");
   const navigate = useNavigate();
   useEffect(() => {

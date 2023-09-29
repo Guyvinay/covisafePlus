@@ -6,6 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { CircularProgress } from '@chakra-ui/react';
 
 
 export default function Login({ zoom: [zoom, setZoom] }) {
@@ -16,10 +17,10 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
   const baseURL = "https://covisafeplus-production-417c.up.railway.app";  
-  
+  const [loading, setLoading] = useState(false);
   const handleSubmit = (event)=>{
     event.preventDefault();
-
+    setLoading(true);
     const user = {
       email: email,
       password: password,
@@ -52,6 +53,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
                 "success"
         )
         .then(()=>{
+          setLoading(true);
           navigate("/")
         })
 
@@ -74,9 +76,10 @@ export default function Login({ zoom: [zoom, setZoom] }) {
           )
           break;
       }
-       
-
+    }).then(()=>{
+      setLoading(false);
     });
+
 
   };
 
@@ -129,7 +132,23 @@ export default function Login({ zoom: [zoom, setZoom] }) {
                   placeholder="Enter password"
                   required
                 />
-                <input type="submit" value="Login" />
+                {/* <input type="submit" value="Login" /> */}
+                <button
+                  type="submit"
+                  className="submitButton bg-[#C20E0E] text-[--white] justify-center items-center border-none disabled:cursor-not-allowed"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <CircularProgress
+                      isIndeterminate
+                      color="red.500"
+                      size="20px"
+                      thickness={8}
+                    />
+                  ) : (
+                    "Login"
+                  )}
+                </button>
               </form>
             </div>
           </div>
