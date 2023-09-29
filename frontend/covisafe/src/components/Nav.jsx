@@ -30,6 +30,7 @@ export default function Nav(props) {
       </div>
 
       {/* <!-- nav --> */}
+      
       <div className="mnav h-36 items-center">
         <div className="mlogo h-fit ">
           <Link to="/">
