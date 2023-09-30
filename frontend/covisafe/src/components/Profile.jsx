@@ -107,6 +107,11 @@ export default function Profile() {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+    const user = {
+      userId:uuid,
+      email:email,
+      
+    }
   };
 
   console.log(appointment);

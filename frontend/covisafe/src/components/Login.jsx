@@ -41,7 +41,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     })
     .then((res) =>{
        if (!res.ok) {
-         if (res.status === 400 || res.status == 404) {
+         if (res.status === 400 || res.status == 404 || 403) {
            throw new Error("Bad Request: Incorrect username or password.");
          }
          throw new Error("Network response was not ok");
