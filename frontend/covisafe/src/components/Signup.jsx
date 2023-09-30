@@ -31,7 +31,7 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
 
 
 
-  const baseURL = `https://covisafeplus-production-417c.up.railway.app`;
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
 
   const handleNext =(e)=>{

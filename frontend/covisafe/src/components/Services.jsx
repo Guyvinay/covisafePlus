@@ -11,7 +11,7 @@ import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
 
 function Services({ zoom: [zoom, setZoom] }) {
   const navigate = useNavigate();
-  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   const [error, setError] = useState(false);
   const [slot, setSlot] = useState({
     id:1,
