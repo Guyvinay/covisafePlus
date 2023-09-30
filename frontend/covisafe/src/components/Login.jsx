@@ -49,8 +49,13 @@ export default function Login({ zoom: [zoom, setZoom] }) {
       return res.json();
     })
     .then((res) => {
+        localStorage.removeItem("memberId");
+        localStorage.removeItem("token");
+        localStorage.removeItem("uuid");
+
         localStorage.setItem("token",res.token);
         localStorage.setItem("uuid",res.uuid);
+        
         Swal.fire(
                 "Login succes!",
                 "you can proceed to vaccination now ", 

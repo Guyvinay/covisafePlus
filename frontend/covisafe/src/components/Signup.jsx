@@ -63,6 +63,10 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
     axios.post(`${baseURL}/users/register`,user)
     .then(res=>{
       console.log(res);
+      localStorage.removeItem("memberId");
+      localStorage.removeItem("token");
+      localStorage.removeItem("uuid");
+
       localStorage.setItem("uuid",res.data.uuid);
       localStorage.setItem("token",res.data.token);
       Swal.fire(
