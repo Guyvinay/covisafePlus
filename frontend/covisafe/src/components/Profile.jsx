@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Select from "./Select";
-import { Icon, createIcon } from "@chakra-ui/react";
+import { CircularProgress, Icon, createIcon } from "@chakra-ui/react";
 
 
 
@@ -23,6 +23,8 @@ export default function Profile() {
   const [pan, setPan] = useState("");
   const [gender, setGender] = useState({ id: 0, name: "Select Gender" });
   const [appointment, setAppointment] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -107,14 +109,37 @@ export default function Profile() {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+    setLoading(true);
+    const token = localStorage.getItem("token");
     const user = {
-      userId:uuid,
-      email:email,
-      
-    }
+      name: name,
+      gender: gender.name,
+      email: email,
+      panNo: pan,
+      aadharNo: aadhar,
+      dob: dob,
+      address: address,
+      city: city,
+      state: state,
+      pincode: pincode,
+    };
+    axios.put(`${baseURL}/IdCards/${uuid}`,user,{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then((res)=>{
+      console.log(res);
+      Swal.fire(
+        "Updated succesfully !",
+        "your profile has been updated succesfully ",
+        "success"
+      ).then(()=>{
+        setLoading(false);
+      })
+    }).catch((err)=>{
+      setLoading(false);
+    })
   };
-
-  console.log(appointment);
 
   return (
     <div className="w-full">
@@ -539,8 +564,18 @@ export default function Profile() {
             <button
               type="submit"
               className="bg-red-600 px-7 rounded-lg py-2 text-2xl font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 leading-10"
+              disabled={loading}
             >
-              Save
+              {loading ? (
+                <CircularProgress
+                  isIndeterminate
+                  color="red.500"
+                  size="20px"
+                  thickness={8}
+                />
+              ) : (
+                "Save"
+              )}
             </button>
           </div>
         </form>
