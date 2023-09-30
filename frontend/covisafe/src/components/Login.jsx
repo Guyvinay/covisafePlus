@@ -16,7 +16,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  const baseURL = "https://covisafeplus-production-417c.up.railway.app";  
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event)=>{

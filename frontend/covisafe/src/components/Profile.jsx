@@ -10,7 +10,7 @@ import { CircularProgress, Icon, createIcon } from "@chakra-ui/react";
 
 
 export default function Profile() {
-  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   const [uuid, setUuid] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
