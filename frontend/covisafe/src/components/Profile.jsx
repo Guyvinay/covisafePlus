@@ -289,47 +289,32 @@ export default function Profile() {
                       )}
                     </div>
                   </div>
+
+                  {/* booking date */}
+
                   <div className="sm:col-span-4 flex">
                     <label
                       htmlFor="username"
                       className="flex text-2xl items-center justify-center font-medium leading-10 text-gray-900"
                     >
-                      Appointment status :
+                      Booking Date :
                     </label>
-                    <div className="">
-                      {appointment.bookingStatus ? (
-                        <>
-                          <div className="flex items-center justify-center px-4">
-                            <Icon
-                              viewBox="0 0 200 200"
-                              color="green.500"
-                              boxSize={8}
-                            >
-                              <path
-                                fill="currentColor"
-                                d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                              />
-                            </Icon>
-                            <p className="inline px-4 font-semibold">Booked</p>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex items-center justify-center px-4">
-                            <Icon
-                              viewBox="0 0 200 200"
-                              color="yellow.500"
-                              boxSize={8}
-                            >
-                              <path
-                                fill="currentColor"
-                                d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                              />
-                            </Icon>
-                            <p className="inline px-4 font-semibold">Pending</p>
-                          </div>
-                        </>
-                      )}
+                    <div className="flex items-center justify-center px-4">
+                      {appointment.dateOfBooking}
+                    </div>
+                  </div>
+
+                  {/* slot */}
+
+                  <div className="sm:col-span-4 flex">
+                    <label
+                      htmlFor="username"
+                      className="flex text-2xl items-center justify-center font-medium leading-10 text-gray-900"
+                    >
+                      Booking Date :
+                    </label>
+                    <div className="flex items-center justify-center px-4 ">
+                      {appointment.slot}
                     </div>
                   </div>
                 </div>
