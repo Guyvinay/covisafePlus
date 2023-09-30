@@ -41,7 +41,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     })
     .then((res) =>{
        if (!res.ok) {
-         if (res.status === 400) {
+         if (res.status === 400 || res.status == 404) {
            throw new Error("Bad Request: Incorrect username or password.");
          }
          throw new Error("Network response was not ok");
@@ -69,6 +69,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
     })
     .catch((res) => {
       setIsDisabled(!isDisabled);
+      // console.log(res);
       switch (res.message) {
         case "Bad Request: Incorrect username or password.":
           Swal.fire(
@@ -77,12 +78,12 @@ export default function Login({ zoom: [zoom, setZoom] }) {
             "error"
           );
           break;
-        case "Network response was not ok":
+        default:
           Swal.fire(
             "Network error",
             "seems like there is a problem related to network",
-            'error'
-          )
+            "error"
+          );
           break;
       }
     }).then(()=>{

@@ -12,7 +12,7 @@ public interface IdCardService {
 	public IdCard getIdCardByAadharNo(String aadharNo);
 	public IdCard getIdCardByPanNo(String panNo);
 	public IdCard addIdCard(IdCard member);
-	public IdCard updateIdCard(String IdCardId , IdCard member);
+	public IdCard updateIdCard(String IdCardId , IdCard idCard);
 	public Boolean deleteIdCard(String id);
 	
 }
