@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
     --main-color: rgb(194, 14, 14);
     --second-color: rgba(8, 95, 206, 255);
@@ -69,10 +68,8 @@ body {
 }
 
 .mrightside button {
-    /* border: 2px solid white; */
     border: none;
     width: 15%;
-    /* background-color: var(--second-color); */
     background-color: var(--focus-color);
     height: fit-content;
     padding-top: .5rem;
@@ -88,7 +85,6 @@ body {
     background-color: var(--second-color);
     display: flex;
     width: 100%;
-    /* height: 7rem; */
     background-color: var(--nav);
     justify-content: space-between;
 }
@@ -106,11 +102,9 @@ body {
 }
 
 .mnavlist {
-    /* border: 1px solid red; */
     width: 60%;
     display: flex;
     font-size: 1.6rem;
-    /* margin-right: 1%; */
     align-items: center;
     justify-content: space-between;
 }

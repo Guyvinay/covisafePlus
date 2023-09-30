@@ -48,21 +48,25 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
     setLoading(true);
     const user = {
       email: email,
-      name:name,
-      dob:dob,
-      gender:gender,
-      aadhar:aadhar,
-      address:address,
-      city:city,
-      state:state,
-      pincode:pincode,
-      pan:pan,
-      password:password,
+      name: name,
+      dob: dob,
+      gender: gender,
+      aadharNo: aadhar,
+      address: address,
+      city: city,
+      state: state,
+      pincode: pincode,
+      panNo: pan,
+      password: password,
     };
 
     axios.post(`${baseURL}/users/register`,user)
     .then(res=>{
       console.log(res);
+      localStorage.removeItem("memberId");
+      localStorage.removeItem("token");
+      localStorage.removeItem("uuid");
+
       localStorage.setItem("uuid",res.data.uuid);
       localStorage.setItem("token",res.data.token);
       Swal.fire(

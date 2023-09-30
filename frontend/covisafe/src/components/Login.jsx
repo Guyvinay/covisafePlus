@@ -18,15 +18,19 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   const [isDisabled, setIsDisabled] = useState(false);
   const baseURL = "https://covisafeplus-production-417c.up.railway.app";  
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = (event)=>{
-    event.preventDefault();
+
+    event.preventDefault(); // revmoving defalut behaviour
+
     setLoading(true);
+ 
     const user = {
       email: email,
       password: password,
     };
 
-    console.log(user);
+    // console.log(user);
 
     fetch(`${baseURL}/users/signin`, {
       method: "POST",
@@ -45,8 +49,13 @@ export default function Login({ zoom: [zoom, setZoom] }) {
       return res.json();
     })
     .then((res) => {
+        localStorage.removeItem("memberId");
+        localStorage.removeItem("token");
+        localStorage.removeItem("uuid");
+
         localStorage.setItem("token",res.token);
         localStorage.setItem("uuid",res.uuid);
+        
         Swal.fire(
                 "Login succes!",
                 "you can proceed to vaccination now ", 
@@ -86,6 +95,7 @@ export default function Login({ zoom: [zoom, setZoom] }) {
   return (
     <>
       <Nav zoom={[zoom, setZoom]} />
+
       <div
         className="w-full bg-[#ff003214] flex items-center justify-center py-20"
         style={{
@@ -94,24 +104,35 @@ export default function Login({ zoom: [zoom, setZoom] }) {
           minHeight: "87vh",
         }}
       >
+
         <div className="loginlogout w-fit ">
+
           <div className="changer bg-[#33333344] ">
+
             <Link to="/signin">
-              <div className="active page text-[#ffffffc3]">Sign In</div>
+              <div className="active page text-[#ffffffc3]">Sign In</div> 
             </Link>
+
             <Link to="/signup">
               <div className="page text-[#ffffffc3]">Sign Up</div>
             </Link>
+
           </div>
+
           <div className="form signin bg-[#33333344] backdrop-blur-lg">
+
             <div className="imgdiv">
+
               <div className="flex justify-center py-5">
-                <img src="./images/login-family.svg" alt="" />
+                <img src="./images/login-family.svg"/>
               </div>
+
               <div>
                 <img src="./images/building-icon.svg" alt="" />
               </div>
+
             </div>
+
             <div>
               <h2>Sign In for Vaccination</h2>
               <br />
@@ -151,10 +172,15 @@ export default function Login({ zoom: [zoom, setZoom] }) {
                 </button>
               </form>
             </div>
+
           </div>
+
         </div>
+
       </div>
+
       <Footer />
+
     </>
   );
 }
