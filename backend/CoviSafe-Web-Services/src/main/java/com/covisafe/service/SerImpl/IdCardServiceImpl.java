@@ -62,15 +62,23 @@ public class IdCardServiceImpl implements IdCardService {
 	}
 
 	@Override
-	public IdCard updateIdCard(String IdCardId, IdCard IdCard) {
-
-		Optional<IdCard> optional = IdCardRepository.findById(IdCardId);
-		if (optional.isEmpty())
-			throw new IdCardNotFoundException("IdCard not found by given id");
-		if (IdCard == null)
+	public IdCard updateIdCard(String IdCardId, IdCard idCard) {
+		if (idCard == null)
 			throw new IdCardNotFoundException("Please provide IdCard details");
-		IdCard.setUserId(IdCardId);
-		return IdCardRepository.save(IdCard);
+		IdCard idCard2 = IdCardRepository.findById(IdCardId).orElseThrow(()->new IdCardNotFoundException("can't find any user with given id"));
+		
+		idCard2.setEmail(idCard.getEmail());
+		idCard2.setName(idCard.getName());
+		idCard2.setAadharNo(idCard.getAadharNo());
+		idCard2.setPanNo(idCard.getPanNo());
+		idCard2.setGender(idCard.getGender());
+		idCard2.setAddress(idCard.getAddress());
+		idCard2.setCity(idCard.getCity());
+		idCard2.setState(idCard.getState());
+		idCard2.setPincode(idCard.getPincode());
+		idCard2.setDob(idCard.getDob());
+		
+		return IdCardRepository.save(idCard2);
 	}
 
 	@Override
