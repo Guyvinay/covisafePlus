@@ -53,7 +53,7 @@ export default function Nav(props) {
             <h4>FAQ</h4>
           </Link>
           <Link to="/">
-            <h4>Partner</h4>
+            <h4>Admin</h4>
           </Link>
           <Link to="/signin">
             <button>Register / Signin</button>
