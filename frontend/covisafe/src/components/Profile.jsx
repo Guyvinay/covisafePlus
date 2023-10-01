@@ -32,30 +32,87 @@ export default function Profile() {
     let token = localStorage.getItem("token");
     let memberId = localStorage.getItem("memberId");
 
-    axios
-      .get(`${baseURL}/memberByUUID/${uid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        localStorage.setItem("memberId", res.data.id);
-        localStorage.setItem("mobileNo", res.data.mobNo);
-      }).catch((res)=>{
-        switch(res.response.status){
-          case 404:
-            Swal.fire(
-              "Add mobile number",
-              "Add mobile number to update profile",
-              "info"
-            ).then(() => {
-              navigate("/service");
+    if (uid && token) {
+      axios
+        .get(`${baseURL}/memberByUUID/${uid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+          localStorage.setItem("memberId", res.data.id);
+          localStorage.setItem("mobileNo", res.data.mobNo);
+        }).then(()=>{
+          axios
+            .get(`${baseURL}/members/${memberId}`, {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            })
+            .then((res) => {
+              console.log(res.data);
+              if (res.data != null) {
+                console.log(res);
+                setEmail(res.data.idcard.email);
+                setName(res.data.idcard.name);
+                setAadhar(res.data.idcard.aadharNo);
+                setGender({ id: 0, name: res.data.idcard.gender });
+                setPan(res.data.idcard.panNo);
+                setDob(res.data.idcard.dob);
+                setAddress(res.data.idcard.address);
+                setCity(res.data.idcard.address);
+                setState(res.data.idcard.state);
+                setPincode(res.data.idcard.pincode);
+                setAppointment(res.data.appointment);
+              } else {
+                Swal.fire(
+                  "something went wrong",
+                  "please try agin later",
+                  "warning"
+                );
+              }
+            })
+            .catch((res) => {
+              console.log(res.response.status);
+              switch (res.response.status) {
+                case 404:
+                  Swal.fire(
+                    "Add mobile number",
+                    "Add mobile number to update profile",
+                    "info"
+                  ).then(() => {
+                    navigate("/service");
+                  });
+                  break;
+                case 403:
+                  Swal.fire(
+                    "Acces Denied!",
+                    "please login first",
+                    "error"
+                  ).then(() => {
+                    navigate("/signin");
+                  });
+                  break;
+              }
             });
-            break;
-        }
-      })
-
-     if (uid && token) {
+        })
+        
+        
+        .catch((res)=>{
+          // console.log(res);
+          switch(res.response.status){
+            case 404:
+              Swal.fire(
+                "Add mobile number",
+                "Add mobile number to update profile",
+                "info"
+              ).then(() => {
+                navigate("/service");
+              });
+              break;
+          }
+        })
        setUuid(uid);
      } else {
        Swal.fire(
@@ -66,45 +123,7 @@ export default function Profile() {
          navigate("/signin");
        });
      }
-     axios.get(`${baseURL}/members/${memberId}`,{
-      headers:{
-        'Authorization' : `Bearer ${token}`
-      }
-     }).then((res)=>{
-      console.log(res.data);
-      if(res.data != null){
-        console.log(res);
-        setEmail(res.data.idcard.email);
-        setName(res.data.idcard.name);
-        setAadhar(res.data.idcard.aadharNo);
-        setGender({id:0,name:res.data.idcard.gender});
-        setPan(res.data.idcard.panNo);
-        setDob(res.data.idcard.dob);
-        setAddress(res.data.idcard.address);
-        setCity(res.data.idcard.address);
-        setState(res.data.idcard.state);
-        setPincode(res.data.idcard.pincode);
-        setAppointment(res.data.appointment);
-      }else{
-        Swal.fire("something went wrong", "please try agin later",'warning');
-      }
-      
-      
-     }).catch((res)=>{
-      console.log(res.response.status);
-      switch (res.response.status) {
-        case 404:
-          Swal.fire("Add mobile number", "Add mobile number to update profile",'info').then(()=>{
-            navigate("/service");
-          });
-          break;
-        case 403:
-          Swal.fire("Acces Denied!", "please login first", "error").then(() => {
-            navigate("/signin");
-          });
-          break;
-      }
-     })
+     
   }, []);
 
   const handleSubmit = (e)=>{
