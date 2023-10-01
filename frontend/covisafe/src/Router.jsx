@@ -6,9 +6,8 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import Services from './components/Services';
 
-
 export default function Router() {
-  const [zoom, setZoom] = useState(100); 
+  const [zoom, setZoom] = useState(100);
   return (
     <div style={{ zoom: `${zoom}%` }}>
       <Routes>

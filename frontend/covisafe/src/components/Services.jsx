@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./nav";
+import Nav from "./Nav";
 import Footer from "./Footer";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { json } from "react-router-dom";
 import Select from "./Select";
+import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+
 
 function Services({ zoom: [zoom, setZoom] }) {
   const navigate = useNavigate();
-  const baseURL = "https://covisafeplus-production-417c.up.railway.app";
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   const [error, setError] = useState(false);
   const [slot, setSlot] = useState({
     id:1,
@@ -20,6 +22,10 @@ function Services({ zoom: [zoom, setZoom] }) {
     name: "select value",
   });
   const [vCenters, setVCenters] = useState([{id:1,name:''}]);
+
+  const [loading, setLoading] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);  
+
 
   const registerMember = ()=>{
     const uuid = localStorage.getItem("uuid");
@@ -116,6 +122,8 @@ function Services({ zoom: [zoom, setZoom] }) {
               });
               break;
           }
+        }).then(()=>{
+          setLoading(false);
         })
     }else{
        Swal.fire("Acces Denied!", "please login first", "error").then(() => {
@@ -127,6 +135,7 @@ function Services({ zoom: [zoom, setZoom] }) {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+    setIsDisabled(true);
     const uuid = localStorage.getItem("uuid");
     const token = localStorage.getItem("token");
     const memberid = localStorage.getItem("memberId");
@@ -150,11 +159,16 @@ function Services({ zoom: [zoom, setZoom] }) {
           return res.json();
         })
         .then((res) => {
-          Swal.fire("Booked succesfully",`your appiontment is booked succesfully`,'success')
+          console.log(res);
+          Swal.fire("Booked succesfully",`your appiontment is booked succesfully`,'success').then(()=>{
+            navigate("/");
+          })
+          setIsDisabled(false);
         })
         .catch((res) => {
-          console.log(res);
-          Swal.fire(`Error `,`${res}`,'error');
+          Swal.fire(`Appointment Booked already`,`An appointment already booked for you `,'error').then(()=>{
+            navigate("/");
+          })
         });
     }
   };
@@ -162,61 +176,74 @@ function Services({ zoom: [zoom, setZoom] }) {
   return (
     <>
       <Nav zoom={[zoom, setZoom]} />
-      <div
-        className="w-full flex justify-center items-center"
-        style={{ minHeight: "87vh" }}
-      >
-        {error ? (
-          <div
-            className="p-8 h-fit w-10/12 text-red-800 border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
-            style={{ borderLeftWidth: "7px" }}
-            role="alert"
-          >
-            <div className="flex items-center">
-              <svg
-                className="flex-shrink-0 w-16 h-7"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-              </svg>
-              <span className="sr-only">Info</span>
-              <h3 className="text-3xl font-medium">Phone number required</h3>
-            </div>
-            <div className="mt-2 mb-4 text-2xl">
-              To book an appointment complete this step for further registration
-              process.
-            </div>
-            <div className="flex">
-              <button
-                style={{ fontSize: "1.6rem" }}
-                type="button"
-                className="text-white bg-red-800  focus:outline-none  font-medium rounded-lg text-base px-6 py-3  text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                onClick={registerMember}
-              >
-                Add phone number
-              </button>
-            </div>
-          </div>
-        ) : (
-          <>
-            <div className="flex min-h-full  flex-col justify-center">
-              <div className="w-fit">
-                <img
-                  className="mx-auto h-16 w-auto mix-blend-exclusion"
-                  src="./images/mainlogo.png"
-                  alt="logo"
-                />
-                <h2 className="mt-14 text-center text-5xl font-bold leading-9 tracking-tight text-gray-900">
-                  Book an appointment
-                </h2>
+      {loading ? (
+        <div
+          className="w-full flex items-center justify-center"
+          style={{ minHeight: "87vh" }}
+        >
+          <CircularProgress
+            isIndeterminate
+            color="red.500"
+            size="70px"
+            thickness={7}
+          />
+        </div>
+      ) : (
+        <div
+          className="w-full flex justify-center items-center"
+          style={{ minHeight: "87vh" }}
+        >
+          {error ? (
+            <div
+              className="p-8 h-fit w-10/12 text-red-800 border-red-300 rounded-lg  bg-[#1f2937dd] dark:text-red-400 border-l-red-800 "
+              style={{ borderLeftWidth: "7px" }}
+              role="alert"
+            >
+              <div className="flex items-center">
+                <svg
+                  className="flex-shrink-0 w-16 h-7"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="sr-only">Info</span>
+                <h3 className="text-3xl font-medium">Phone number required</h3>
               </div>
+              <div className="mt-2 mb-4 text-2xl">
+                To book an appointment complete this step for further
+                registration process.
+              </div>
+              <div className="flex">
+                <button
+                  style={{ fontSize: "1.6rem" }}
+                  type="button"
+                  className="text-white bg-red-800  focus:outline-none  font-medium rounded-lg text-base px-6 py-3  text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  onClick={registerMember}
+                >
+                  Add phone number
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="flex min-h-full  flex-col justify-center">
+                <div className="w-fit">
+                  <img
+                    className="mx-auto h-16 w-auto mix-blend-exclusion"
+                    src="./images/mainlogo.png"
+                    alt="logo"
+                  />
+                  <h2 className="mt-14 text-center text-5xl font-bold leading-9 tracking-tight text-gray-900">
+                    Book an appointment
+                  </h2>
+                </div>
 
-              <div className="mt-14">
-                <form className="space-y-6" onSubmit={handleSubmit}>
-                  {/* <div>
+                <div className="mt-14">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
+                    {/* <div>
                     <label
                       htmlFor="email"
                       className="block text-2xl font-medium leading-6 text-gray-900"
@@ -235,32 +262,32 @@ function Services({ zoom: [zoom, setZoom] }) {
                     </div>
                   </div> */}
 
-                  <Select
-                    selectedValue={[vaxinationCenter, setVaxinationCenter]}
-                    data={vCenters.map((e, i) => {
-                      return {
-                        id: e.centerId,
-                        name: `${e.centerName}, ${e.city}`,
-                      };
-                    })}
-                    labelText={"Vaccination center"}
-                  />
-                  <Select
-                    selectedValue={[slot, setSlot]}
-                    data={[
-                      { id: 1, name: "SLOT1" },
-                      { id: 2, name: "SLOT2" },
-                      { id: 3, name: "SLOT3" },
-                      { id: 4, name: "SLOT4" },
-                      { id: 5, name: "SLOT5" },
-                      { id: 6, name: "SLOT6" },
-                      { id: 7, name: "SLOT7" },
-                      { id: 8, name: "SLOT8" },
-                      { id: 9, name: "SLOT9" },
-                    ]}
-                    labelText={"Choose Slot"}
-                  />
-                  {/* <div>
+                    <Select
+                      selectedValue={[vaxinationCenter, setVaxinationCenter]}
+                      data={vCenters.map((e, i) => {
+                        return {
+                          id: e.centerId,
+                          name: `${e.centerName}, ${e.city}`,
+                        };
+                      })}
+                      labelText={"Vaccination center"}
+                    />
+                    <Select
+                      selectedValue={[slot, setSlot]}
+                      data={[
+                        { id: 1, name: "SLOT1" },
+                        { id: 2, name: "SLOT2" },
+                        { id: 3, name: "SLOT3" },
+                        { id: 4, name: "SLOT4" },
+                        { id: 5, name: "SLOT5" },
+                        { id: 6, name: "SLOT6" },
+                        { id: 7, name: "SLOT7" },
+                        { id: 8, name: "SLOT8" },
+                        { id: 9, name: "SLOT9" },
+                      ]}
+                      labelText={"Choose Slot"}
+                    />
+                    {/* <div>
                     <div className="flex items-center justify-between">
                       <label
                         htmlFor="password"
@@ -289,17 +316,27 @@ function Services({ zoom: [zoom, setZoom] }) {
                     </div>
                   </div> */}
 
-                  <div>
-                    <button
-                      type="submit"
-                      className="flex w-full justify-center rounded-md bg-red-600 px-3 py-5 text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-                    >
-                      Sign in
-                    </button>
-                  </div>
-                </form>
+                    <div>
+                      <button
+                        type="submit"
+                        className="flex w-full justify-center rounded-md bg-red-600 px-3 py-5  text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                        disabled={isDisabled}
+                      >
+                        {isDisabled ? (
+                          <CircularProgress
+                            isIndeterminate
+                            color="red.500"
+                            size="20px"
+                            thickness={8}
+                          />
+                        ) : (
+                          "Book appointment"
+                        )}
+                      </button>
+                    </div>
+                  </form>
 
-                {/* <p className="mt-10 text-center text-sm text-gray-500">
+                  {/* <p className="mt-10 text-center text-sm text-gray-500">
                   Not a member?{" "}
                   <a
                     href="#"
@@ -308,11 +345,12 @@ function Services({ zoom: [zoom, setZoom] }) {
                     Start a 14 day free trial
                   </a>
                 </p> */}
+                </div>
               </div>
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
+      )}
       <Footer />
     </>
   );

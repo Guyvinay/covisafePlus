@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,15 +38,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @CrossOrigin("*")
-@Deprecated
-
-/**
- * <p>
- * Idcard should be a field instead of having a seperate controllor we will
- * merge it in either memeber or user
- * </p>
- * 
- */
 
 public class IdCardControllor {
 
@@ -54,6 +47,11 @@ public class IdCardControllor {
 	@PostMapping(value = "/IdCards")
 	public ResponseEntity<IdCard> saveIdCard(@RequestBody IdCard IdCard) {
 		return new ResponseEntity<IdCard>(idCardService.addIdCard(IdCard), HttpStatus.ACCEPTED);
+	}
+
+	@PutMapping(value = "/IdCards/{id}")
+	public ResponseEntity<IdCard> updateIdCard(@RequestBody IdCard idCard, @PathVariable String id){
+		return new ResponseEntity<IdCard>(idCardService.updateIdCard(id, idCard), HttpStatus.ACCEPTED);
 	}
 
 	@GetMapping(value = "/IdCards/{id}")

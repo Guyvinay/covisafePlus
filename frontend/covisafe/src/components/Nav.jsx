@@ -18,15 +18,21 @@ export default function Nav(props) {
         <div className="mrightside">
           <button onClick={() => props.zoom[1](props.zoom[0] + 1)}>A+</button>
           <button onClick={() => props.zoom[1](100)}>A</button>
-          <button onClick={() => props.zoom[1](props.zoom[0] - 1)}>A-</button>
-
+          <button
+            onClick={() =>
+              props.zoom[1]((prev) => (prev > 1 ? prev - 1 : prev))
+            }
+          >
+            A-
+          </button>
           <p id="eng">English </p>
         </div>
       </div>
 
       {/* <!-- nav --> */}
-      <div className="mnav">
-        <div className="mlogo">
+      
+      <div className="mnav h-36 items-center">
+        <div className="mlogo h-fit ">
           <Link to="/">
             <img
               className="cursor-pointer"
@@ -43,14 +49,14 @@ export default function Nav(props) {
           <Link to="/service">
             <h4>Book an slot</h4>
           </Link>
-          <a href="/faq.html">
+          <Link to="/">
             <h4>FAQ</h4>
-          </a>
-          <a href="/partner.html">
-            <h4>Partner</h4>
-          </a>
+          </Link>
+          <Link to="/">
+            <h4>Admin</h4>
+          </Link>
           <Link to="/signin">
-            <button>Register/Signin</button>
+            <button>Register / Signin</button>
           </Link>
         </div>
       </div>

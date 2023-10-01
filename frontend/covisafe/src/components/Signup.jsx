@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import Nav from './nav';
+import Nav from './Nav';
 import Footer from './Footer';
 import Swal from "sweetalert2";
 import axios from 'axios';
-import { Select } from '@chakra-ui/react';
+import { CircularProgress, Select } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 
 
 export default function Signup({ zoom: [zoom, setZoom] }) {
-
+  const [loading, setLoading] = useState(false);
   const [next, setNext] = useState(false);
 
   const navigate = useNavigate();
@@ -31,34 +31,42 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
 
 
 
-  const baseURL = `https://covisafeplus-production-417c.up.railway.app`;
+  const baseURL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
 
   const handleNext =(e)=>{
     e.preventDefault();
-    setNext(prev=>!prev);
+    if(email&&name&&dob&&gender&&aadhar){
+      setNext((prev) => !prev);
+    }else{
+      Swal.fire('Not allowed !', "please fill the required details to move ahead ", 'info');
+    }
   };
   
   const handleSubmit = (e)=>{
     e.preventDefault();
-    
+    setLoading(true);
     const user = {
       email: email,
-      name:name,
-      dob:dob,
-      gender:gender,
-      aadhar:aadhar,
-      address:address,
-      city:city,
-      state:state,
-      pincode:pincode,
-      pan:pan,
-      password:password,
+      name: name,
+      dob: dob,
+      gender: gender,
+      aadharNo: aadhar,
+      address: address,
+      city: city,
+      state: state,
+      pincode: pincode,
+      panNo: pan,
+      password: password,
     };
 
     axios.post(`${baseURL}/users/register`,user)
     .then(res=>{
       console.log(res);
+      localStorage.removeItem("memberId");
+      localStorage.removeItem("token");
+      localStorage.removeItem("uuid");
+
       localStorage.setItem("uuid",res.data.uuid);
       localStorage.setItem("token",res.data.token);
       Swal.fire(
@@ -210,11 +218,23 @@ export default function Signup({ zoom: [zoom, setZoom] }) {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
-                    <input
+                    <button
                       type="submit"
+                      className="submitButton bg-[#C20E0E] text-[--white] justify-center items-center border-none disabled:cursor-not-allowed"
+                      disabled={loading}
                       onClick={handleSubmit}
-                      value="Sign up"
-                    />
+                    >
+                      {loading ? (
+                        <CircularProgress
+                          isIndeterminate
+                          color="red.500"
+                          size="20px"
+                          thickness={8}
+                        />
+                      ) : (
+                        "Login"
+                      )}
+                    </button>
                   </>
                 )}
               </form>

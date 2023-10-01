@@ -1,5 +1,7 @@
 package com.covisafe.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,7 @@ public class AppointmentController {
 	}
 	@PostMapping(value = "/appointments/{memberid}/{vaxcenterid}")
 	public ResponseEntity<Appointment> addAppointment(@PathVariable String memberid , @PathVariable String vaxcenterid,@RequestBody Appointment appointment){
+		appointment.setDateOfBooking(LocalDate.now());
 		return  new ResponseEntity<Appointment>(appointmentService.addAppointment(memberid , vaxcenterid , appointment) , HttpStatus.ACCEPTED);
 	}
 	@PutMapping(value = "/appointments/{bookingId}")
