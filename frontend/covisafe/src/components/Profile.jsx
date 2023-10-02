@@ -157,6 +157,7 @@ export default function Profile() {
       })
     }).catch((err)=>{
       setLoading(false);
+      console.log(err.status);
     })
   };
 
