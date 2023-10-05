@@ -11,11 +11,9 @@ export const App = () => {
       width={"100%"}
       flexDir={"row"}
       shadow={"outline"}
-      paddingTop={"12px"}
-      paddingBottom={"12px"}
       boxShadow="sm"
     >
-      <div style={{ width: "10%" }}>
+      <div style={{ width: "10%" }} className="m-auto">
         <a
           href=""
           className="font-medium px-6 text-2xl"
@@ -28,20 +26,34 @@ export const App = () => {
         className="flex justify-around text-red-600 font-semibold hover:"
         style={{ width: "90%" }}
       >
-        <li className="nav-item">
-          <a href="#" className="nav-link">
+        <li>
+          <a
+            href="#"
+            className="inline-flex items-center px-1  py-5 border-b-2 border-transparent text-sm font-medium leading-5 text-red-500 hover:text-red-700 hover:border-red-300 focus:outline-none focus:text-red-700 focus:border-red-300 transition"
+          >
             Home
           </a>
         </li>
         <li>
-          <a href="" className="after:w-9 after:h-2 after:bg-red-500">About</a>
-          <div></div>
+          <a className="inline-flex items-center px-1 cursor-pointer  py-5 border-b-2 border-transparent text-sm font-medium leading-5 text-red-500 hover:text-red-700 hover:border-red-300 focus:outline-none focus:text-red-700 focus:border-red-300 transition">
+            About
+          </a>
         </li>
         <li>
-          <a href="">Dashboard</a>
+          <a
+            href=""
+            className="inline-flex items-center px-1  py-5 border-b-2 border-transparent text-sm font-medium leading-5 text-red-500 hover:text-red-700 hover:border-red-300 focus:outline-none focus:text-red-700 focus:border-red-300 transition"
+          >
+            Dashboard
+          </a>
         </li>
         <li>
-          <a href="">Users</a>
+          <a
+            href=""
+            className="inline-flex items-center px-1  py-5 border-b-2 border-transparent text-sm font-medium leading-5 text-red-500 hover:text-red-700 hover:border-red-300 focus:outline-none focus:text-red-700 focus:border-red-300 transition"
+          >
+            Users
+          </a>
         </li>
       </ul>
     </Box>
