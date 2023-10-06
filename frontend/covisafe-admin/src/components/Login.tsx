@@ -13,12 +13,13 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import React, { Dispatch, useState } from 'react'
+import React, { Dispatch, Reducer, useState } from 'react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import axios from 'axios';
 import { BeatLoader } from "react-spinners";
 import { loginUser } from "../redux/actions/loginAction";
-import { AppActions, AppState } from "../redux/actions/types";
+import { AppActions, AppState, RootState } from "../redux/actions/types";
+import { CombinedState } from "redux";
 
 
 const  Login : React.FC= ()=> {
@@ -27,45 +28,11 @@ const  Login : React.FC= ()=> {
     const [email, setEmail] = useState("");
     const [view, setView] = useState(false);
     const [password,setPassword] = useState("");
-    // const [loading, setLoading] = useState(false);
-    const loading = useSelector((state:any) => state.user.loading);
-
+    const loading = useSelector((state: RootState) => state.user.loading); 
     const baseURL = process.env.REACT_APP_API_BASE_URL;
-
-    console.log(loading);
-    
+        
     const handleSubmit = (e:React.FormEvent)=>{
-        e.preventDefault();
-        // setLoading(true);
-        // axios.post(`${baseURL}/users/signin`,{
-        //     email:email,
-        //     password:password
-        // })
-        // .then((res)=>{
-        //     console.log(res);
-        //     localStorage.setItem('token',res.data.token);
-        //     toast({
-        //       title: "Logged in",
-        //       description: "your account has logged in.",
-        //       status: "success",
-        //       position:'top',
-        //       duration: 9000,
-        //       isClosable: true,
-        //     });
-        //     setLoading(false);
-        // })
-        // .catch((res)=>{
-        //     console.log(res);
-        //     toast({
-        //       title: "Login fail.",
-        //       description: "unable to login.",
-        //       status: "error",
-        //       position: "top",
-        //       duration: 9000,
-        //       isClosable: true,
-        //     });
-        //     setLoading(false);
-        // })
+      e.preventDefault();
       dispatch(loginUser(email, password, toast));
     };
 

@@ -1,10 +1,12 @@
-export default function User() {
+import { UserProp } from "../../redux/actions/types";
+
+export default function User({ w: width, h: height }: UserProp) {
   return (
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width={width}
+        height={height}
         fill="currentColor"
         className="bi bi-person"
         viewBox="0 0 16 16"

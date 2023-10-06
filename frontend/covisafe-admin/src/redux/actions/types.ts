@@ -21,4 +21,14 @@ export interface AppState {
   token: string | null;
 }
 
+export interface RootState {
+  user:AppState;
+}
+
+
+export interface UserProp {
+  w:number;
+  h:number;
+}
+
 export type AppActions = SetLoadingAction | LoginSuccesAction | LoginFailAction;

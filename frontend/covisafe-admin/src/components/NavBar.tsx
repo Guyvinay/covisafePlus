@@ -12,8 +12,9 @@ export default function NavBar() {
       flexDir={"row"}
       shadow={"outline"}
       boxShadow="sm"
+      
     >
-      <div style={{ width: "10%" }} className="m-auto">
+      <div style={{ width: "10%" }} className="m-auto flex flex-nowrap">
         <a
           href=""
           className="font-medium px-6 text-2xl "
@@ -24,7 +25,7 @@ export default function NavBar() {
         </a>
       </div>
       <ul
-        className="flex justify-around text-red-600 font-semibold hover:"
+        className="flex justify-evenly text-red-600 font-semibold "
         style={{ width: "80%" }}
       >
         <li>
@@ -70,7 +71,7 @@ export default function NavBar() {
               }}
               aria-label="Done"
               fontSize="20px"
-              icon={<User />}
+              icon={<User h={16} w={16}/>}
             />
           </MenuButton>
           <MenuList>
