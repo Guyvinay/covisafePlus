@@ -12,7 +12,6 @@ export default function NavBar() {
       flexDir={"row"}
       shadow={"outline"}
       boxShadow="sm"
-      
     >
       <div style={{ width: "10%" }} className="m-auto flex flex-nowrap">
         <a
@@ -66,12 +65,9 @@ export default function NavBar() {
               variant="solid"
               colorScheme="teal"
               background={"red.600"}
-              _hover={{
-                background: "red.400",
-              }}
               aria-label="Done"
               fontSize="20px"
-              icon={<User h={16} w={16}/>}
+              icon={<User h={16} w={16} />}
             />
           </MenuButton>
           <MenuList>

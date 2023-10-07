@@ -1,0 +1,5 @@
+GET https://covisafeplus-production-417c.up.railway.app/members
+
+Content-Type: application/json
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aW5heUBnbWFpbC5jb20iLCJpYXQiOjE2OTY3MDA0MzMsImV4cCI6MTY5NjcwMTg3M30.7Pgu6kZzYLUeaB6tTPRnG0kHKP9cFIwaQrwJLk5l-H4
