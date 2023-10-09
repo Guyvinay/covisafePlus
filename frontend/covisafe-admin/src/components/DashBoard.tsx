@@ -153,9 +153,9 @@ export default function DashBoard(){
                 </TableCaption> */}
                 <Thead>
                   <Tr>
-                    <Th>To convert</Th>
-                    <Th>into</Th>
-                    <Th isNumeric>multiply by</Th>
+                    <Th>Email</Th>
+                    <Th>Name</Th>
+                    <Th>City</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -163,13 +163,15 @@ export default function DashBoard(){
                     data.map((e, i) => {
                       console.log(e);
                       
-                      return (
-                        <Tr key={i}>
-                          <Td>{e.idcard.email}</Td>
-                          <Td>millimetres (mm)</Td>
-                          <Td isNumeric>25.4</Td>
-                        </Tr>
-                      );
+                     return e.idcard ? (
+                       <Tr key={i}>
+                         <Td>{e.idcard.email}</Td>
+                         <Td>{e.idcard.name}</Td>
+                         <Td>{e.idcard.city}</Td>
+                       </Tr>
+                     ) : (
+                       <></>
+                     ); 
                     })
                   ) : (
                     <>
@@ -186,7 +188,6 @@ export default function DashBoard(){
           </Flex>
         </Flex>
       </Grid>
-      <div>{JSON.stringify(data).toString()}</div>
     </div>
   );
 }
