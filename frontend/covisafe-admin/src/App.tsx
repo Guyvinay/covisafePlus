@@ -8,6 +8,6 @@ import DashBoard from "./components/DashBoard";
 export const App = () => {
 
   return (
-    <><NavBar /><DashBoard /></>
+    <><NavBar /><DashBoard/> <Login/> </>
   );
 };

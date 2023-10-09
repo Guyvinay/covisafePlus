@@ -1,10 +1,11 @@
-import { applyMiddleware, combineReducers } from "redux";
+import { combineReducers } from "redux";
 import loginReducer from "./recuders/loginReducers";
-import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
+import userDataReducer from "./recuders/fetchUserDataReducers";
 
 const rootReducer = combineReducers({
-    user:loginReducer,
+  user: loginReducer,
+  userData: userDataReducer,
 });
 
 const store = configureStore({reducer:rootReducer})

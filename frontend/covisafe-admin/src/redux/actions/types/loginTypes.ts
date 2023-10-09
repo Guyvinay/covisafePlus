@@ -1,5 +1,9 @@
 import { type } from "os";
-import { LOGIN_FAIL, LOGIN_SUCCESS, SET_LOADING } from "./loginActionTypes";
+import {
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
+  SET_LOADING,
+} from "../actionTypes/loginActionTypes";
 
 export interface SetLoadingAction {
   type: typeof SET_LOADING;
@@ -19,16 +23,6 @@ export interface AppState {
   loading: boolean;
   loggedIn: boolean;
   token: string | null;
-}
-
-export interface RootState {
-  user:AppState;
-}
-
-
-export interface UserProp {
-  w:number;
-  h:number;
 }
 
 export type AppActions = SetLoadingAction | LoginSuccesAction | LoginFailAction;

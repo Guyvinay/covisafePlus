@@ -1,0 +1,830 @@
+[
+  {
+    "id": "14e73044-f2b4-44aa-920f-f53368a87206",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-26",
+    "idcard": {
+      "userId": "55a72f58-a3b2-4b15-a95f-b63832dc6bf7",
+      "email": "vinay@gmail.com",
+      "createdAt": "2023-09-19T05:48:18.979091",
+      "role": "MEMBER",
+      "name": "vinay",
+      "dob": "2003-01-04",
+      "gender": "MALE",
+      "address": "noida",
+      "city": "noida",
+      "state": "UP",
+      "pincode": "231306",
+      "panNo": "JIT1234",
+      "aadharNo": "2552278956525",
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "vinay@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "49640832-9024-4282-8d18-123433d7a38c",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "1b2dd919-365c-43ed-83ee-fc013a259598",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 9717533907,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "2c030f30-aac7-41fd-bdb5-9842c49c0b0e",
+      "email": "john@gmail.com",
+      "createdAt": "2023-09-28T15:35:46.243019",
+      "role": "MEMBER",
+      "name": "john",
+      "dob": "1999-12-01",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "231104",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "john@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "ed89b621-d142-4541-aefd-2b85e54be6e1",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "29c50b35-168c-4ad1-80ec-ff363b3a90b2",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "f8bdbb9e-eda2-4060-bd35-330631e657ea",
+      "email": "boss@gmail.com",
+      "createdAt": "2023-09-28T07:00:16.14158",
+      "role": "MEMBER",
+      "name": "boss",
+      "dob": "1988-01-01",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201305",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "boss@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "375b8909-ab70-4726-9f66-40411699ad45",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 919717533709,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "79eb1959-ecc0-4c0a-b44d-572708574815",
+      "email": "yashveer@gmail.com",
+      "createdAt": "2023-09-28T15:48:13.761358",
+      "role": "MEMBER",
+      "name": "yashveer radhe",
+      "dob": "1994-08-03",
+      "gender": "MALE",
+      "address": "Noiida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201323",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "yashveer@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "d3470494-4f0f-4cbc-a3a6-1dcb7a5c1176",
+      "mobileNo": 919717533709,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "37fe1b72-b54e-400b-ac37-e0806191c324",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "094cc6b2-d133-44d1-975d-461b8c28fc36",
+      "email": "varun@gmail.com",
+      "createdAt": "2023-09-28T07:05:22.979265",
+      "role": "MEMBER",
+      "name": "varun",
+      "dob": "2003-09-30",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "UP",
+      "pincode": "958198",
+      "panNo": "JIN233",
+      "aadharNo": "JAM123",
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "varun@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "45bf33d0-cd00-4ec5-805a-a7373e1feab5",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 8595024053,
+    "dateOfRegistration": "2023-09-30",
+    "idcard": {
+      "userId": "7c94e39e-a026-4930-ba25-f5a345c5a43a",
+      "email": "hanshraj@gmail.com",
+      "createdAt": "2023-09-30T10:44:44.093413",
+      "role": "MEMBER",
+      "name": "hanshraj singh",
+      "dob": "1986-12-02",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "UP",
+      "pincode": "201990",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "hanshraj@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "4e23151e-0b18-4461-8f81-6b72ad39f2b6",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-27",
+    "idcard": null,
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "562b440d-1d31-4f0c-ae15-3dd3cd4db7f4",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "662d4c08-a294-42cd-a60a-fe3b33bdda26",
+      "email": "raju@gmail.com",
+      "createdAt": "2023-09-28T16:38:31.243965",
+      "role": "MEMBER",
+      "name": "raju sharma",
+      "dob": "2006-10-30",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "232013",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "raju@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "9279ff09-4bdc-4bc8-bd16-4a9812684f32",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT6",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "698a7fb1-99be-4bbf-a3bb-9e1ad9a276c6",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "61d1f9a2-dd6c-4219-b9d3-c4d70978d818",
+      "email": "honey@gmail.com",
+      "createdAt": "2023-09-28T08:03:13.246963",
+      "role": "MEMBER",
+      "name": "honey",
+      "dob": "2000-02-02",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Honda",
+      "state": "useState",
+      "pincode": "201230",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "honey@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "ef6611e0-88f3-46e2-b3a8-d8ae0e6c7867",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "7f9ad23e-644f-461c-b323-214a6190bbb0",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "eec6cf24-807b-41f1-b550-77b5a1acb47e",
+      "email": "sunil@gmail.com",
+      "createdAt": "2023-09-28T08:18:34.640993",
+      "role": "MEMBER",
+      "name": "Sunil",
+      "dob": "2003-11-01",
+      "gender": "MALE",
+      "address": "Noiida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201305",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "sunil@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "80d91648-1d3c-4c94-83a1-d998ff69f985",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 729171536,
+    "dateOfRegistration": "2023-10-03",
+    "idcard": {
+      "userId": "2a5aa8da-6e87-4b9e-ae29-2ce318ed035d",
+      "email": "anuragjat231104@gmail.com",
+      "createdAt": "2023-10-03T22:48:24.932982",
+      "role": "MEMBER",
+      "name": "Anurag jaat",
+      "dob": "1967-10-04",
+      "gender": "MALE",
+      "address": "Krishna Kunj Noida Sector 122",
+      "city": "Krishna Kunj Noida Sector 122",
+      "state": "Uttar Pradesh ",
+      "pincode": "201301",
+      "panNo": "127GH34",
+      "aadharNo": "13488997578",
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "anuragjat231104@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "053b4913-6741-4b37-82f9-1eaafe604c20",
+      "mobileNo": 729171536,
+      "dateOfBooking": "2023-10-03",
+      "slot": "SLOT2",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "90ce3323-6757-43be-a580-46d33a693fbd",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 9717533709,
+    "dateOfRegistration": "2023-09-22",
+    "idcard": null,
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "9d9f2101-7eb7-4f2b-ba54-b5bebe6796f0",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "c9a8edf8-7518-4a15-bb25-e3a2b4678349",
+      "email": "babur@gmail.com",
+      "createdAt": "2023-09-28T07:03:30.748464",
+      "role": "MEMBER",
+      "name": "babur",
+      "dob": "2006-01-01",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "jkdfjkfl",
+      "state": "lkjlkfjsdjk",
+      "pincode": "201307",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "babur@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "a1b5c576-4536-421c-8b0a-7d9b5c2cf4f1",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-27",
+    "idcard": {
+      "userId": "22b0de64-9034-4ff0-ba5c-0970f79943de",
+      "email": "json@gmail.com",
+      "createdAt": "2023-09-27T17:44:05.093153",
+      "role": "MEMBER",
+      "name": "json",
+      "dob": "1989-01-01",
+      "gender": "MALE",
+      "address": "SMASHTRESS SPORTS COMPLEX",
+      "city": "Noida",
+      "state": "Uttar Pradesh",
+      "pincode": "201305",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "json@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "b0c3fcba-dbc8-4b9a-9403-64f56e8008ab",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 8595024053,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "5c2650e1-f12d-4b2f-989b-dcea33825377",
+      "email": "jatin@gmail.com",
+      "createdAt": "2023-09-28T15:53:12.884871",
+      "role": "MEMBER",
+      "name": "jating",
+      "dob": "2002-11-02",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201307",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "jatin@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "78a69de1-4c3f-4716-88b3-489ba7e05152",
+      "mobileNo": 8595024053,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "b40e1837-aa1d-4c5f-bf23-590b492d4d34",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": null,
+    "appointment": {
+      "bookingId": "3eec61d3-7e53-46c1-ada7-1acf4acb70ae",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT5",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "bb587fcd-8f08-4f45-9859-2e2ce5874eca",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "59fc99de-ca3d-4b2c-9ed6-3bb057aef9b4",
+      "email": "bhanjan@gmail.com",
+      "createdAt": "2023-09-28T16:11:37.437312",
+      "role": "MEMBER",
+      "name": "bhajan rathod",
+      "dob": "2001-10-02",
+      "gender": "MALE",
+      "address": "Noiida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201320",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "bhanjan@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "965e6bd2-47b6-4c65-bcce-654e26ce2661",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "c451d6c6-0d33-4b8a-a3c5-dd82f18c5eaa",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 85950240253,
+    "dateOfRegistration": "2023-09-30",
+    "idcard": {
+      "userId": "2dfc8230-ef0d-49f1-aef3-9e769db59365",
+      "email": "naveen@gmail.com",
+      "createdAt": "2023-09-30T13:46:01.382035",
+      "role": "MEMBER",
+      "name": "navin singh",
+      "dob": "1989-04-03",
+      "gender": "MALE",
+      "address": "shivali nagar ",
+      "city": "indore ",
+      "state": "Madhya pradesh",
+      "pincode": "201306",
+      "panNo": "JU22541236",
+      "aadharNo": "256971552369",
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "naveen@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "5484b9f6-369b-49d9-873a-9b936cab29cd",
+      "mobileNo": 85950240253,
+      "dateOfBooking": "2023-09-30",
+      "slot": "SLOT5",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "ca0e38a5-c35e-44b8-932f-9c2f78d1a79b",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "92c90b44-5089-4564-8d10-89ab05d964c3",
+      "email": "chiku@gmail.com",
+      "createdAt": "2023-09-28T06:36:54.270564",
+      "role": "MEMBER",
+      "name": "chiku bhaiya ",
+      "dob": "2003-12-01",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201307",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "chiku@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "cd637df9-65c3-447f-afed-455a53842063",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 2347873482,
+    "dateOfRegistration": "2023-09-29",
+    "idcard": {
+      "userId": "a0e4aab5-a596-4fd6-8c6a-1411d642610d",
+      "email": "sagarbhadrawle@gmail.com",
+      "createdAt": "2023-09-29T06:02:33.192368",
+      "role": "MEMBER",
+      "name": "sagar",
+      "dob": "2023-06-21",
+      "gender": "MALE",
+      "address": "345 ",
+      "city": "indore",
+      "state": "mp",
+      "pincode": "452002",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "sagarbhadrawle@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "e6f2d6d9-12ee-4807-8fec-6ee44f5250b5",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 91971755310,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "72d29f79-869c-49c7-8ccd-70ef3799c91b",
+      "email": "shivam@gmail.com",
+      "createdAt": "2023-09-28T07:07:16.831674",
+      "role": "MEMBER",
+      "name": "shivam",
+      "dob": "2009-02-01",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201302",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "shivam@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": null,
+    "vaccine": null
+  },
+  {
+    "id": "eeda76a6-bdbd-4035-9f8a-cc3b65bc1711",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 7291971753,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "4e3afda2-cfff-4d59-b195-1088529a72eb",
+      "email": "jatinsingh@gmail.com",
+      "createdAt": "2023-09-28T16:42:52.918755",
+      "role": "MEMBER",
+      "name": "jatinsingh",
+      "dob": "1999-12-02",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "250235",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "jatinsingh@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "e56306d2-60d3-455b-b410-ef1897e7818f",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  },
+  {
+    "id": "fa4e1386-3e6d-40b3-93e4-2edc92c61f25",
+    "dose1Status": null,
+    "dose2Status": null,
+    "dose1Date": null,
+    "dose2Date": null,
+    "mobNo": 8595024053,
+    "dateOfRegistration": "2023-09-28",
+    "idcard": {
+      "userId": "5064b6a7-6a7b-4a0a-aea3-6f80ba21db36",
+      "email": "jin@gmail.com",
+      "createdAt": "2023-09-28T15:43:56.69464",
+      "role": "MEMBER",
+      "name": "jin",
+      "dob": "2007-02-02",
+      "gender": "MALE",
+      "address": "Noida",
+      "city": "Noida",
+      "state": "Noida",
+      "pincode": "201223",
+      "panNo": null,
+      "aadharNo": null,
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "username": "jin@gmail.com",
+      "authorities": [
+        {
+          "authority": "MEMBER"
+        }
+      ]
+    },
+    "appointment": {
+      "bookingId": "25259325-9715-4e37-bd56-fc22b9bea36f",
+      "mobileNo": 7291971753,
+      "dateOfBooking": null,
+      "slot": "SLOT1",
+      "bookingStatus": false
+    },
+    "vaccine": null
+  }
+]

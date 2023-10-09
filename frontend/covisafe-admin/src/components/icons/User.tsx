@@ -1,4 +1,8 @@
-import { UserProp } from "../../redux/actions/types";
+interface UserProp {
+  w: number;
+  h: number;
+}
+
 
 export default function User({ w: width, h: height }: UserProp) {
   return (
