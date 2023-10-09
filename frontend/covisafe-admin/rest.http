@@ -1,5 +1,30 @@
-GET https://covisafeplus-production-417c.up.railway.app/members
+GET http://www.localhost:8080/members
 
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm51QGdtYWlsLmNvbSIsImlhdCI6MTY5NjczMzQ1OSwiZXhwIjoxNjk2NzM0ODk5fQ.lr7X5zhmdLkZA_PAZcb_85iEZRVlZjrmsygK6peqna8
 
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aW5heUBnbWFpbC5jb20iLCJpYXQiOjE2OTY3MDA0MzMsImV4cCI6MTY5NjcwMTg3M30.7Pgu6kZzYLUeaB6tTPRnG0kHKP9cFIwaQrwJLk5l-H4
+###
+POST http://localhost:8080/users/signin
+
+{
+    "email":"vinay@gmail.com",
+    "password":"string"
+}
+
+###
+POST http://localhost:8080/users/register
+content-type: application/json
+
+
+{
+    "email": "annu@gmail.com",
+    "name": "java",
+    "dob": "2023-01-01",
+    "aadhar": "dfjklsjfkljd234",
+    "address": "kanput",
+    "gender":"MALE",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "pincode": "201305",
+    "pan": "jjwt233",
+    "password": "string"
+}
