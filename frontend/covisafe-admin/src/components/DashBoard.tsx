@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import User from './icons/User'
 import { Button, Flex, Grid, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr, color, useToast } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons';
@@ -13,6 +13,8 @@ export default function DashBoard(){
   const dispatch: any = useDispatch();
   const data = useSelector((state:RootState) => state.userData.data);
   const toast = useToast();
+  const [recentUsers, setRecentUsers] = useState<any[]>([]);
+
 
   useEffect(()=>{
 
@@ -37,94 +39,17 @@ export default function DashBoard(){
     
   },[dispatch]);
 
+  useEffect(() => {
+    // Update recentUsers whenever data changes
+    if (data && data.length) {
+      const recentUsersData = data.slice(0, 10);
+      setRecentUsers(recentUsersData);
+    }
+  }, [data]);
+
+
   return (
     <div className="w-full flex flex-col items-center py-5 bg-[#f5f5f5]">
-      {/* <Grid width={"90%"} gridTemplateColumns={"repeat(4,1fr)"} gap={10}>
-        <Flex
-          shadow={"md"}
-          justify={"space-between"}
-          px={5}
-          py={5}
-          rounded={"md"}
-          cursor={"pointer"}
-          color={"#010045"}
-          _hover={{
-            bg: "#010045",
-            color: "white",
-          }}
-        >
-          <div>
-            <h2 className="font-bold font-sans text-2xl pr-5">12</h2>
-            <span className="text-gray-400">Users</span>
-          </div>
-          <div className="w-16 pl-5">
-            <User w={50} h={50} />
-          </div>
-        </Flex>
-        <Flex
-          shadow={"md"}
-          justify={"space-between"}
-          px={5}
-          py={5}
-          rounded={"md"}
-          cursor={"pointer"}
-          color={"#010045"}
-          _hover={{
-            bg: "#010045",
-            color: "white",
-          }}
-        >
-          <div>
-            <h2 className="font-bold font-sans text-2xl pr-5">12</h2>
-            <span className="text-gray-400">Users</span>
-          </div>
-          <div className="w-16 pl-5">
-            <User w={50} h={50} />
-          </div>
-        </Flex>
-        <Flex
-          shadow={"md"}
-          justify={"space-between"}
-          px={5}
-          py={5}
-          rounded={"md"}
-          cursor={"pointer"}
-          color={"#010045"}
-          _hover={{
-            bg: "#010045",
-            color: "white",
-          }}
-        >
-          <div>
-            <h2 className="font-bold font-sans text-2xl pr-5">12</h2>
-            <span className="text-gray-400">Users</span>
-          </div>
-          <div className="w-16 pl-5">
-            <User w={50} h={50} />
-          </div>
-        </Flex>
-        <Flex
-          shadow={"md"}
-          justify={"space-between"}
-          px={5}
-          py={5}
-          rounded={"md"}
-          cursor={"pointer"}
-          color={"#010045"}
-          _hover={{
-            bg: "#010045",
-            color: "white",
-          }}
-        >
-          <div>
-            <h2 className="font-bold font-sans text-2xl pr-5">12</h2>
-            <span className="text-gray-400">Users</span>
-          </div>
-          <div className="w-16 pl-5">
-            <User w={50} h={50} />
-          </div>
-        </Flex>
-      </Grid> */}
       <Grid gridTemplateColumns={"repeat(2,1fr)"} w={"full"}>
         <Flex className="flex-col bg-white rounded-lg p-3">
           <Flex className="items-center justify-between">
@@ -148,9 +73,9 @@ export default function DashBoard(){
           <Flex>
             <TableContainer w={"full"}>
               <Table variant="simple">
-                {/* <TableCaption>
-                  Imperial to metric conversion factors
-                </TableCaption> */}
+                <TableCaption>
+                  and {data.length} more
+                </TableCaption>
                 <Thead>
                   <Tr>
                     <Th>Email</Th>
@@ -159,26 +84,25 @@ export default function DashBoard(){
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {data.length ? (
-                    data.map((e, i) => {
+                  {recentUsers.length ? (
+                    recentUsers.map((e, i) => {
                       console.log(e);
-                      
-                     return e.idcard ? (
-                       <Tr key={i}>
-                         <Td>{e.idcard.email}</Td>
-                         <Td>{e.idcard.name}</Td>
-                         <Td>{e.idcard.city}</Td>
-                       </Tr>
-                     ) : (
-                       <></>
-                     ); 
+                      return e.idcard ? (
+                        <Tr key={i}>
+                          <Td>{e.idcard.email}</Td>
+                          <Td>{e.idcard.name}</Td>
+                          <Td>{e.idcard.city}</Td>
+                        </Tr>
+                      ) : (
+                        <></>
+                      );
                     })
                   ) : (
                     <>
                       <Tr>
                         <Td></Td>
-                        <Td>millimetres (mm)</Td>
-                        <Td isNumeric>25.4</Td>
+                        <Td></Td>
+                        <Td></Td>
                       </Tr>
                     </>
                   )}
