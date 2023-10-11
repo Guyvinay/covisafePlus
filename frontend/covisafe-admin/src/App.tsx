@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import DashBoard from "./components/DashBoard";
+import Appointments from "./components/Appointments";
 
 export const App = () => {
 
@@ -11,7 +12,8 @@ export const App = () => {
     <>
       <div className="bg-[#F5F5F5]">
         <NavBar />
-        <DashBoard /> <Login />
+        <Appointments/>
+         {/* <Login /> */}
       </div>
     </>
   );

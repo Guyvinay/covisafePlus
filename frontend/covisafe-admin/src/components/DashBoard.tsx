@@ -70,7 +70,7 @@ export default function DashBoard(){
         gap={"20px"}
         justifyContent={"space-between"}
       >
-        <Flex className="flex-col bg-white rounded-lg px-7 py-5 h-fit">
+        <Flex className="flex-col bg-white rounded-lg px-7 py-5 h-fit overflow-x-auto">
           <Flex className="items-center justify-between">
             <h3 className="font-semibold text-lg">Recent Appointments</h3>
             <Button
@@ -168,7 +168,7 @@ export default function DashBoard(){
             </TableContainer>
           </Flex>
         </Flex>
-        <Flex className="flex-col bg-white rounded-lg px-7 py-5 h-fit">
+        <Flex className="flex-col bg-white rounded-lg px-7 py-5 h-fit overflow-x-auto">
           <Flex className="items-center justify-between">
             <h3 className="font-semibold text-lg">Recent Users</h3>
             <Button
