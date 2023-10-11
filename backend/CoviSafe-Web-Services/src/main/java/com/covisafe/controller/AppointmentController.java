@@ -1,6 +1,7 @@
 package com.covisafe.controller;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,6 +54,11 @@ public class AppointmentController {
 	@DeleteMapping(value = "/appointments/{bookingId}")
 	public ResponseEntity<Appointment> deleteAppointment(@PathVariable String bookingId){
 		return  new ResponseEntity<Appointment>(appointmentService.deleteAppointment(bookingId) , HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/appointments")
+	public ResponseEntity<List<Appointment>> getAllAppointments(){
+		return new ResponseEntity<List<Appointment>>(appointmentService.getAllAppointments(), null, HttpStatus.OK);
 	}
 	
 }
