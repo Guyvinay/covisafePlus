@@ -3,9 +3,8 @@ import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, Al
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointmentData } from '../redux/actions/appointmentAction';
-import { FetchAppointmentDataAction } from '../redux/actions/types/appointmentDataTypes';
-import { RootState } from '../redux/type';
 import { FaClipboard } from "react-icons/fa";
+import { RootState } from '../redux/type';
 
 export default function Appointments() {
   const dispatch: any = useDispatch();

@@ -13,6 +13,7 @@ export const App = () => {
       <div className="bg-[#F5F5F5]">
         <NavBar />
         <Appointments/>
+        <DashBoard/>
         <Login />
       </div>
     </>
