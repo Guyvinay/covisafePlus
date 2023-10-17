@@ -79,6 +79,7 @@ export const DeleteAppointmentData = ( token:string, uuid:string) =>{
       dispatch: Dispatch<DeleteAppointmentDataAction>
     ): Promise<void> => {
       try {
+        
         dispatch(setAppointmentDeleteRequest(true));
 
         const baseURL = process.env.REACT_APP_API_BASE_URL;
@@ -88,10 +89,15 @@ export const DeleteAppointmentData = ( token:string, uuid:string) =>{
             Authorization: `Bearer ${token}`,
           },
         });
+
       } catch (error) {
         const errorMessage = (error as AxiosError).message;
+
+        dispatch(appointmentDataDeleteFailure(errorMessage));
       } finally {
+
         dispatch(setAppointmentDeleteRequest(false));
+
       }
     };
 }

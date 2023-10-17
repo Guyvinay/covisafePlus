@@ -37,6 +37,12 @@ export interface DeleteAppointmentDataFailureAction {
     payload: string | null;
 }
 
+export interface DeleteAppointmentDataState {
+    loading: boolean;
+    data: any;
+    error: null | string;
+}
+
 export type FetchAppointmentDataAction =
   | FetchAppointmentDataRequestAction
   | FetchAppointmentDataSuccesAction
