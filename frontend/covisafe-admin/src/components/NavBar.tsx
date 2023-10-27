@@ -11,7 +11,7 @@ export default function NavBar() {
       width={"100%"}
       flexDir={"row"}
       shadow={"outline"}
-      boxShadow="sm"
+      boxShadow="md"
     >
       <div style={{ width: "10%" }} className="m-auto flex flex-nowrap">
         <a

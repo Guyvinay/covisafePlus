@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;    
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar { 
+    width: 10px; 
+    height: 10px;
+    border-radius: 5px;
+} 
+  
+/* Track */
+::-webkit-scrollbar-track { 
+    background: #f1f1f1;
+} 
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px; 
+    background: gray;
+} 
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { 
+    background: #555; 
+
+}
