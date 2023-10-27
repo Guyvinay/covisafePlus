@@ -2,7 +2,7 @@ import {DeleteIcon, SmallAddIcon } from '@chakra-ui/icons';
 import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, Icon, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAppointmentData } from '../redux/actions/appointmentAction';
+import { deleteAppointmentData, fetchAppointmentData } from '../redux/actions/appointmentAction';
 import { FaClipboard } from "react-icons/fa";
 import { RootState } from '../redux/type';
 
@@ -22,6 +22,20 @@ export default function Appointments() {
     const token: string = localStorage.getItem("token") || "";
     dispatch(fetchAppointmentData(token));
   }, [dispatch]);
+
+  type OnCloseHandler = (event: Event) => void;
+
+  const handleDelete = (e: any, id: string, onclose: OnCloseHandler) => {
+    console.log("clicked");
+    console.log(onclose);
+
+    if (onclose) {
+      onclose.call(window, e);
+    }
+
+    const token: string = localStorage.getItem("token") || "";
+    console.log(dispatch(deleteAppointmentData(token,id)));
+  };
 
   console.log(appointmentData);
 
@@ -157,7 +171,9 @@ export default function Appointments() {
                                   </Button>
                                   <Button
                                     colorScheme="red"
-                                    onClick={onClose}
+                                    onClick={(event) =>
+                                      handleDelete(event, e.bookingId, onClose)
+                                    }
                                     ml={3}
                                   >
                                     Delete

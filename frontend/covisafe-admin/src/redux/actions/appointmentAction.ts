@@ -74,7 +74,7 @@ export const fetchAppointmentData = (token:string) =>{
     };
 }
 
-export const DeleteAppointmentData = ( token:string, uuid:string) =>{
+export const deleteAppointmentData = ( token:string, uuid:string) =>{
     return async (
       dispatch: Dispatch<DeleteAppointmentDataAction>
     ): Promise<void> => {
