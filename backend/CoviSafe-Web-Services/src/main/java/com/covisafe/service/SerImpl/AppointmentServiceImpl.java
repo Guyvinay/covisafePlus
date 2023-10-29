@@ -133,7 +133,9 @@ public class AppointmentServiceImpl implements AppointmentService {
 									.get();
 		appointmentRepository
 		.delete(appointment);
-
+//		appointmentRepository.deleteById(bookingId);
+		
+		
 		return appointment;
 
 	}

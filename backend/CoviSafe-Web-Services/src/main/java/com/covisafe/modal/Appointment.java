@@ -32,11 +32,11 @@ public class Appointment {
 	 private boolean bookingStatus;
 	 
 	 @JsonIgnore
-	 @OneToOne(cascade = CascadeType.ALL)
+	 @OneToOne()
 	 private Member memberId;
 	 
 	 @JsonIgnore
-	 @ManyToOne(cascade = CascadeType.ALL)
+	 @ManyToOne()
 	 private VaccinationCenter vaxCenter;
 	 
 }

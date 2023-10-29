@@ -39,7 +39,7 @@ public class Member {
 	 @OneToOne(mappedBy = "member",cascade = CascadeType.ALL)
 	 private IdCard idcard;
 	 
-	 @OneToOne(mappedBy = "memberId", cascade = CascadeType.ALL)
+	 @OneToOne(mappedBy = "memberId")
 	 private Appointment appointment;
 	 
 	 @OneToOne(mappedBy = "member", cascade = CascadeType.ALL)
