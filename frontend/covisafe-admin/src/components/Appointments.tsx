@@ -1,5 +1,5 @@
 import {DeleteIcon, SmallAddIcon } from '@chakra-ui/icons';
-import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, Icon, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react';
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, Icon, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAppointmentData, fetchAppointmentData } from '../redux/actions/appointmentAction';
@@ -8,6 +8,8 @@ import { RootState } from '../redux/type';
 
 export default function Appointments() {
   const dispatch: any = useDispatch();
+  const toast = useToast();
+
   const appointmentData = useSelector(
     (state: RootState) => state.appointmentData.data
   );
@@ -18,13 +20,6 @@ export default function Appointments() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef<HTMLButtonElement | null>(null);
 
-  useEffect(() => {
-    const token: string = localStorage.getItem("token") || "";
-    dispatch(fetchAppointmentData(token));
-  }, [dispatch]);
-
-  type OnCloseHandler = (event: Event) => void;
-
   const handleDelete = (e: any, id: string, onclose: OnCloseHandler) => {
     console.log("clicked");
     console.log(onclose);
@@ -34,10 +29,34 @@ export default function Appointments() {
     }
 
     const token: string = localStorage.getItem("token") || "";
-    console.log(dispatch(deleteAppointmentData(token,id)));
-  };
 
-  console.log(appointmentData);
+    dispatch(deleteAppointmentData(token, id))
+    .then(()=>{
+
+       toast({
+         title: "Appointment deleted succesfully ",
+         description: "we have deleted your appointment",
+         status: "success",
+         duration: 9000,
+         isClosable: true,
+         position: "top",
+       });
+
+       dispatch(fetchAppointmentData(token));
+
+    })
+    
+  };  
+
+  useEffect(() => {
+    console.log('useeffect called again');
+    console.log('\n');
+    
+    const token: string = localStorage.getItem("token") || "";
+    dispatch(fetchAppointmentData(token));
+  }, [dispatch]);
+
+  type OnCloseHandler = (event: Event) => void;
 
   return (
     <div className="w-full bg-[#F5F5F5]">

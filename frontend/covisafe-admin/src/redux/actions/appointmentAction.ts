@@ -99,5 +99,5 @@ export const deleteAppointmentData = ( token:string, uuid:string) =>{
         dispatch(setAppointmentDeleteRequest(false));
 
       }
-    };
+    };  
 }

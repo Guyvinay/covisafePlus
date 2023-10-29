@@ -16,13 +16,13 @@ POST https://covisafe-plus.onrender.com/users/register
 Content-Type: application/json
 
 {
-    "email": "vinay@gmail.com",
-    "name": "vinay kumar singh",
+    "email": "akanshamishra@gmail.com",
+    "name": "Akansha mishra",
     "dob": "2003-01-01",
     "aadhar": "1234568546945",
-    "address": "patna",
-    "gender":"MALE",
-    "city": "Noida",
+    "address": "kanpur",
+    "gender":"FEMALE",
+    "city": "kanpur",
     "state": "Uttar Pradesh",
     "pincode": "201305",
     "pan": "FU85728IIK",
@@ -36,3 +36,19 @@ DELETE https://covisafe-plus.onrender.com/appointments/72229e08-189a-4e62-8e57-2
 Content-Type: application/json
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aW5heUBnbWFpbC5jb20iLCJpYXQiOjE2OTg0ODA2NTEsImV4cCI6MTY5ODQ4MjA5MX0.vgEFpVSj0lK-OUAMYh8LlLhG60gRUkUaIxQnfJYckRI
+
+###
+
+POST http://covisafe-plus.onrender.com/vaccinationCenters
+
+Content-Type: application/json
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aW5heUBnbWFpbC5jb20iLCJpYXQiOjE2OTg1OTkzNTYsImV4cCI6MTY5ODYwMDc5Nn0.Lb1In4MNFxSZI1RTkrUYT-22iDhYGM5QdVoifIj29kM
+
+{
+  "centerName": "Noida sector 122",
+  "address": "parthala noida sector 122",
+  "city": "Noida",
+  "state": "uttar pradesh",
+  "pinCode": "443149"
+}

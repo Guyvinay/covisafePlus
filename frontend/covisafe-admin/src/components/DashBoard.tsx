@@ -50,15 +50,19 @@ export default function DashBoard(){
       const recentUsersData = userData.slice(0, 10);
       setRecentUsers(recentUsersData);
     }
+    console.log("called agian recentusers useffect");
+    
   }, [userData]);
 
-  useEffect(()=>{
+  useEffect(() => {
     // update recentAppointment whenever data changes
     if (userAppointment && userAppointment.length) {
-      const recentAppointmentData = userAppointment.slice(0,10);
+      const recentAppointmentData = userAppointment.slice(0, 10);
       setRecentAppointment(recentAppointmentData);
     }
-  },[userAppointment])
+
+    console.log("called agian recentAppointment useffect");
+  }, [userAppointment]);
 
   console.log(userAppointment);
   
