@@ -1,52 +1,71 @@
 import {DeleteIcon, SmallAddIcon } from '@chakra-ui/icons';
-import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, Icon, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from '@chakra-ui/react';
-import React, { useEffect } from 'react'
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, FormControl, FormLabel, Icon, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteAppointmentData, fetchAppointmentData } from '../redux/actions/appointmentAction';
+import { addAppointmentData, deleteAppointmentData, fetchAppointmentData } from '../redux/actions/appointmentAction';
 import { FaClipboard } from "react-icons/fa";
 import { RootState } from '../redux/type';
+import { BeatLoader } from 'react-spinners';
 
 export default function Appointments() {
   const dispatch: any = useDispatch();
   const toast = useToast();
-
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
   const appointmentData = useSelector(
     (state: RootState) => state.appointmentData.data
   );
-  const loading = useSelector(
+  const loading: boolean = useSelector(
     (state: RootState) => state.appointmentData.loading
   );
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const addAppointmentLoading: boolean = useSelector(
+    (state: RootState) => state.addAppointmentData.loading
+  );
+  const deleteAppointmentLoading: boolean = useSelector(
+    (state: RootState) => state.deleteAppointmentData.loading
+  );
+  const [slot, setSlot] = useState('SLOT1');
+  
+  const [vaccinationCenterId,setVaccinationCenterId]= useState("");
+  const [userId,setUserId] = useState("");
+  const [mobileNo, setMobileNo] = useState('');
+
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  const deleteAppointment = useDisclosure();
+  const addAppointmentDisclosure = useDisclosure();
   const cancelRef = React.useRef<HTMLButtonElement | null>(null);
 
   const handleDelete = (e: any, id: string, onclose: OnCloseHandler) => {
-    console.log("clicked");
-    console.log(onclose);
-
     if (onclose) {
       onclose.call(window, e);
     }
 
     const token: string = localStorage.getItem("token") || "";
 
-    dispatch(deleteAppointmentData(token, id))
+    dispatch(deleteAppointmentData(token, id,toast))
     .then(()=>{
-
-       toast({
-         title: "Appointment deleted succesfully ",
-         description: "we have deleted your appointment",
-         status: "success",
-         duration: 9000,
-         isClosable: true,
-         position: "top",
-       });
-
        dispatch(fetchAppointmentData(token));
-
     })
     
   };  
+
+  const handleAdd = (e:any,onclose:OnCloseHandler) =>{
+   
+
+    const token: string = localStorage.getItem('token') || '';
+
+    const body = { mobileNo: mobileNo, slot: slot };
+
+    dispatch(addAppointmentData(token,userId,vaccinationCenterId,body,toast))
+    .then(
+      ()=>{
+         if (onclose) {
+           onclose.call(window, e);
+         }
+      }
+    )
+  }
 
   useEffect(() => {
     console.log('useeffect called again');
@@ -77,6 +96,8 @@ export default function Appointments() {
             rightIcon={
               <SmallAddIcon className="border-2 rounded-full text-lg" />
             }
+            onClick={addAppointmentDisclosure.onOpen}
+            ref={finalRef}
           >
             Add appointment
           </Button>
@@ -155,7 +176,7 @@ export default function Appointments() {
                             _hover={{
                               bg: "red.300",
                             }}
-                            onClick={onOpen}
+                            onClick={deleteAppointment.onOpen}
                             _focusVisible={{
                               outline: "2",
                               outlineOffset: "2",
@@ -166,9 +187,9 @@ export default function Appointments() {
                             Delete
                           </Button>
                           <AlertDialog
-                            isOpen={isOpen}
+                            isOpen={deleteAppointment.isOpen}
                             leastDestructiveRef={cancelRef}
-                            onClose={onClose}
+                            onClose={deleteAppointment.onClose}
                           >
                             <AlertDialogOverlay>
                               <AlertDialogContent bg={"white"}>
@@ -185,14 +206,33 @@ export default function Appointments() {
                                 </AlertDialogBody>
 
                                 <AlertDialogFooter>
-                                  <Button ref={cancelRef} onClick={onClose}>
+                                  <Button
+                                    ref={cancelRef}
+                                    onClick={deleteAppointment.onClose}
+                                    _focusVisible={{
+                                      outline: "2",
+                                      outlineOffset: "2",
+                                      outlineColor: "red.300",
+                                    }}
+                                  >
                                     Cancel
                                   </Button>
                                   <Button
                                     colorScheme="red"
                                     onClick={(event) =>
-                                      handleDelete(event, e.bookingId, onClose)
+                                      handleDelete(
+                                        event,
+                                        e.bookingId,
+                                        deleteAppointment.onClose
+                                      )
                                     }
+                                    isLoading={deleteAppointmentLoading}
+                                    spinner={<BeatLoader size={8} color='white'/>}
+                                    _focusVisible={{
+                                      outline: "2",
+                                      outlineOffset: "2",
+                                      outlineColor: "red.300",
+                                    }}
                                     ml={3}
                                   >
                                     Delete
@@ -219,6 +259,105 @@ export default function Appointments() {
           </TableContainer>
         </Flex>
       </Flex>
+      <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={addAppointmentDisclosure.isOpen}
+        onClose={addAppointmentDisclosure.onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Add an appointment</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>User Id</FormLabel>
+              <Input
+                ref={initialRef}
+                borderRadius={"md"}
+                required={true}
+                focusBorderColor="red.500"
+                placeholder="Enter user id"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+              />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Vaccination center Id</FormLabel>
+              <Input
+                placeholder="Enter vaccination center id"
+                borderRadius={"md"}
+                required={true}
+                focusBorderColor="red.500"
+                value={vaccinationCenterId}
+                onChange={(e) => setVaccinationCenterId(e.target.value)}
+              />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Mobile no.</FormLabel>
+              <Input
+                placeholder="Enter  mobile number "
+                borderRadius={"md"}
+                required={true}
+                focusBorderColor="red.500"
+                value={mobileNo}
+                onChange={(e) => setMobileNo(e.target.value)}
+              />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Vaccination center Id</FormLabel>
+              <Select
+                placeholder="Select slot"
+                focusBorderColor="red.500"
+                value={slot}
+                onChange={(e) => setSlot(e.target.value)}
+              >
+                <option value="SLOT1">SLOT 1</option>
+                <option value="SLOT2">SLOT 2</option>
+                <option value="SLOT3">SLOT 3</option>
+              </Select>
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button
+              colorScheme="blue"
+              mr={3}
+              type="submit"
+              background={"red.600"}
+              isLoading={addAppointmentLoading}
+              spinner={<BeatLoader size={8} color="white" />}
+              color={"white"}
+              _hover={{
+                bgColor: "red.300",
+              }}
+              onClick={(event) =>
+                handleAdd(event, addAppointmentDisclosure.onClose)
+              }
+              _focusVisible={{
+                outline: "2",
+                outlineOffset: "2",
+                outlineColor: "red.300",
+              }}
+            >
+              Add
+            </Button>
+            <Button
+              onClick={addAppointmentDisclosure.onClose}
+              _focusVisible={{
+                outline: "2",
+                outlineOffset: "2",
+                outlineColor: "red.300",
+              }}
+            >
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
