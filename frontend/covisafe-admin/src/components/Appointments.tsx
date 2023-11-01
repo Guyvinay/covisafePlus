@@ -226,7 +226,7 @@ export default function Appointments() {
                                         deleteAppointment.onClose
                                       )
                                     }
-                                    isLoading={deleteAppointmentLoading}
+                                    isLoading={true}
                                     spinner={<BeatLoader size={8} color='white'/>}
                                     _focusVisible={{
                                       outline: "2",
