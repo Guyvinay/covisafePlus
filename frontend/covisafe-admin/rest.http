@@ -1,8 +1,3 @@
-GET http://www.localhost:8080/members
-
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm51QGdtYWlsLmNvbSIsImlhdCI6MTY5NjczMzQ1OSwiZXhwIjoxNjk2NzM0ODk5fQ.lr7X5zhmdLkZA_PAZcb_85iEZRVlZjrmsygK6peqna8
-
-###
 POST https://covisafe-plus.onrender.com/users/signin
 Content-Type: application/json
 
