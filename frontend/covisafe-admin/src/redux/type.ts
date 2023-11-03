@@ -6,6 +6,6 @@ export interface RootState {
   user: AppState;
   userData: UserDataState;
   appointmentData: AppointmentDataState;
-  deleteAppointmentData: DeleteAppointmentDataState;
+  appointmentDelete: DeleteAppointmentDataState;
   addAppointmentData: AddAppointmentDataState;
 }

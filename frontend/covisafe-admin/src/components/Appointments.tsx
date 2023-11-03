@@ -1,4 +1,4 @@
-import {DeleteIcon, SmallAddIcon } from '@chakra-ui/icons';
+import { DeleteIcon, SmallAddIcon, EditIcon } from "@chakra-ui/icons";
 import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, FormControl, FormLabel, Icon, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +23,7 @@ export default function Appointments() {
     (state: RootState) => state.addAppointmentData.loading
   );
   const deleteAppointmentLoading: boolean = useSelector(
-    (state: RootState) => state.deleteAppointmentData.loading
+    (state: RootState) => state.appointmentDelete.loading
   );
   const [slot, setSlot] = useState('SLOT1');
   
@@ -33,19 +33,21 @@ export default function Appointments() {
 
   // const { isOpen, onOpen, onClose } = useDisclosure();
   const deleteAppointment = useDisclosure();
+  const editAppointment = useDisclosure();
   const addAppointmentDisclosure = useDisclosure();
   const cancelRef = React.useRef<HTMLButtonElement | null>(null);
 
   const handleDelete = (e: any, id: string, onclose: OnCloseHandler) => {
-    if (onclose) {
-      onclose.call(window, e);
-    }
+   
 
     const token: string = localStorage.getItem("token") || "";
 
     dispatch(deleteAppointmentData(token, id,toast))
     .then(()=>{
        dispatch(fetchAppointmentData(token));
+        if (onclose) {
+          onclose.call(window, e);
+        }
     })
     
   };  
@@ -74,6 +76,9 @@ export default function Appointments() {
     const token: string = localStorage.getItem("token") || "";
     dispatch(fetchAppointmentData(token));
   }, [dispatch]);
+
+  
+  
 
   type OnCloseHandler = (event: Event) => void;
 
@@ -170,22 +175,40 @@ export default function Appointments() {
                         </Td>
                         <Td className="text-sm font-medium">{e.mobileNo}</Td>
                         <Td>
-                          <Button
-                            bg={"red.500"}
-                            color={"whiteAlpha.900"}
-                            _hover={{
-                              bg: "red.300",
-                            }}
-                            onClick={deleteAppointment.onOpen}
-                            _focusVisible={{
-                              outline: "2",
-                              outlineOffset: "2",
-                              outlineColor: "red.300",
-                            }}
-                            rightIcon={<DeleteIcon />}
-                          >
-                            Delete
-                          </Button>
+                          <div className="flex w-full gap-7">
+                            <Button
+                              bg={"red.500"}
+                              color={"whiteAlpha.900"}
+                              _hover={{
+                                bg: "red.300",
+                              }}
+                              onClick={deleteAppointment.onOpen}
+                              _focusVisible={{
+                                outline: "2",
+                                outlineOffset: "2",
+                                outlineColor: "red.300",
+                              }}
+                              rightIcon={<DeleteIcon />}
+                            >
+                              Delete
+                            </Button>
+                            <Button
+                              bg={"red.500"}
+                              color={"whiteAlpha.900"}
+                              _hover={{
+                                bg: "red.300",
+                              }}
+                              onClick={editAppointment.onOpen}
+                              _focusVisible={{
+                                outline: "2",
+                                outlineOffset: "2",
+                                outlineColor: "red.300",
+                              }}
+                              rightIcon={<EditIcon />}
+                            >
+                              Edit
+                            </Button>
+                          </div>
                           <AlertDialog
                             isOpen={deleteAppointment.isOpen}
                             leastDestructiveRef={cancelRef}
@@ -226,8 +249,10 @@ export default function Appointments() {
                                         deleteAppointment.onClose
                                       )
                                     }
-                                    isLoading={true}
-                                    spinner={<BeatLoader size={8} color='white'/>}
+                                    isLoading={deleteAppointmentLoading}
+                                    spinner={
+                                      <BeatLoader size={8} color="white" />
+                                    }
                                     _focusVisible={{
                                       outline: "2",
                                       outlineOffset: "2",
