@@ -1,11 +1,54 @@
 import { DeleteIcon, SmallAddIcon, EditIcon } from "@chakra-ui/icons";
-import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Flex, FormControl, FormLabel, Icon, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Skeleton, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { addAppointmentData, deleteAppointmentData, fetchAppointmentData } from '../redux/actions/appointmentAction';
-import { FaClipboard } from "react-icons/fa";
-import { RootState } from '../redux/type';
-import { BeatLoader } from 'react-spinners';
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
+  FormControl,
+  FormLabel,
+  Icon,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Select,
+  Skeleton,
+  Switch,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addAppointmentData,
+  deleteAppointmentData,
+  fetchAppointmentData,
+} from "../redux/actions/appointmentAction";
+import { RootState } from "../redux/type";
+import { BeatLoader } from "react-spinners";
 
 export default function Appointments() {
   const dispatch: any = useDispatch();
@@ -25,60 +68,49 @@ export default function Appointments() {
   const deleteAppointmentLoading: boolean = useSelector(
     (state: RootState) => state.appointmentDelete.loading
   );
-  const [slot, setSlot] = useState('SLOT1');
-  
-  const [vaccinationCenterId,setVaccinationCenterId]= useState("");
-  const [userId,setUserId] = useState("");
-  const [mobileNo, setMobileNo] = useState('');
+  const [slot, setSlot] = useState("SLOT1");
+
+  const [vaccinationCenterId, setVaccinationCenterId] = useState("");
+  const [userId, setUserId] = useState("");
+  const [mobileNo, setMobileNo] = useState("");
 
   // const { isOpen, onOpen, onClose } = useDisclosure();
   const deleteAppointment = useDisclosure();
   const editAppointment = useDisclosure();
   const addAppointmentDisclosure = useDisclosure();
+  const editAppointmentDisclosure = useDisclosure();
   const cancelRef = React.useRef<HTMLButtonElement | null>(null);
+  const editref = React.useRef<HTMLTableRowElement | null>(null);
 
   const handleDelete = (e: any, id: string, onclose: OnCloseHandler) => {
-   
-
     const token: string = localStorage.getItem("token") || "";
 
-    dispatch(deleteAppointmentData(token, id,toast))
-    .then(()=>{
-       dispatch(fetchAppointmentData(token));
-        if (onclose) {
-          onclose.call(window, e);
-        }
-    })
-    
-  };  
+    dispatch(deleteAppointmentData(token, id, toast)).then(() => {
+      dispatch(fetchAppointmentData(token));
+      if (onclose) {
+        onclose.call(window, e);
+      }
+    });
+  };
 
-  const handleAdd = (e:any,onclose:OnCloseHandler) =>{
-   
-
-    const token: string = localStorage.getItem('token') || '';
+  const handleAdd = (e: any, onclose: OnCloseHandler) => {
+    const token: string = localStorage.getItem("token") || "";
 
     const body = { mobileNo: mobileNo, slot: slot };
 
-    dispatch(addAppointmentData(token,userId,vaccinationCenterId,body,toast))
-    .then(
-      ()=>{
-         if (onclose) {
-           onclose.call(window, e);
-         }
+    dispatch(
+      addAppointmentData(token, userId, vaccinationCenterId, body, toast)
+    ).then(() => {
+      if (onclose) {
+        onclose.call(window, e);
       }
-    )
-  }
+    });
+  };
 
   useEffect(() => {
-    console.log('useeffect called again');
-    console.log('\n');
-    
     const token: string = localStorage.getItem("token") || "";
     dispatch(fetchAppointmentData(token));
   }, [dispatch]);
-
-  
-  
 
   type OnCloseHandler = (event: Event) => void;
 
@@ -123,7 +155,13 @@ export default function Appointments() {
                 <Tbody>
                   {appointmentData.length ? (
                     appointmentData.map((e, i) => (
-                      <Tr key={i}>
+                      <Tr
+                        key={i}
+                        onClick={() => {
+                          editAppointmentDisclosure.onOpen();
+                        }}
+                        ref={editref}
+                      >
                         <Td className="text-black font-medium">
                           <p className="py-1">{e.slot}</p>
                           <div className="w-fit flex font-mono justify-center items-center text-sm text-gray-500 bg-slate-100 py-2 px-3">
@@ -175,40 +213,26 @@ export default function Appointments() {
                         </Td>
                         <Td className="text-sm font-medium">{e.mobileNo}</Td>
                         <Td>
-                          <div className="flex w-full gap-7">
-                            <Button
-                              bg={"red.500"}
-                              color={"whiteAlpha.900"}
-                              _hover={{
-                                bg: "red.300",
-                              }}
-                              onClick={deleteAppointment.onOpen}
-                              _focusVisible={{
-                                outline: "2",
-                                outlineOffset: "2",
-                                outlineColor: "red.300",
-                              }}
-                              rightIcon={<DeleteIcon />}
-                            >
-                              Delete
-                            </Button>
-                            <Button
-                              bg={"red.500"}
-                              color={"whiteAlpha.900"}
-                              _hover={{
-                                bg: "red.300",
-                              }}
-                              onClick={editAppointment.onOpen}
-                              _focusVisible={{
-                                outline: "2",
-                                outlineOffset: "2",
-                                outlineColor: "red.300",
-                              }}
-                              rightIcon={<EditIcon />}
-                            >
-                              Edit
-                            </Button>
-                          </div>
+                          <Button
+                            bg={"red.500"}
+                            color={"whiteAlpha.900"}
+                            _hover={{
+                              bg: "red.300",
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              console.log("delete button clicked");
+                              deleteAppointment.onOpen();
+                            }}
+                            _focusVisible={{
+                              outline: "2",
+                              outlineOffset: "2",
+                              outlineColor: "red.300",
+                            }}
+                            rightIcon={<DeleteIcon />}
+                          >
+                            Delete
+                          </Button>
                           <AlertDialog
                             isOpen={deleteAppointment.isOpen}
                             leastDestructiveRef={cancelRef}
@@ -266,6 +290,112 @@ export default function Appointments() {
                               </AlertDialogContent>
                             </AlertDialogOverlay>
                           </AlertDialog>
+
+                          <Drawer
+                            isOpen={editAppointmentDisclosure.isOpen}
+                            placement="right"
+                            onClose={editAppointmentDisclosure.onClose}
+                            finalFocusRef={editref}
+                          >
+                            <DrawerOverlay />
+                            <DrawerContent>
+                              <DrawerCloseButton
+                                _focusVisible={{
+                                  outline: "2",
+                                  outlineOffset: "2",
+                                  outlineColor: "red.300",
+                                }}
+                              />
+                              <DrawerHeader>Edit appointment</DrawerHeader>
+
+                              <DrawerBody>
+                                <FormLabel>Booking Id</FormLabel>
+                                <Input
+                                  placeholder="appointmentId"
+                                  value={e.bookingId}
+                                  disabled
+                                />
+                                <FormControl>
+                                  <Flex>
+                                    {e.bookingStatus ? (
+                                      <>
+                                        <div>
+                                          <Icon
+                                            viewBox="0 0 200 200"
+                                            color="green.500"
+                                            boxSize={5}
+                                          >
+                                            <path
+                                              fill="currentColor"
+                                              d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                                            />
+                                          </Icon>
+                                          <p className="inline px-2 text-sm">
+                                            Booked
+                                          </p>
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <div>
+                                          <Icon
+                                            viewBox="0 0 200 200"
+                                            color="yellow.500"
+                                            boxSize={5}
+                                          >
+                                            <path
+                                              fill="currentColor"
+                                              d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                                            />
+                                          </Icon>
+                                          <p className="inline px-2 font-medium text-gray-600 text-sm">
+                                            Pending
+                                          </p>
+                                        </div>
+                                      </>
+                                    )}
+                                    <Switch
+                                      size="lg"
+                                      colorScheme="red"
+                                     _focus={{
+                                        // Remove the focus outline using data attributes
+                                        '[data-focus]': {
+                                          boxShadow: 'none',
+                                        },
+                                        '[data-focus-visible]': {
+                                          boxShadow: 'none',
+                                        }}}
+                                    />
+                                  </Flex>
+                                </FormControl>
+                              </DrawerBody>
+
+                              <DrawerFooter>
+                                <Button
+                                  variant="outline"
+                                  mr={3}
+                                  onClick={editAppointmentDisclosure.onClose}
+                                  _focusVisible={{
+                                    outline: "2",
+                                    outlineOffset: "2",
+                                    outlineColor: "red.300",
+                                  }}
+                                >
+                                  Cancel
+                                </Button>
+                                <Button
+                                  colorScheme="red"
+                                  _focusVisible={{
+                                    outline: "2",
+                                    outlineOffset: "2",
+                                    outlineColor: "red.300",
+                                  }}
+                                >
+                                  Save
+                                </Button>
+                              </DrawerFooter>
+                            </DrawerContent>
+                          </Drawer>
                         </Td>
                       </Tr>
                     ))
