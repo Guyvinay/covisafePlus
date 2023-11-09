@@ -6,6 +6,9 @@ import {
   DELETE_APPOINTMENT_DATA_FAILURE,
   DELETE_APPOINTMENT_DATA_REQUEST,
   DELETE_APPOINTMENT_DATA_SUCCES,
+  EDIT_APPOINTMENT_DATA_FAILURE,
+  EDIT_APPOINTMENT_DATA_REQUEST,
+  EDIT_APPOINTMENT_DATA_SUCCES,
   FETCH_APPOINTMENT_DATA_FAILURE,
   FETCH_APPOINTMENT_DATA_REQUEST,
   FETCH_APPOINTMENT_DATA_SUCCES,
@@ -16,6 +19,8 @@ import {
   AppointmentDataState,
   DeleteAppointmentDataAction,
   DeleteAppointmentDataState,
+  EditAppointmentDataAction,
+  EditAppointmentDataState,
   FetchAppointmentDataAction,
 } from "../actions/types/appointmentDataTypes";
 
@@ -35,6 +40,12 @@ const initialAddState: AddAppointmentDataState = {
   data: null,
   loading: false,
   error: null,
+}
+
+const initialEditState: EditAppointmentDataState  = {
+  data:null,
+  loading:false,
+  error:null,
 }
 
 const appointmentDataReducer = (
@@ -100,24 +111,58 @@ export const appointmentDeleteDataReducer = (
 };
 
 
-export const appointmentAddDataReducer = (state = initialAddState,action: AddAppointmentDataAction): AddAppointmentDataState => {
-  switch(action.type){
+export const appointmentAddDataReducer = (
+  state = initialAddState,
+  action: AddAppointmentDataAction
+): AddAppointmentDataState => {
+  switch (action.type) {
     case ADD_APPOINTMENT_DATA_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+
+    case ADD_APPOINTMENT_DATA_SUCCES:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
+
+    case ADD_APPOINTMENT_DATA_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export const appointmentEditDataReducer = (
+  state = initialEditState,
+  action: EditAppointmentDataAction
+) => {
+  switch(action.type){
+    case EDIT_APPOINTMENT_DATA_REQUEST:
       return {
         ...state,
         loading:true,
         error:null,
-      };
-    
-    case ADD_APPOINTMENT_DATA_SUCCES:
-      return {
+      }
+
+    case EDIT_APPOINTMENT_DATA_SUCCES:
+      return{
         ...state,
         loading:false,
         data:action.payload,
       }
 
-    case ADD_APPOINTMENT_DATA_FAILURE:
-      return {
+    case EDIT_APPOINTMENT_DATA_FAILURE:
+      return{
         ...state,
         loading:false,
         error:action.payload,
@@ -126,5 +171,10 @@ export const appointmentAddDataReducer = (state = initialAddState,action: AddApp
     default:
       return state;
   }
-}
+};
+
+
+
+
+
 export default appointmentDataReducer;

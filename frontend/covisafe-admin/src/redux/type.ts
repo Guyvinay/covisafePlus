@@ -1,4 +1,4 @@
-import { AddAppointmentDataState, AppointmentDataState, DeleteAppointmentDataState } from "./actions/types/appointmentDataTypes";
+import { AddAppointmentDataState, AppointmentDataState, DeleteAppointmentDataState, EditAppointmentDataState } from "./actions/types/appointmentDataTypes";
 import { AppState } from "./actions/types/loginTypes";
 import { UserDataState } from "./actions/types/userDataTypes";
 
@@ -8,4 +8,5 @@ export interface RootState {
   appointmentData: AppointmentDataState;
   appointmentDelete: DeleteAppointmentDataState;
   addAppointmentData: AddAppointmentDataState;
+  editAppointmentData: EditAppointmentDataState;
 }

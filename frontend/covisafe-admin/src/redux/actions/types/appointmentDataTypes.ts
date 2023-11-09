@@ -5,6 +5,9 @@ import {
   DELETE_APPOINTMENT_DATA_FAILURE,
   DELETE_APPOINTMENT_DATA_REQUEST,
   DELETE_APPOINTMENT_DATA_SUCCES,
+  EDIT_APPOINTMENT_DATA_FAILURE,
+  EDIT_APPOINTMENT_DATA_REQUEST,
+  EDIT_APPOINTMENT_DATA_SUCCES,
   FETCH_APPOINTMENT_DATA_FAILURE,
   FETCH_APPOINTMENT_DATA_REQUEST,
   FETCH_APPOINTMENT_DATA_SUCCES,
@@ -76,6 +79,37 @@ export interface AddAppointmentDataState {
   error: null | string;
 }
 
+// for [PUT] reqeust on `/appointments`
+
+export interface EditAppointmentDataRequstAction {
+    type: typeof EDIT_APPOINTMENT_DATA_REQUEST;
+    payload:boolean;
+}
+
+export interface EditAppointmentDataSuccesAction {
+  type: typeof EDIT_APPOINTMENT_DATA_SUCCES;
+  payload: any;
+}
+
+export interface EditAppointmentDataFaliureAction {
+  type: typeof EDIT_APPOINTMENT_DATA_FAILURE;
+  payload: string | null;
+}
+
+export interface EditAppointmentDataState {
+    loading:boolean;
+    data:any;
+    error:null | string;
+}
+
+export interface EditAppointmentRequestBody {
+  bookingId:string;
+  mobileNo: number;
+  dateOfBooking:string;
+  slot: string;
+  bookingStatus: boolean;
+}
+
 export type FetchAppointmentDataAction =
   | FetchAppointmentDataRequestAction
   | FetchAppointmentDataSuccesAction
@@ -91,3 +125,8 @@ export type AddAppointmentDataAction =
   | AddAppointmentDataReqestAction
   | AddAppointmentDataSuccessAction 
   | AddAppointmentDataFaliureAction;
+
+export type EditAppointmentDataAction =
+  | EditAppointmentDataRequstAction
+  | EditAppointmentDataSuccesAction
+  | EditAppointmentDataFaliureAction;

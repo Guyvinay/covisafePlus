@@ -49,6 +49,7 @@ import {
 } from "../redux/actions/appointmentAction";
 import { RootState } from "../redux/type";
 import { BeatLoader } from "react-spinners";
+import AppointmentRow from "./AppointmentRow";
 
 export default function Appointments() {
   const dispatch: any = useDispatch();
@@ -155,249 +156,17 @@ export default function Appointments() {
                 <Tbody>
                   {appointmentData.length ? (
                     appointmentData.map((e, i) => (
-                      <Tr
+                      <AppointmentRow
                         key={i}
-                        onClick={() => {
-                          editAppointmentDisclosure.onOpen();
-                        }}
-                        ref={editref}
-                      >
-                        <Td className="text-black font-medium">
-                          <p className="py-1">{e.slot}</p>
-                          <div className="w-fit flex font-mono justify-center items-center text-sm text-gray-500 bg-slate-100 py-2 px-3">
-                            <p>#{e.bookingId}</p>
-                            {/* <div className='px-1 py-1 rounded-sm cursor-pointer bg-[#FFFF] mx-3'>
-                              <FaClipboard />
-                            </div> */}
-                          </div>
-                        </Td>
-                        <Td>
-                          {e.bookingStatus ? (
-                            <>
-                              <div>
-                                <Icon
-                                  viewBox="0 0 200 200"
-                                  color="green.500"
-                                  boxSize={5}
-                                >
-                                  <path
-                                    fill="currentColor"
-                                    d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                                  />
-                                </Icon>
-                                <p className="inline px-2 text-sm">Booked</p>
-                              </div>
-                            </>
-                          ) : (
-                            <>
-                              <div>
-                                <Icon
-                                  viewBox="0 0 200 200"
-                                  color="yellow.500"
-                                  boxSize={5}
-                                >
-                                  <path
-                                    fill="currentColor"
-                                    d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                                  />
-                                </Icon>
-                                <p className="inline px-2 font-medium text-gray-600 text-sm">
-                                  Pending
-                                </p>
-                              </div>
-                            </>
-                          )}
-                        </Td>
-                        <Td className="text-sm font-medium">
-                          {e.dateOfBooking}
-                        </Td>
-                        <Td className="text-sm font-medium">{e.mobileNo}</Td>
-                        <Td>
-                          <Button
-                            bg={"red.500"}
-                            color={"whiteAlpha.900"}
-                            _hover={{
-                              bg: "red.300",
-                            }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              console.log("delete button clicked");
-                              deleteAppointment.onOpen();
-                            }}
-                            _focusVisible={{
-                              outline: "2",
-                              outlineOffset: "2",
-                              outlineColor: "red.300",
-                            }}
-                            rightIcon={<DeleteIcon />}
-                          >
-                            Delete
-                          </Button>
-                          <AlertDialog
-                            isOpen={deleteAppointment.isOpen}
-                            leastDestructiveRef={cancelRef}
-                            onClose={deleteAppointment.onClose}
-                          >
-                            <AlertDialogOverlay>
-                              <AlertDialogContent bg={"white"}>
-                                <AlertDialogHeader
-                                  fontSize="lg"
-                                  fontWeight="bold"
-                                >
-                                  Delete Appointment
-                                </AlertDialogHeader>
-
-                                <AlertDialogBody>
-                                  Are you sure? You can't undo this action
-                                  afterwards.
-                                </AlertDialogBody>
-
-                                <AlertDialogFooter>
-                                  <Button
-                                    ref={cancelRef}
-                                    onClick={deleteAppointment.onClose}
-                                    _focusVisible={{
-                                      outline: "2",
-                                      outlineOffset: "2",
-                                      outlineColor: "red.300",
-                                    }}
-                                  >
-                                    Cancel
-                                  </Button>
-                                  <Button
-                                    colorScheme="red"
-                                    onClick={(event) =>
-                                      handleDelete(
-                                        event,
-                                        e.bookingId,
-                                        deleteAppointment.onClose
-                                      )
-                                    }
-                                    isLoading={deleteAppointmentLoading}
-                                    spinner={
-                                      <BeatLoader size={8} color="white" />
-                                    }
-                                    _focusVisible={{
-                                      outline: "2",
-                                      outlineOffset: "2",
-                                      outlineColor: "red.300",
-                                    }}
-                                    ml={3}
-                                  >
-                                    Delete
-                                  </Button>
-                                </AlertDialogFooter>
-                              </AlertDialogContent>
-                            </AlertDialogOverlay>
-                          </AlertDialog>
-
-                          <Drawer
-                            isOpen={editAppointmentDisclosure.isOpen}
-                            placement="right"
-                            onClose={editAppointmentDisclosure.onClose}
-                            finalFocusRef={editref}
-                          >
-                            <DrawerOverlay />
-                            <DrawerContent>
-                              <DrawerCloseButton
-                                _focusVisible={{
-                                  outline: "2",
-                                  outlineOffset: "2",
-                                  outlineColor: "red.300",
-                                }}
-                              />
-                              <DrawerHeader>Edit appointment</DrawerHeader>
-
-                              <DrawerBody>
-                                <FormLabel>Booking Id</FormLabel>
-                                <Input
-                                  placeholder="appointmentId"
-                                  value={e.bookingId}
-                                  disabled
-                                />
-                                <FormControl>
-                                  <Flex>
-                                    {e.bookingStatus ? (
-                                      <>
-                                        <div>
-                                          <Icon
-                                            viewBox="0 0 200 200"
-                                            color="green.500"
-                                            boxSize={5}
-                                          >
-                                            <path
-                                              fill="currentColor"
-                                              d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                                            />
-                                          </Icon>
-                                          <p className="inline px-2 text-sm">
-                                            Booked
-                                          </p>
-                                        </div>
-                                      </>
-                                    ) : (
-                                      <>
-                                        <div>
-                                          <Icon
-                                            viewBox="0 0 200 200"
-                                            color="yellow.500"
-                                            boxSize={5}
-                                          >
-                                            <path
-                                              fill="currentColor"
-                                              d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                                            />
-                                          </Icon>
-                                          <p className="inline px-2 font-medium text-gray-600 text-sm">
-                                            Pending
-                                          </p>
-                                        </div>
-                                      </>
-                                    )}
-                                    <Switch
-                                      size="lg"
-                                      colorScheme="red"
-                                     _focus={{
-                                        // Remove the focus outline using data attributes
-                                        '[data-focus]': {
-                                          boxShadow: 'none',
-                                        },
-                                        '[data-focus-visible]': {
-                                          boxShadow: 'none',
-                                        }}}
-                                    />
-                                  </Flex>
-                                </FormControl>
-                              </DrawerBody>
-
-                              <DrawerFooter>
-                                <Button
-                                  variant="outline"
-                                  mr={3}
-                                  onClick={editAppointmentDisclosure.onClose}
-                                  _focusVisible={{
-                                    outline: "2",
-                                    outlineOffset: "2",
-                                    outlineColor: "red.300",
-                                  }}
-                                >
-                                  Cancel
-                                </Button>
-                                <Button
-                                  colorScheme="red"
-                                  _focusVisible={{
-                                    outline: "2",
-                                    outlineOffset: "2",
-                                    outlineColor: "red.300",
-                                  }}
-                                >
-                                  Save
-                                </Button>
-                              </DrawerFooter>
-                            </DrawerContent>
-                          </Drawer>
-                        </Td>
-                      </Tr>
+                        e={e}
+                        deleteAppointment={deleteAppointment}
+                        editAppointment={editAppointment}
+                        editAppointmentDisclosure={editAppointmentDisclosure}
+                        cancelRef={cancelRef}
+                        editref={editref}
+                        deleteAppointmentLoading={deleteAppointmentLoading}
+                        handleDelete={handleDelete}
+                      />
                     ))
                   ) : (
                     <>
@@ -463,7 +232,7 @@ export default function Appointments() {
             </FormControl>
 
             <FormControl mt={4}>
-              <FormLabel>Vaccination center Id</FormLabel>
+              <FormLabel>Select Slot</FormLabel>
               <Select
                 placeholder="Select slot"
                 focusBorderColor="red.500"
