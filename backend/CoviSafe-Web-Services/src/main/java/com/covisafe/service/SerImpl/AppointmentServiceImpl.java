@@ -106,12 +106,19 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 		if (appointment == null)
 			throw new AppointmentNotFoundException("Please provide Updated Appointment details");
-			
-		appointment
-		.setBookingId(bookingId);
+
+		Appointment appointment1 = getAppointmentDetails(bookingId);
+
+		appointment1.setSlot(appointment.getSlot());
+
+		appointment1.setBookingStatus(appointment.getBookingStatus());
+
+		appointment1.setMobileNo(appointment.getMobileNo());
+
+		appointment1.setDateOfBooking(appointment.getDateOfBooking());
 
 		return appointmentRepository
-				.save(appointment);
+				.save(appointment1);
 
 	}
 

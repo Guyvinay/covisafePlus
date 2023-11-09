@@ -4,7 +4,7 @@ import React, { Dispatch, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 import { EditAppointmentDataAction, EditAppointmentRequestBody } from '../redux/actions/types/appointmentDataTypes';
-import { updateAppointmentData } from '../redux/actions/appointmentAction';
+import { fetchAppointmentData, updateAppointmentData } from '../redux/actions/appointmentAction';
 import { RootState } from '../redux/type';
 
 export default function AppointmentRow({
@@ -45,6 +45,7 @@ export default function AppointmentRow({
 
     dispatch(updateAppointmentData(token,toast,booking))
     .then(()=>{
+      dispatch(fetchAppointmentData(token));
       editAppointmentDisclosure.onClose();
     });
 
