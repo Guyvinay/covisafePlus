@@ -16,15 +16,18 @@ import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
+@Setter
+@Getter
 public class Appointment {
 
 	 @Id
 	 @GeneratedValue(strategy =  GenerationType.UUID)
 	 private String bookingId;
-//	 @Pattern(regexp = "^[6-9][0-9]{9}")
 	 private Long mobileNo;
 	 private LocalDate dateOfBooking;
 	 @Enumerated(EnumType.STRING)
@@ -38,5 +41,9 @@ public class Appointment {
 	 @JsonIgnore
 	 @ManyToOne()
 	 private VaccinationCenter vaxCenter;
+
+	 public boolean getBookingStatus(){
+		 return this.bookingStatus;
+	 }
 	 
 }

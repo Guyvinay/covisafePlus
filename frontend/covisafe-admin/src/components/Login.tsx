@@ -41,15 +41,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="w-full h-[90vh] justify-center items-center flex ">
-      <Flex
-        flexDir={"column"}
-        w={"25%"}
-        minW={"400px"}
-        shadow={"lg"}
-        padding={"10"}
-        margin={"auto"}
-        borderRadius={"xl"}
-      >
+      <Flex flexDir={"column"} w={"25%"} minW={"400px"} shadow={"lg"} padding={"10"} margin={"auto"} borderRadius={"xl"}>
         <div className="m-auto rounded-md">
           <div className="rounded-lg bg-gray-300 p-4">
             <a
