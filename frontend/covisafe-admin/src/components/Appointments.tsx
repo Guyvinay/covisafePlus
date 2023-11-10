@@ -159,6 +159,7 @@ export default function Appointments() {
                       <AppointmentRow
                         key={i}
                         e={e}
+                        i={i}
                         deleteAppointment={deleteAppointment}
                         editAppointment={editAppointment}
                         editAppointmentDisclosure={editAppointmentDisclosure}

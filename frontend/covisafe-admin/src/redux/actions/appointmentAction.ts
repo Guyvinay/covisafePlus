@@ -97,7 +97,7 @@ const editAppointmentDataRequest = (
 const editAppointmentDataSucces = (
   data: any
 ): EditAppointmentDataAction => ({
-  type:EDIT_APPOINTMENT_DATA_REQUEST,
+  type:EDIT_APPOINTMENT_DATA_SUCCES,
   payload:data
 });
 
@@ -166,9 +166,11 @@ export const deleteAppointmentData = ( token:string, uuid:string,toast:any) =>{
         dispatch(appointmentDataDeleteSucces(data));
 
       } catch (error) {
+
         const errorMessage = (error as AxiosError).message;
 
         dispatch(appointmentDataDeleteFailure(errorMessage));
+
       } finally {
 
         dispatch(setAppointmentDeleteRequest(false));
@@ -244,7 +246,8 @@ export const updateAppointmentData = (
     dispatch: Dispatch<EditAppointmentDataAction>
   ): Promise<void> => {
     try {
-      dispatch(editAppointmentDataRequest(false));
+
+      dispatch(editAppointmentDataRequest(true));
 
       const baseURL = process.env.REACT_APP_API_BASE_URL;
 
@@ -254,12 +257,14 @@ export const updateAppointmentData = (
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
         }
       );
 
-      const {data} = response;
+      const { data } = response;
+
+      console.log(data);
 
       dispatch(editAppointmentDataSucces(data));
 

@@ -8,9 +8,9 @@ const rootReducer = combineReducers({
   user: loginReducer,
   userData: userDataReducer,
   appointmentData: appointmentDataReducer,
-  appointmentDelete:appointmentDeleteDataReducer,
+  appointmentDelete: appointmentDeleteDataReducer,
   addAppointmentData: appointmentAddDataReducer,
-  editAppointmentData:appointmentEditDataReducer,
+  editAppointmentData: appointmentEditDataReducer,
 });
 
 const store = configureStore({reducer:rootReducer})
