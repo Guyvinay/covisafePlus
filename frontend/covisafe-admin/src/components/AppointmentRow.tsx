@@ -6,12 +6,18 @@ import { BeatLoader } from 'react-spinners';
 import { EditAppointmentDataAction, EditAppointmentRequestBody } from '../redux/actions/types/appointmentDataTypes';
 import { fetchAppointmentData, updateAppointmentData } from '../redux/actions/appointmentAction';
 import { RootState } from '../redux/type';
-
-export default function AppointmentRow({
+const bookingDet: EditAppointmentRequestBody = {
+  bookingId: '',
+  mobileNo: 0,
+  dateOfBooking: '',
+  slot: '',
+  bookingStatus: false
+};
+export default function AppointmentRow({  
+  i,
   e,
   deleteAppointment,
   editAppointment,
-  i,
   editAppointmentDisclosure,
   cancelRef,
   editref,
@@ -63,10 +69,7 @@ export default function AppointmentRow({
     <>
       <Tr
         onClick={() => {
-          editAppointmentDisclosure.onOpen();
-          console.log("onopen", e);
 
-          console.log(bookingId);
           setBookingDate(e.dateOfBooking);
           setBookingstatus(e.bookingStatus);
           setMobileNo(e.mobileNo);
@@ -74,18 +77,16 @@ export default function AppointmentRow({
           setSlot(e.slot);
           setBookingId(e.bookingId);
 
-          // Log the state to check if it reflects the correct values
-          console.log("State after click:", {
-            bookingDate,
-            bookingStatus,
-            mobileNo,
-            isDisabled,
-            slot,
-            bookingId,
-          });
+          bookingDet.bookingId = e.bookingId;
+          bookingDet.bookingStatus = e.bookingStatus
+          bookingDet.dateOfBooking = e.dateOfBooking
+          bookingDet.mobileNo = e.mobileNo
+          bookingDet.slot = e.slot
+          editAppointmentDisclosure.onOpen();
         }}
         ref={editref}
         cursor={"pointer"}
+        
       >
         <Td className="text-black font-medium">
           <p className="py-1">{e.slot}</p>
@@ -206,7 +207,7 @@ export default function AppointmentRow({
         placement="right"
         onClose={editAppointmentDisclosure.onClose}
         finalFocusRef={editref}
-        key={e.bookingId}
+        key={bookingDet.bookingId}
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -221,11 +222,11 @@ export default function AppointmentRow({
 
           <DrawerBody>
             <FormLabel>Booking Id</FormLabel>
-            <Input placeholder="appointmentId" value={e.bookingId} disabled />
+            <Input placeholder="appointmentId" value={bookingDet.bookingId} disabled />
             <FormControl className="my-5">
               <FormLabel>Booking Status</FormLabel>
               <Flex className="justify-between">
-                {bookingStatus ? (
+                {bookingDet.bookingStatus ? (
                   <>
                     <div>
                       <Icon viewBox="0 0 200 200" color="green.500" boxSize={5}>
@@ -283,7 +284,7 @@ export default function AppointmentRow({
                   setBookingDate(e.target.value);
                   setIsDisabled(false);
                 }}
-                value={bookingDate}
+                value={bookingDet.dateOfBooking   }
               />
             </FormControl>
 
@@ -314,7 +315,7 @@ export default function AppointmentRow({
                 <Input
                   placeholder="moble no"
                   type="number"
-                  value={mobileNo}
+                  value={bookingDet.mobileNo}
                   focusBorderColor="red.500"
                   onChange={(e) => {
                     setMobileNo(e.target.value);
