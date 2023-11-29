@@ -119,7 +119,7 @@ export const appointmentAddDataReducer = (
     case ADD_APPOINTMENT_DATA_REQUEST:
       return {
         ...state,
-        loading: true,
+        loading: action.payload,
         error: null,
       };
 
@@ -150,7 +150,7 @@ export const appointmentEditDataReducer = (
     case EDIT_APPOINTMENT_DATA_REQUEST:
       return {
         ...state,
-        loading:true,
+        loading:action.payload,
         error:null,
       }
 
